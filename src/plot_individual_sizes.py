@@ -3,6 +3,7 @@ Create individual visualizations for each committee size (k=0 to 12).
 
 For each size, creates a 2x3 grid of scatter plots showing relationships
 between alpha values, filtered to only that specific committee size.
+MES (Method of Equal Shares) committee is shown as a gold star.
 """
 
 import pandas as pd
@@ -12,7 +13,7 @@ from matplotlib import cm
 import os
 
 
-def plot_single_size(df, k, output_dir='output/by_size'):
+def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     """
     Create visualization for a single committee size.
     
@@ -20,6 +21,7 @@ def plot_single_size(df, k, output_dir='output/by_size'):
         df: DataFrame with alpha scores
         k: Committee size to plot
         output_dir: Directory to save plots
+        mes_df: DataFrame with MES results (optional)
     """
     # Filter to only this size
     df_k = df[df['subset_size'] == k].copy()
@@ -29,6 +31,15 @@ def plot_single_size(df, k, output_dir='output/by_size'):
         return
     
     print(f"  Size k={k}: {len(df_k)} subsets")
+    
+    # Get MES data for this size
+    mes_k = None
+    if mes_df is not None:
+        mes_k = mes_df[mes_df['subset_size'] == k]
+        if len(mes_k) > 0:
+            mes_k = mes_k.iloc[0]  # Get the single row
+        else:
+            mes_k = None
     
     # Create figure with 2x3 subplots
     fig, axes = plt.subplots(2, 3, figsize=(15, 10))
@@ -41,6 +52,13 @@ def plot_single_size(df, k, output_dir='output/by_size'):
     # Plotting parameters
     alpha_transparency = 0.6  # Less transparency since fewer points per size
     marker_size = 30  # Larger markers for individual size plots
+    
+    # MES marker parameters
+    mes_marker = '*'
+    mes_color = 'gold'
+    mes_size = 400  # Larger for individual plots
+    mes_edgecolor = 'black'
+    mes_linewidth = 1.5
     
     # Row 1: alpha_PAIRS as x-axis
     
@@ -65,6 +83,12 @@ def plot_single_size(df, k, output_dir='output/by_size'):
     # Reference line: beta = 1 - alpha (a + b = 1)
     x_ref = np.linspace(0, 1, 100)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
+    # Add MES point
+    if mes_k is not None:
+        ax.scatter(mes_k['alpha_PAIRS'], mes_k['alpha_AV'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_AV (avg)', fontsize=11)
     ax.set_title('PAIRS vs AV', fontsize=12, fontweight='bold')
@@ -79,6 +103,12 @@ def plot_single_size(df, k, output_dir='output/by_size'):
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
+    # Add MES point
+    if mes_k is not None:
+        ax.scatter(mes_k['alpha_PAIRS'], mes_k['alpha_CC'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_CC (avg)', fontsize=11)
     ax.set_title('PAIRS vs CC', fontsize=12, fontweight='bold')
@@ -93,6 +123,12 @@ def plot_single_size(df, k, output_dir='output/by_size'):
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
+    # Add MES point
+    if mes_k is not None:
+        ax.scatter(mes_k['alpha_PAIRS'], mes_k['alpha_EJR'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_EJR (avg)', fontsize=11)
     ax.set_title('PAIRS vs EJR', fontsize=12, fontweight='bold')
@@ -123,6 +159,12 @@ def plot_single_size(df, k, output_dir='output/by_size'):
               edgecolors='black', linewidths=0.5)
     # Reference line: beta = 1 - alpha^2 (a^2 + b = 1)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
+    # Add MES point
+    if mes_k is not None:
+        ax.scatter(mes_k['alpha_CONS'], mes_k['alpha_AV'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_AV (avg)', fontsize=11)
     ax.set_title('CONS vs AV', fontsize=12, fontweight='bold')
@@ -137,6 +179,12 @@ def plot_single_size(df, k, output_dir='output/by_size'):
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
+    # Add MES point
+    if mes_k is not None:
+        ax.scatter(mes_k['alpha_CONS'], mes_k['alpha_CC'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_CC (avg)', fontsize=11)
     ax.set_title('CONS vs CC', fontsize=12, fontweight='bold')
@@ -151,6 +199,12 @@ def plot_single_size(df, k, output_dir='output/by_size'):
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
+    # Add MES point
+    if mes_k is not None:
+        ax.scatter(mes_k['alpha_CONS'], mes_k['alpha_EJR'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_EJR (avg)', fontsize=11)
     ax.set_title('CONS vs EJR', fontsize=12, fontweight='bold')
@@ -169,13 +223,15 @@ def plot_single_size(df, k, output_dir='output/by_size'):
 
 
 def plot_all_sizes(input_file='output/alpha_scores_by_size.csv', 
-                   output_dir='output/by_size'):
+                   output_dir='output/by_size',
+                   mes_file='output/mes_results.csv'):
     """
     Create individual plots for all committee sizes.
     
     Args:
         input_file: Path to alpha scores CSV (normalized by size)
         output_dir: Directory to save plots
+        mes_file: Path to MES results CSV
     """
     print("="*70)
     print("CREATING INDIVIDUAL PLOTS FOR EACH COMMITTEE SIZE")
@@ -189,6 +245,15 @@ def plot_all_sizes(input_file='output/alpha_scores_by_size.csv',
     df = pd.read_csv(input_file)
     print(f"Loaded {len(df):,} subsets")
     
+    # Load MES results
+    mes_df = None
+    if os.path.exists(mes_file):
+        print(f"Loading MES results from {mes_file}...")
+        mes_df = pd.read_csv(mes_file)
+        print(f"Loaded {len(mes_df)} MES committees")
+    else:
+        print(f"Warning: MES results file not found at {mes_file}")
+    
     # Get all unique sizes
     sizes = sorted(df['subset_size'].unique())
     print(f"\nFound {len(sizes)} committee sizes: {list(sizes)}")
@@ -196,16 +261,17 @@ def plot_all_sizes(input_file='output/alpha_scores_by_size.csv',
     # Create plot for each size
     print(f"\nGenerating plots...")
     for k in sizes:
-        plot_single_size(df, k, output_dir)
+        plot_single_size(df, k, output_dir, mes_df)
     
     print("\n" + "="*70)
     print("COMPLETED!")
     print("="*70)
     print(f"Generated {len(sizes)} plots in {output_dir}/")
     print(f"Files: size_00.png to size_12.png")
+    if mes_df is not None:
+        print("MES committees marked with gold stars")
     print("="*70)
 
 
 if __name__ == "__main__":
     plot_all_sizes()
-

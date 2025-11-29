@@ -8,21 +8,25 @@ Creates 6 scatter plots (2x3 grid):
 Beta values are the average alpha values for each x-axis value.
 Points are colored by subset_size using viridis colormap.
 Reference lines show theoretical bounds.
+MES (Method of Equal Shares) committees are shown as gold stars.
 """
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
+import os
 
 
-def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha_plots.png'):
+def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha_plots.png',
+                 mes_file='output/mes_results.csv'):
     """
     Create 6 plots showing relationships between alpha values.
     
     Args:
         input_file: Path to alpha scores CSV
         output_file: Path to output plot image
+        mes_file: Path to MES results CSV
     """
     print("="*70)
     print("CREATING PLOTS")
@@ -32,6 +36,15 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
     print(f"\nLoading {input_file}...")
     df = pd.read_csv(input_file)
     print(f"Loaded {len(df):,} subsets")
+    
+    # Load MES results
+    mes_df = None
+    if os.path.exists(mes_file):
+        print(f"Loading MES results from {mes_file}...")
+        mes_df = pd.read_csv(mes_file)
+        print(f"Loaded {len(mes_df)} MES committees")
+    else:
+        print(f"Warning: MES results file not found at {mes_file}")
     
     # Create figure with 2x3 subplots
     fig, axes = plt.subplots(2, 3, figsize=(15, 10))
@@ -45,6 +58,13 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
     # Plotting parameters
     alpha_transparency = 0.35
     marker_size = 15
+    
+    # MES marker parameters
+    mes_marker = '*'
+    mes_color = 'gold'
+    mes_size = 200
+    mes_edgecolor = 'black'
+    mes_linewidth = 1
     
     # Row 1: alpha_PAIRS as x-axis
     print("\nProcessing row 1 (alpha_PAIRS)...")
@@ -72,6 +92,12 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
     # Reference line: beta = 1 - alpha (a + b = 1)
     x_ref = np.linspace(0, 1, 100)
     ax.plot(x_ref, 1 - x_ref, 'k-', linewidth=2, alpha=0.7, label='a + b = 1')
+    # Add MES points
+    if mes_df is not None:
+        ax.scatter(mes_df['alpha_PAIRS_global'], mes_df['alpha_AV_global'],
+                  marker=mes_marker, c=mes_color, s=mes_size, 
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_AV (avg)', fontsize=11)
     ax.set_title('PAIRS vs AV', fontsize=12, fontweight='bold')
@@ -84,6 +110,12 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
               c=pairs_grouped['subset_size'], cmap=cmap, norm=norm,
               alpha=alpha_transparency, s=marker_size)
     ax.plot(x_ref, 1 - x_ref, 'k-', linewidth=2, alpha=0.7, label='a + b = 1')
+    # Add MES points
+    if mes_df is not None:
+        ax.scatter(mes_df['alpha_PAIRS_global'], mes_df['alpha_CC_global'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_CC (avg)', fontsize=11)
     ax.set_title('PAIRS vs CC', fontsize=12, fontweight='bold')
@@ -96,6 +128,12 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
               c=pairs_grouped['subset_size'], cmap=cmap, norm=norm,
               alpha=alpha_transparency, s=marker_size)
     ax.plot(x_ref, 1 - x_ref, 'k-', linewidth=2, alpha=0.7, label='a + b = 1')
+    # Add MES points
+    if mes_df is not None:
+        ax.scatter(mes_df['alpha_PAIRS_global'], mes_df['alpha_EJR'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_EJR (avg)', fontsize=11)
     ax.set_title('PAIRS vs EJR', fontsize=12, fontweight='bold')
@@ -126,6 +164,12 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
               alpha=alpha_transparency, s=marker_size)
     # Reference line: beta = 1 - alpha^2 (a^2 + b = 1)
     ax.plot(x_ref, 1 - x_ref**2, 'k-', linewidth=2, alpha=0.7, label='a² + b = 1')
+    # Add MES points
+    if mes_df is not None:
+        ax.scatter(mes_df['alpha_CONS_global'], mes_df['alpha_AV_global'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_AV (avg)', fontsize=11)
     ax.set_title('CONS vs AV', fontsize=12, fontweight='bold')
@@ -138,6 +182,12 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
               c=cons_grouped['subset_size'], cmap=cmap, norm=norm,
               alpha=alpha_transparency, s=marker_size)
     ax.plot(x_ref, 1 - x_ref**2, 'k-', linewidth=2, alpha=0.7, label='a² + b = 1')
+    # Add MES points
+    if mes_df is not None:
+        ax.scatter(mes_df['alpha_CONS_global'], mes_df['alpha_CC_global'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_CC (avg)', fontsize=11)
     ax.set_title('CONS vs CC', fontsize=12, fontweight='bold')
@@ -150,6 +200,12 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
               c=cons_grouped['subset_size'], cmap=cmap, norm=norm,
               alpha=alpha_transparency, s=marker_size)
     ax.plot(x_ref, 1 - x_ref**2, 'k-', linewidth=2, alpha=0.7, label='a² + b = 1')
+    # Add MES points
+    if mes_df is not None:
+        ax.scatter(mes_df['alpha_CONS_global'], mes_df['alpha_EJR'],
+                  marker=mes_marker, c=mes_color, s=mes_size,
+                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
+                  label='MES', zorder=10)
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_EJR (avg)', fontsize=11)
     ax.set_title('CONS vs EJR', fontsize=12, fontweight='bold')
@@ -186,6 +242,9 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
     print(f"  beta_CC range: [{cons_grouped['beta_CC'].min():.4f}, {cons_grouped['beta_CC'].max():.4f}]")
     print(f"  beta_EJR range: [{cons_grouped['beta_EJR'].min():.4f}, {cons_grouped['beta_EJR'].max():.4f}]")
     
+    if mes_df is not None:
+        print(f"\nMES committees plotted: {len(mes_df)}")
+    
     print("\n" + "="*70)
     print("COMPLETED!")
     print("="*70)
@@ -196,4 +255,3 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
 
 if __name__ == "__main__":
     plot_results()
-
