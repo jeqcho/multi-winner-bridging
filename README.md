@@ -122,10 +122,53 @@ See `reference.md` for detailed mathematical definitions.
 
 ## Performance
 
-- **PAIRS** is the bottleneck (~91% of computation time)
-- French Election (12 candidates, 4096 subsets): ~34 minutes
-- Camp Songs file_02 (8 candidates, 256 subsets): ~2 minutes
-- Camp Songs file_04 (10 candidates, 1024 subsets): ~10 minutes
+### Notation
+
+| Variable | Description |
+|----------|-------------|
+| **n** | Number of voters |
+| **m** | Number of candidates |
+| **k** | Committee size |
+| **α(n)** | Inverse Ackermann function (effectively constant, ≤4 for practical n) |
+
+### Algorithm Time Complexity
+
+| Algorithm | Description | Time Complexity | Typical Runtime Share |
+|-----------|-------------|-----------------|----------------------|
+| **AV** | Sum of approvals for committee members | O(n × k) | ~0.1-6% |
+| **CC** | Count voters with ≥1 approved member | O(n × k) | ~0.1-6% |
+| **PAIRS** | Count voter pairs sharing ≥1 approved member | O(n² × k) | **~20-94%** (bottleneck) |
+| **CONS** | Count voter pairs in same connected component | O(n × k × α(n)) | ~5-56% |
+
+### Implementation Details
+
+- **AV**: Simple matrix sum over committee columns: `M[:, W].sum()`
+- **CC**: Row-wise OR check: `(M[:, W].sum(axis=1) > 0).sum()`
+- **PAIRS**: Matrix multiplication `M_W @ M_W.T`, count upper triangle > 0
+- **CONS**: Union-Find data structure; union all supporters per candidate, sum C(|component|, 2)
+
+### Runtime Benchmarks
+
+**French Election** (n=2836 voters, m=12 candidates, 2^m=4096 subsets):
+| Algorithm | Time | Share |
+|-----------|------|-------|
+| PAIRS | 96.67s | **94.2%** |
+| CONS | 5.55s | 5.4% |
+| AV | 0.30s | 0.3% |
+| CC | 0.09s | 0.1% |
+| **Total** | **102.66s** (~1.7 min) | |
+
+**Camp Songs file_02** (n=39 voters, m=8 candidates, 256 subsets):
+- Total: 0.02s
+- CONS: 34.4%, PAIRS: 19.9%, CC: 6.5%, AV: 6.2%
+
+**Camp Songs file_04** (n=56 voters, m=10 candidates, 1024 subsets):
+- Total: 0.07s
+- CONS: 56.4%, PAIRS: 26.1%, CC: 6.1%, AV: 4.5%
+
+### Key Insight
+
+**PAIRS is the bottleneck** for large voter counts (n) due to its O(n²) matrix multiplication. For small datasets, CONS takes a relatively larger share since its O(n) term becomes comparable to other algorithms.
 
 ## Key Findings
 
