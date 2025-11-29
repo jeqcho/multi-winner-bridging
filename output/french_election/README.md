@@ -44,7 +44,7 @@ Raw scores for all 4,096 committee subsets.
 - `PAIRS`: Direct pair coverage score
 - `CONS`: Connectivity score
 - `EJR`: Boolean (True/False) - Extended Justified Representation
-- `beta_EJR`: Maximum β for β-EJR satisfaction (0-1)
+- `alpha_EJR`: Maximum α for α-EJR satisfaction (0-1)
 
 #### `alpha_scores.csv`
 Alpha-approximations normalized by **global maximum** (across all committee sizes).
@@ -54,7 +54,7 @@ Alpha-approximations normalized by **global maximum** (across all committee size
 - `alpha_CC`: CC / global_max_CC
 - `alpha_PAIRS`: PAIRS / global_max_PAIRS
 - `alpha_CONS`: CONS / global_max_CONS
-- `alpha_EJR`: Same as beta_EJR
+- `alpha_EJR`: Maximum α for α-EJR satisfaction
 
 **Use case:** Find the absolute best committees regardless of size.
 
@@ -66,7 +66,7 @@ Alpha-approximations normalized by **size-specific maximum** (within each commit
 - `alpha_CC`: CC / max_CC_for_this_size
 - `alpha_PAIRS`: PAIRS / max_PAIRS_for_this_size
 - `alpha_CONS`: CONS / max_CONS_for_this_size
-- `alpha_EJR`: Same as beta_EJR
+- `alpha_EJR`: Maximum α for α-EJR satisfaction
 
 **Use case:** Compare committees within the same size class; understand trade-offs with size constraints.
 

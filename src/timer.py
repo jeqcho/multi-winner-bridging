@@ -10,7 +10,7 @@ import time
 import random
 from itertools import combinations
 from data_loader import load_and_combine_data
-from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, alpha_ejr
 
 
 def time_single_subset(M, W, k):
@@ -42,10 +42,10 @@ def time_single_subset(M, W, k):
     ejr_satisfied(M, W, k)
     times['EJR'] = time.time() - start
     
-    # Time beta-EJR
+    # Time alpha-EJR
     start = time.time()
-    beta_ejr(M, W, k)
-    times['beta_EJR'] = time.time() - start
+    alpha_ejr(M, W, k)
+    times['alpha_EJR'] = time.time() - start
     
     # Total time
     times['TOTAL'] = sum(times.values())
@@ -75,7 +75,7 @@ def estimate_time():
         'PAIRS': [],
         'CONS': [],
         'EJR': [],
-        'beta_EJR': [],
+        'alpha_EJR': [],
         'TOTAL': []
     }
     
@@ -105,7 +105,7 @@ def estimate_time():
     print("="*70)
     
     avg_times = {}
-    for key in ['AV', 'CC', 'PAIRS', 'CONS', 'EJR', 'beta_EJR', 'TOTAL']:
+    for key in ['AV', 'CC', 'PAIRS', 'CONS', 'EJR', 'alpha_EJR', 'TOTAL']:
         avg = np.mean(all_times[key])
         std = np.std(all_times[key])
         avg_times[key] = avg
@@ -127,17 +127,17 @@ def estimate_time():
     
     # Breakdown by function
     print("\nEstimated time breakdown:")
-    for key in ['AV', 'CC', 'PAIRS', 'CONS', 'EJR', 'beta_EJR']:
+    for key in ['AV', 'CC', 'PAIRS', 'CONS', 'EJR', 'alpha_EJR']:
         func_total = avg_times[key] * total_subsets
         percentage = (avg_times[key] / avg_times['TOTAL']) * 100
         print(f"  {key:12s}: {func_total:8.2f} s ({func_total/60:6.2f} min) - {percentage:5.1f}%")
     
     print("\n" + "="*70)
     
-    # Check if beta_EJR is the bottleneck
-    if avg_times['beta_EJR'] > avg_times['TOTAL'] * 0.5:
-        print("\n⚠️  WARNING: beta_EJR is the bottleneck!")
-        print("   Consider optimizing or using a coarser precision.")
+    # Check if alpha_EJR is the bottleneck
+    if avg_times['alpha_EJR'] > avg_times['TOTAL'] * 0.5:
+        print("\n⚠️  WARNING: alpha_EJR is the bottleneck!")
+        print("   Consider optimizing or using sampling.")
     
     return avg_times, estimated_total
 

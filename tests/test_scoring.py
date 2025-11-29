@@ -4,7 +4,7 @@ import numpy as np
 import sys
 sys.path.insert(0, 'src')
 
-from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, alpha_ejr
 
 
 def test_av_score():
@@ -166,8 +166,8 @@ def test_ejr_satisfied():
     print("✓ test_ejr_satisfied passed")
 
 
-def test_beta_ejr():
-    """Test beta-EJR calculation."""
+def test_alpha_ejr():
+    """Test alpha-EJR calculation."""
     M = np.array([
         [1, 1, 0, 0],
         [1, 1, 0, 0],
@@ -175,20 +175,18 @@ def test_beta_ejr():
         [0, 0, 1, 1],
     ], dtype=bool)
     
-    # W = [0, 2] satisfies full EJR, so beta = 1.0
-    beta = beta_ejr(M, [0, 2], k=2)
-    assert beta >= 0.99, f"Expected beta ~1.0, got {beta}"
+    # W = [0, 2] satisfies full EJR, so alpha = 1.0
+    alpha = alpha_ejr(M, [0, 2], k=2)
+    assert alpha >= 0.99, f"Expected alpha ~1.0, got {alpha}"
     
     # W = [0, 1] does not satisfy full EJR
-    # Group {2,3} deserves 1 seat but gets 0 approvals
-    # However, for β-EJR: threshold = ⌊β·1⌋
-    # When β < 1.0, ⌊β⌋ = 0, which is vacuous (no constraint)
-    # So W satisfies β-EJR for any β < 1.0
-    # We expect beta to be just below 1.0
-    beta = beta_ejr(M, [0, 1], k=2)
-    assert 0.95 <= beta < 1.0, f"Expected beta ~0.99, got {beta}"
+    # Group {2,3} (size 2) shares {2,3}, deserves 1 seat but gets 0
+    # Violation threshold: alpha = (1 * 4) / (2 * 2) = 1.0
+    # So alpha_ejr should be 1.0 (the threshold at which violation occurs)
+    alpha = alpha_ejr(M, [0, 1], k=2)
+    assert alpha == 1.0, f"Expected alpha=1.0 (violation threshold), got {alpha}"
     
-    # Test a case with more seats for clearer beta value
+    # Test a case where alpha < 1.0 (partial satisfaction)
     # 6 voters, 3 groups of 2, committee size 3
     M2 = np.array([
         [1, 1, 1, 0, 0, 0],  # Group 1: voters 0,1
@@ -202,10 +200,10 @@ def test_beta_ejr():
     # W = [0, 3] with k=2
     # Group 1 (voters 0,1) share {0,1,2}, deserve 1 seat, get 1 approval each -> OK
     # Group 2 (voters 2,3) share {3,4,5}, deserve 1 seat, get 1 approval each -> OK
-    beta = beta_ejr(M2, [0, 3], k=2)
-    assert beta >= 0.99, f"Expected beta ~1.0 for fair committee, got {beta}"
+    alpha = alpha_ejr(M2, [0, 3], k=2)
+    assert alpha >= 0.99, f"Expected alpha ~1.0 for fair committee, got {alpha}"
     
-    print("✓ test_beta_ejr passed")
+    print("✓ test_alpha_ejr passed")
 
 
 def test_edge_cases():
@@ -266,9 +264,12 @@ def test_ejr_non_maximal_cohesive_group():
     result = ejr_satisfied(M, W, k)
     assert result == False, f"Expected EJR violation, but got {result}"
     
-    # The beta value should be less than 1.0
-    beta = beta_ejr(M, W, k)
-    assert beta < 1.0, f"Expected beta < 1.0, but got {beta}"
+    # The alpha value = threshold at which violation occurs
+    # For this case: group size = 2, l=1, n=4, k=2
+    # Threshold: alpha = (l * n) / (k * |S|) = (1 * 4) / (2 * 2) = 1.0
+    # This means the committee fails full EJR (alpha=1.0)
+    alpha = alpha_ejr(M, W, k)
+    assert alpha == 1.0, f"Expected alpha=1.0 (fails full EJR), got {alpha}"
     
     # Verify the good committee works
     W_good = [0, 2]  # One candidate from each group
@@ -318,7 +319,7 @@ if __name__ == "__main__":
     test_cons_score()
     test_cons_score_fully_connected()
     test_ejr_satisfied()
-    test_beta_ejr()
+    test_alpha_ejr()
     test_edge_cases()
     test_ejr_non_maximal_cohesive_group()
     test_ejr_multiple_violations()

@@ -245,89 +245,58 @@ def ejr_satisfied(M: np.ndarray, W: List[int], k: int, max_samples: int = MAX_EJ
     return True
 
 
-def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01, 
+def alpha_ejr(M: np.ndarray, W: List[int], k: int, 
               max_samples: int = MAX_EJR_SAMPLES_PER_SIZE) -> float:
     """
-    Calculate maximum β such that W satisfies β-EJR.
+    Compute the maximum α such that committee W satisfies α-EJR.
     
-    β-EJR: For every ℓ-cohesive group S with |S| ≥ (ℓ/k)·n, there exists 
-    some voter i ∈ S with |A_i ∩ W| ≥ ⌊β·ℓ⌋.
+    α-EJR: For every ℓ ∈ [k] and every ℓ-cohesive group S,
+    if α·|S| ≥ (ℓ/k)·n, then some voter in S has ≥ℓ approved in W.
     
-    This implementation samples candidate subsets for efficiency.
+    For each violating group (ℓ-cohesive S where no voter has ≥ℓ in W),
+    the violation threshold is α = (ℓ·n) / (k·|S|).
+    Returns the minimum such threshold, or 1.0 if no violations (full EJR).
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
         W: List of candidate indices in the committee
         k: Committee size |W|
-        precision: Step size for β search (default 0.01)
         max_samples: Maximum candidate subsets to check per coalition size
         
     Returns:
-        Maximum β value (between 0 and 1) for which W satisfies β-EJR
+        Maximum α value in (0, 1] for which W satisfies α-EJR
     """
-    if k == 0:
-        return 1.0 if len(W) == 0 else 0.0
+    n_voters, n_candidates = M.shape
     
-    if len(W) != k:
+    if k == 0 or len(W) == 0:
         return 0.0
     
-    n_voters = M.shape[0]
-    n_candidates = M.shape[1]
+    # Precompute how many W-candidates each voter approves
+    approvals_in_W = M[:, W].sum(axis=1)
     
-    # Precompute approvals in W for each voter
-    if len(W) > 0:
-        approvals_in_W = M[:, W].sum(axis=1)
-    else:
-        approvals_in_W = np.zeros(n_voters, dtype=int)
+    min_alpha = 1.0  # Start assuming full EJR
     
-    # Binary search for maximum β
-    beta_min, beta_max = 0.0, 1.0
-    
-    # First check if β=1 works (full EJR)
-    if ejr_satisfied(M, W, k, max_samples):
-        return 1.0
-    
-    # Binary search with precision
-    while beta_max - beta_min > precision / 2:
-        beta = (beta_min + beta_max) / 2
+    for ell in range(1, k + 1):
+        # Find voters who are "unsatisfied" at level ℓ
+        unsatisfied = approvals_in_W < ell
         
-        # Check if W satisfies β-EJR
-        satisfies = True
-        
-        for ell in range(1, k + 1):
-            threshold = int(beta * ell)  # ⌊β·ℓ⌋
+        # Check ℓ-sized candidate subsets T (with sampling)
+        for T in _sample_combinations(n_candidates, ell, max_samples):
+            T_list = list(T)
+            # Voters who approve ALL candidates in T (ℓ-cohesive group)
+            voters_approve_all_T = M[:, T_list].all(axis=1)
             
-            if threshold == 0:
-                # Vacuous constraint (any voter trivially has ≥0 approvals)
-                continue
+            # The violating group: ℓ-cohesive AND unsatisfied
+            cohesive_unsatisfied = voters_approve_all_T & unsatisfied
+            group_size = cohesive_unsatisfied.sum()
             
-            # Find unsatisfied voters for this threshold
-            unsatisfied = approvals_in_W < threshold
-            
-            # Sample ℓ-subsets of candidates (at most max_samples)
-            for T in _sample_combinations(n_candidates, ell, max_samples):
-                T_list = list(T)
-                
-                # Find voters who approve all candidates in T AND are unsatisfied
-                voters_approve_all_T = M[:, T_list].all(axis=1)
-                cohesive_unsatisfied = voters_approve_all_T & unsatisfied
-                group_size = cohesive_unsatisfied.sum()
-                
-                # Check if this unsatisfied cohesive group deserves ℓ seats
-                if group_size * k >= ell * n_voters:
-                    # Violation found
-                    satisfies = False
-                    break
-            
-            if not satisfies:
-                break
-        
-        if satisfies:
-            beta_min = beta
-        else:
-            beta_max = beta
+            if group_size > 0:
+                # This group causes a violation when α ≥ (ℓ·n) / (k·|S|)
+                threshold = (ell * n_voters) / (k * group_size)
+                if threshold < min_alpha:
+                    min_alpha = threshold
     
-    return beta_min
+    return min_alpha
 
 
 if __name__ == "__main__":
@@ -348,7 +317,7 @@ if __name__ == "__main__":
     print(f"PAIRS score: {pairs_score(M, W)}")
     print(f"CONS score: {cons_score(M, W)}")
     print(f"EJR satisfied: {ejr_satisfied(M, W, k)}")
-    print(f"Beta-EJR: {beta_ejr(M, W, k):.2f}")
+    print(f"Alpha-EJR: {alpha_ejr(M, W, k):.2f}")
 
 
 

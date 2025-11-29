@@ -15,7 +15,7 @@ import json
 import os
 import time
 
-from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, alpha_ejr
 from mes import method_of_equal_shares
 from voting_methods import approval_voting, chamberlin_courant_greedy, pav_greedy
 
@@ -79,7 +79,7 @@ def plot_ejr_results(M, candidates, output_dir):
             
             # Calculate EJR
             t0 = time.time()
-            beta = beta_ejr(M, committee, k)
+            alpha = alpha_ejr(M, committee, k)
             timing['ejr'] += time.time() - t0
             
             # Normalize BY SIZE (consistent with alpha_plots_by_size.png)
@@ -92,13 +92,13 @@ def plot_ejr_results(M, candidates, output_dir):
                 'committee': committee,
                 'alpha_PAIRS': alpha_pairs,
                 'alpha_CONS': alpha_cons,
-                'alpha_EJR': beta,
+                'alpha_EJR': alpha,
                 'marker': marker,
                 'color': color,
                 'size': size,
             })
             
-            print(f"{method_name}(EJR={beta:.2f})", end=" ")
+            print(f"{method_name}(EJR={alpha:.2f})", end=" ")
         print()
     
     # Print timing
@@ -130,7 +130,7 @@ def plot_ejr_results(M, candidates, output_dir):
                c=color, alpha=0.3, linewidth=1)
     
     ax.set_xlabel('alpha_PAIRS', fontsize=12)
-    ax.set_ylabel('alpha_EJR (beta_EJR)', fontsize=12)
+    ax.set_ylabel('alpha_EJR', fontsize=12)
     ax.set_title('PAIRS vs EJR', fontsize=14, fontweight='bold')
     ax.legend(loc='best', fontsize=10)
     ax.grid(True, alpha=0.3)
@@ -155,7 +155,7 @@ def plot_ejr_results(M, candidates, output_dir):
                c=color, alpha=0.3, linewidth=1)
     
     ax.set_xlabel('alpha_CONS', fontsize=12)
-    ax.set_ylabel('alpha_EJR (beta_EJR)', fontsize=12)
+    ax.set_ylabel('alpha_EJR', fontsize=12)
     ax.set_title('CONS vs EJR', fontsize=14, fontweight='bold')
     ax.legend(loc='best', fontsize=10)
     ax.grid(True, alpha=0.3)
@@ -168,7 +168,69 @@ def plot_ejr_results(M, candidates, output_dir):
     output_file = os.path.join(output_dir, 'ejr_plots.png')
     print(f"\nSaving EJR plot to {output_file}...")
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
+    plt.close()
     print(f"Plot saved successfully")
+    
+    # Create ZOOMED IN version (0.8-1.0 range with margins)
+    fig_zoom, axes_zoom = plt.subplots(1, 2, figsize=(14, 6))
+    fig_zoom.suptitle('Voting Methods: Bridging vs EJR (Zoomed 0.8-1.0)', fontsize=16, fontweight='bold', y=1.02)
+    
+    # Plot 1: alpha_PAIRS vs alpha_EJR (zoomed)
+    ax = axes_zoom[0]
+    for method_name, group in df.groupby('method'):
+        marker = group['marker'].iloc[0]
+        color = group['color'].iloc[0]
+        size = group['size'].iloc[0]
+        
+        ax.scatter(group['alpha_PAIRS'], group['alpha_EJR'],
+                  marker=marker, c=color, s=size,
+                  edgecolors='black', linewidths=0.5,
+                  label=method_name, alpha=0.8)
+        
+        sorted_group = group.sort_values('k')
+        ax.plot(sorted_group['alpha_PAIRS'], sorted_group['alpha_EJR'],
+               c=color, alpha=0.3, linewidth=1)
+    
+    ax.set_xlabel('alpha_PAIRS', fontsize=12)
+    ax.set_ylabel('alpha_EJR', fontsize=12)
+    ax.set_title('PAIRS vs EJR (Zoomed)', fontsize=14, fontweight='bold')
+    ax.legend(loc='best', fontsize=10)
+    ax.grid(True, alpha=0.3)
+    ax.set_xlim(0.78, 1.02)
+    ax.set_ylim(0.78, 1.02)
+    
+    # Plot 2: alpha_CONS vs alpha_EJR (zoomed)
+    ax = axes_zoom[1]
+    for method_name, group in df.groupby('method'):
+        marker = group['marker'].iloc[0]
+        color = group['color'].iloc[0]
+        size = group['size'].iloc[0]
+        
+        ax.scatter(group['alpha_CONS'], group['alpha_EJR'],
+                  marker=marker, c=color, s=size,
+                  edgecolors='black', linewidths=0.5,
+                  label=method_name, alpha=0.8)
+        
+        sorted_group = group.sort_values('k')
+        ax.plot(sorted_group['alpha_CONS'], sorted_group['alpha_EJR'],
+               c=color, alpha=0.3, linewidth=1)
+    
+    ax.set_xlabel('alpha_CONS', fontsize=12)
+    ax.set_ylabel('alpha_EJR', fontsize=12)
+    ax.set_title('CONS vs EJR (Zoomed)', fontsize=14, fontweight='bold')
+    ax.legend(loc='best', fontsize=10)
+    ax.grid(True, alpha=0.3)
+    ax.set_xlim(0.78, 1.02)
+    ax.set_ylim(0.78, 1.02)
+    
+    plt.tight_layout()
+    
+    # Save zoomed figure
+    output_file_zoom = os.path.join(output_dir, 'ejr_plots_zoomed.png')
+    print(f"Saving zoomed EJR plot to {output_file_zoom}...")
+    plt.savefig(output_file_zoom, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"Zoomed plot saved successfully")
     
     # Also save the data
     data_file = os.path.join(output_dir, 'ejr_data.csv')

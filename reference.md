@@ -138,49 +138,22 @@ union all vertices in S (e.g., chain unions)
 sizes = multiset of component sizes from DSU
 CONS = sum( s * (s - 1) // 2 for s in sizes )
 
-### EJR (sufficient check)
+### α-Extended Justified Representation (α-EJR)
 
-for ℓ in 1..k:
-for T in combinations(C, ℓ):
-S_T = [v for v in V if all(M[v, c] for c in T)]
-if len(S_T) * k >= ℓ * n:
-if all( sum(M[v, c] for c in W) < ℓ for v in S_T ):
-return False  # violates EJR
-return True
+Given an election \((V, C, k)\) and a parameter \(\alpha \in (0,1]\),  
+a committee \(W \subseteq C\) is said to satisfy **α-EJR** if the following holds:
 
----
+For every integer \(\ell \in [k]\) and every subset of voters \(S \subseteq V\) such that
 
-## Addendum: β-Approximation to EJR
+- \(\alpha \cdot |S| \;\ge\; \frac{\ell}{k} \cdot |V|\), and  
+- \(\left| \bigcap_{i \in S} A_i \right| \ge \ell\),
 
-**Purpose.** This clarifies what “β-approx of EJR” means and how to check it with the same inputs/notaton as in the main file.
+there exists at least one voter \(i \in S\) such that
 
-### Definition (β-EJR)
-Let `k = |W|`. Fix a parameter `β ∈ (0, 1]`. A committee `W` is a **β-approximation to EJR** if for every `ℓ ∈ {1,…,k}` and every `ℓ`-cohesive group `S` (i.e., `|S| ≥ (ℓ/k)·n` and the voters in `S` share at least `ℓ` commonly approved candidates),
-there exists **some** voter `i ∈ S` with
+\[
+|W \cap A_i| \;\ge\; \ell .
+\]
 
-|A_i ∩ W| ≥ ⌊β · ℓ⌋ .
+In words: any sufficiently large cohesive group of voters deserving \(\ell\) seats must have at least one member who receives \(\ell\) approved representatives in the committee.
 
-- When `β = 1`, this is exactly EJR.
-- Larger `β` ⇒ stronger guarantee.  
-- If `⌊β·ℓ⌋ = 0`, the constraint for that `ℓ` is vacuous (as expected for very small `β`).
-
-### How it differs from α-EJR
-β-EJR weakens **satisfaction** (how many winners someone in `S` must approve), keeping the group-size threshold `|S| ≥ (ℓ/k)·n` unchanged.  
-By contrast, **α-EJR** weakens the **size threshold** (e.g., require `|S| ≥ α·(ℓ/k)·n`) while keeping the full “≥ ℓ winners for someone in `S`” condition. They are distinct relaxations.
-
-### Drop-in check (adapt the EJR test)
-Use the same sufficient test as in the main file, replacing the satisfaction threshold `ℓ` with `⌊β·ℓ⌋` **only**:
-
-For each `ℓ = 1..k` and each `ℓ`-subset of candidates `T ⊆ C`:
-1. `S_T ← { v ∈ V : T ⊆ A_v }`.
-2. If `|S_T| · k ≥ ℓ · n` **and** every `v ∈ S_T` has `|A_v ∩ W| < ⌊β·ℓ⌋`,
-   then `W` **violates β-EJR**.
-
-If no such `T` triggers a violation for any `ℓ`, then `W` satisfies β-EJR.
-
-### Example
-If `ℓ = 4` and `β = 0.5`, then `⌊β·ℓ⌋ = 2`.  
-Every 4-cohesive group must contain a voter who approves at least 2 members of `W` (instead of 4 under full EJR).
-
-### Optional reference (local copy)
-Dong et al., “Selecting Interlacing Committees.” See local PDF: [/mnt/data/2509.02519v1%20(2).pdf](/mnt/data/2509.02519v1%20(2).pdf)
+We say that a voting rule \(f\) **satisfies α-EJR** if every committee \(W = f(V, C, k)\) produced by the rule satisfies α-EJR.
