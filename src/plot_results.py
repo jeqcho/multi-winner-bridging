@@ -28,7 +28,7 @@ VOTING_METHODS = {
 
 
 def plot_results(input_file='output/french_election/alpha_scores.csv', output_file='output/french_election/alpha_plots.png',
-                 mes_file='output/french_election/mes_results.csv', output_dir=None, n_candidates=12):
+                 mes_file='output/french_election/voting_results.csv', output_dir=None, n_candidates=12):
     """
     Create 4 plots showing relationships between alpha values.
     

@@ -25,9 +25,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from data_loader import load_preflib_file, load_and_combine_data
 from scoring import av_score, cc_score, pairs_score, cons_score
-from alpha_approx import calculate_alpha_approximations
 from alpha_approx_by_size import calculate_alpha_by_size
-from plot_results import plot_results
 from plot_results_by_size import plot_results_by_size
 from plot_individual_sizes import plot_all_sizes
 from run_mes import run_mes_all_sizes
@@ -197,19 +195,9 @@ def process_dataset(M, candidates, output_dir, description):
     print("="*70)
     calculate_all_scores_for_dataset(M, candidates, output_dir)
     
-    # Step 2: Calculate alpha approximations (global)
+    # Step 2: Calculate alpha approximations (by size)
     print("\n" + "="*70)
-    print("STEP 2: Calculating alpha approximations (global)")
-    print("="*70)
-    calculate_alpha_approximations(
-        input_file='raw_scores.csv',
-        output_file='alpha_scores.csv',
-        output_dir=output_dir
-    )
-    
-    # Step 3: Calculate alpha approximations (by size)
-    print("\n" + "="*70)
-    print("STEP 3: Calculating alpha approximations (by size)")
+    print("STEP 2: Calculating alpha approximations (by size)")
     print("="*70)
     calculate_alpha_by_size(
         input_file='raw_scores.csv',
@@ -218,55 +206,43 @@ def process_dataset(M, candidates, output_dir, description):
         output_dir=output_dir
     )
     
-    # Step 4: Run MES
+    # Step 3: Run voting methods (MES, AV, CC, PAV)
     print("\n" + "="*70)
-    print("STEP 4: Running Method of Equal Shares")
+    print("STEP 3: Running voting methods (MES, AV, CC, PAV)")
     print("="*70)
     run_mes_all_sizes(
-        output_file='mes_results.csv',
+        output_file='voting_results.csv',
         M=M,
         candidates=candidates,
         output_dir=output_dir
     )
     
-    # Step 5: Create plots (global)
+    # Step 4: Create plots (by size)
     print("\n" + "="*70)
-    print("STEP 5: Creating plots (global)")
-    print("="*70)
-    plot_results(
-        input_file='alpha_scores.csv',
-        output_file='alpha_plots.png',
-        mes_file='mes_results.csv',
-        output_dir=output_dir,
-        n_candidates=n_candidates
-    )
-    
-    # Step 6: Create plots (by size)
-    print("\n" + "="*70)
-    print("STEP 6: Creating plots (by size)")
+    print("STEP 4: Creating plots (by size)")
     print("="*70)
     plot_results_by_size(
         input_file='alpha_scores_by_size.csv',
         output_file='alpha_plots_by_size.png',
-        mes_file='mes_results.csv',
+        mes_file='voting_results.csv',
         output_dir=output_dir,
         n_candidates=n_candidates
     )
     
-    # Step 7: Create individual size plots
+    # Step 5: Create individual size plots
     print("\n" + "="*70)
-    print("STEP 7: Creating individual size plots")
+    print("STEP 5: Creating individual size plots")
     print("="*70)
     plot_all_sizes(
         input_file='alpha_scores_by_size.csv',
         output_dir='by_size',
-        mes_file='mes_results.csv',
+        mes_file='voting_results.csv',
         base_dir=output_dir
     )
     
-    # Step 8: Create EJR-specific plots with voting methods
+    # Step 6: Create EJR-specific plots with voting methods
     print("\n" + "="*70)
-    print("STEP 8: Creating EJR plots with voting methods")
+    print("STEP 6: Creating EJR plots with voting methods")
     print("="*70)
     plot_ejr_results(
         M=M,
@@ -310,7 +286,7 @@ def run_french_election():
     print("="*70)
     print(f"Total time: {total_elapsed:.2f}s ({total_elapsed/60:.2f} min)")
     print("\nOutput directory: output/french_election/")
-    print("View plots with: open output/french_election/alpha_plots.png")
+    print("View plots with: open output/french_election/alpha_plots_by_size.png")
 
 
 def run_camp_songs(file_key=None):
@@ -362,7 +338,7 @@ def run_camp_songs(file_key=None):
         print(f"  - output/camp_songs/{key}/")
     print("\nView plots with:")
     for key in files_to_process:
-        print(f"  open output/camp_songs/{key}/alpha_plots.png")
+        print(f"  open output/camp_songs/{key}/alpha_plots_by_size.png")
 
 
 def main():

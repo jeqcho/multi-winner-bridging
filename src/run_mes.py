@@ -16,7 +16,7 @@ from scoring import av_score, cc_score, pairs_score, cons_score
 from voting_methods import approval_voting, chamberlin_courant_greedy, pav_greedy
 
 
-def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=None, candidates=None, output_dir=None):
+def run_mes_all_sizes(output_file='output/french_election/voting_results.csv', M=None, candidates=None, output_dir=None):
     """
     Run MES and other voting methods for all committee sizes and save results.
     
@@ -31,11 +31,9 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
     start_time = time.time()
     
     # Handle output_dir prefixing
-    alpha_scores_file = 'output/french_election/alpha_scores.csv'
     max_by_size_file = 'output/french_election/max_scores_by_size.csv'
     if output_dir:
-        output_file = os.path.join(output_dir, 'mes_results.csv')
-        alpha_scores_file = os.path.join(output_dir, 'alpha_scores.csv')
+        output_file = os.path.join(output_dir, 'voting_results.csv')
         max_by_size_file = os.path.join(output_dir, 'max_scores_by_size.csv')
     
     print("="*70)
@@ -49,18 +47,9 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
     n_voters, n_candidates = M.shape
     print(f"Dataset: {n_voters} voters, {n_candidates} candidates")
     
-    # Load max scores for alpha normalization
+    # Load max scores for alpha normalization (by size)
     print("\nLoading max scores for normalization...")
-    max_global = pd.read_csv(alpha_scores_file)
     max_by_size = pd.read_csv(max_by_size_file)
-    
-    # Global max values
-    global_max_av = max_global['AV'].max()
-    global_max_cc = max_global['CC'].max()
-    global_max_pairs = max_global['PAIRS'].max()
-    global_max_cons = max_global['CONS'].max()
-    
-    print(f"Global max - AV: {global_max_av}, CC: {global_max_cc}, PAIRS: {global_max_pairs}, CONS: {global_max_cons}")
     
     # Define voting methods
     voting_methods = {
@@ -98,12 +87,6 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
             
             print(f"    {method_name}: {committee} | AV={av}, CC={cc}, PAIRS={pairs}, CONS={cons}")
             
-            # Calculate alpha approximations (global)
-            alpha_av_global = av / global_max_av if global_max_av > 0 else 0
-            alpha_cc_global = cc / global_max_cc if global_max_cc > 0 else 0
-            alpha_pairs_global = pairs / global_max_pairs if global_max_pairs > 0 else 0
-            alpha_cons_global = cons / global_max_cons if global_max_cons > 0 else 0
-            
             # Calculate alpha approximations (by size)
             alpha_av_size = av / max_av_size if max_av_size > 0 else 0
             alpha_cc_size = cc / max_cc_size if max_cc_size > 0 else 0
@@ -118,11 +101,6 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
                 'CC': cc,
                 'PAIRS': pairs,
                 'CONS': cons,
-                # Global alpha values (for alpha_plots.png)
-                'alpha_AV_global': alpha_av_global,
-                'alpha_CC_global': alpha_cc_global,
-                'alpha_PAIRS_global': alpha_pairs_global,
-                'alpha_CONS_global': alpha_cons_global,
                 # Size-normalized alpha values (for alpha_plots_by_size.png and by_size/)
                 'alpha_AV': alpha_av_size,
                 'alpha_CC': alpha_cc_size,

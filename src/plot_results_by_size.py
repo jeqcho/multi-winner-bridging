@@ -31,7 +31,7 @@ VOTING_METHODS = {
 
 def plot_results_by_size(input_file='output/french_election/alpha_scores_by_size.csv', 
                          output_file='output/french_election/alpha_plots_by_size.png',
-                         mes_file='output/french_election/mes_results.csv',
+                         mes_file='output/french_election/voting_results.csv',
                          output_dir=None, n_candidates=12):
     """
     Create 4 plots showing relationships between alpha values (normalized by size).

@@ -171,7 +171,7 @@ def plot_single_size(df, k, output_dir='output/by_size', methods_df=None):
 
 def plot_all_sizes(input_file='output/french_election/alpha_scores_by_size.csv', 
                    output_dir='output/french_election/by_size',
-                   mes_file='output/french_election/mes_results.csv',
+                   mes_file='output/french_election/voting_results.csv',
                    base_dir=None):
     """
     Create individual plots for all committee sizes.

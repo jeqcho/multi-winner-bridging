@@ -8,10 +8,9 @@ This directory contains all generated data and visualizations from the PrefLib S
 output/
 ├── README.md                      (this file)
 ├── raw_scores.csv                 (raw scores for all 4,096 subsets)
-├── alpha_scores.csv               (alpha scores normalized globally)
 ├── alpha_scores_by_size.csv       (alpha scores normalized by size)
 ├── max_scores_by_size.csv         (max scores for each committee size)
-├── alpha_plots.png                (global normalization plots)
+├── voting_results.csv             (voting method results: MES, AV, CC, PAV)
 ├── alpha_plots_by_size.png        (size normalization plots)
 └── by_size/                       (individual plots for each k)
     ├── size_00.png                (k=0: 1 subset)
@@ -46,18 +45,6 @@ Raw scores for all 4,096 committee subsets.
 - `EJR`: Boolean (True/False) - Extended Justified Representation
 - `alpha_EJR`: Maximum α for α-EJR satisfaction (0-1)
 
-#### `alpha_scores.csv`
-Alpha-approximations normalized by **global maximum** (across all committee sizes).
-
-**Additional Columns:**
-- `alpha_AV`: AV / global_max_AV
-- `alpha_CC`: CC / global_max_CC
-- `alpha_PAIRS`: PAIRS / global_max_PAIRS
-- `alpha_CONS`: CONS / global_max_CONS
-- `alpha_EJR`: Maximum α for α-EJR satisfaction
-
-**Use case:** Find the absolute best committees regardless of size.
-
 #### `alpha_scores_by_size.csv`
 Alpha-approximations normalized by **size-specific maximum** (within each committee size).
 
@@ -83,13 +70,6 @@ Maximum achievable scores for each committee size.
 **Key insight:** Shows diminishing returns - e.g., CONS plateaus at k=10.
 
 ### Visualization Files
-
-#### `alpha_plots.png`
-Combined plot (2×3 grid) showing all committee sizes together, with alpha scores normalized globally.
-
-**Color coding:** Committee size (viridis colormap: purple=small, green=medium, yellow=large)
-
-**Use case:** See overall patterns and how committee size affects all metrics.
 
 #### `alpha_plots_by_size.png`
 Combined plot (2×3 grid) showing all committee sizes together, with alpha scores normalized by size.

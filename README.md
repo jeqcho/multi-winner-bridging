@@ -84,13 +84,11 @@ For each dataset, the pipeline produces:
 
 **CSV files:**
 - `raw_scores.csv` - Raw scores for all subsets
-- `alpha_scores.csv` - Alpha-approximations (global)
 - `alpha_scores_by_size.csv` - Alpha-approximations by committee size
 - `max_scores_by_size.csv` - Maximum scores per size
-- `mes_results.csv` - MES algorithm results
+- `voting_results.csv` - Voting method results (MES, AV, CC, PAV)
 
 **Plots:**
-- `alpha_plots.png` - Global alpha approximation plots
 - `alpha_plots_by_size.png` - Alpha plots by committee size
 - `by_size/size_XX.png` - Individual plots for each committee size
 
