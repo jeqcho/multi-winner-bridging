@@ -2,7 +2,7 @@
 name = "preflib-score-calculator"
 version = "0.1.0"
 description = "Calculate AV, CC, PAIRS, CONS, and EJR scores for PrefLib election data"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "preflibtools>=2.0.0",
     "pandas>=2.0.0",
