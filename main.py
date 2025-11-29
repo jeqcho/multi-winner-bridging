@@ -1,5 +1,14 @@
 """
-Main script to calculate scores for all candidate subsets.
+Unified runner script for multi-winner bridging analysis.
+
+Supports two datasets:
+- French Election (2007): 12 candidates, 2836 voters from 6 polling stations
+- Camp Songs: PrefLib dataset 00059 with two files (8 and 10 candidates)
+
+Usage:
+    python main.py french_election           # Run French election dataset
+    python main.py camp_songs                # Run all Camp Songs files
+    python main.py camp_songs --file file_02 # Run specific Camp Songs file
 """
 
 import numpy as np
@@ -7,19 +16,44 @@ import pandas as pd
 from itertools import combinations
 import json
 import time
-from src.data_loader import load_and_combine_data
-from src.scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+import os
+import sys
+import argparse
+
+# Add src to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
+from data_loader import load_preflib_file, load_and_combine_data
+from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+from alpha_approx import calculate_alpha_approximations
+from alpha_approx_by_size import calculate_alpha_by_size
+from plot_results import plot_results
+from plot_results_by_size import plot_results_by_size
+from plot_individual_sizes import plot_all_sizes
+from run_mes import run_mes_all_sizes
 
 
-def calculate_all_scores():
+# Dataset configurations
+CAMP_SONGS_BASE_URL = "https://raw.githubusercontent.com/PrefLib/PrefLib-Data/main/datasets/00059%20-%20campsongs/"
+
+CAMP_SONGS_FILES = {
+    'file_02': {
+        'url': CAMP_SONGS_BASE_URL + "00059-00000002.cat",
+        'description': "2022 Second Question (8 candidates, 39 voters)"
+    },
+    'file_04': {
+        'url': CAMP_SONGS_BASE_URL + "00059-00000004.cat",
+        'description': "2023 Second Question (10 candidates, 56 voters)"
+    }
+}
+
+FRENCH_ELECTION = {
+    'description': "2007 French Presidential Election (12 candidates, 2836 voters)"
+}
+
+
+def calculate_all_scores_for_dataset(M, candidates, output_dir):
     """Calculate scores for all possible subsets of candidates."""
-    print("="*70)
-    print("CALCULATING SCORES FOR ALL SUBSETS")
-    print("="*70)
-    
-    # Load data
-    print("\nLoading data...")
-    M, candidates = load_and_combine_data()
     n_candidates = len(candidates)
     total_subsets = 2 ** n_candidates
     
@@ -90,7 +124,7 @@ def calculate_all_scores():
     df = pd.DataFrame(results)
     
     # Save to CSV
-    output_file = "output/french_election/raw_scores.csv"
+    output_file = os.path.join(output_dir, "raw_scores.csv")
     print(f"Saving to {output_file}...")
     df.to_csv(output_file, index=False)
     
@@ -99,25 +133,237 @@ def calculate_all_scores():
     print("\n" + "="*70)
     print("COMPLETED!")
     print("="*70)
-    print(f"Total time: {total_elapsed:.2f}s ({total_elapsed/60:.2f} min, {total_elapsed/3600:.2f} hr)")
+    print(f"Total time: {total_elapsed:.2f}s ({total_elapsed/60:.2f} min)")
     print(f"Total subsets processed: {len(results):,}")
     print(f"Average time per subset: {total_elapsed/len(results)*1000:.2f} ms")
     print(f"Output file: {output_file}")
-    print(f"File size: {df.memory_usage(deep=True).sum() / 1024:.2f} KB")
     
-    
-    
+    # Display some statistics
     print("\n" + "="*70)
-    print("Next step: Run src/alpha_approx.py to compute alpha-approximations")
+    print("SCORE STATISTICS")
     print("="*70)
+    print(f"\nAV score range: {df['AV'].min()} - {df['AV'].max()}")
+    print(f"CC score range: {df['CC'].min()} - {df['CC'].max()}")
+    print(f"PAIRS score range: {df['PAIRS'].min()} - {df['PAIRS'].max()}")
+    print(f"CONS score range: {df['CONS'].min()} - {df['CONS'].max()}")
+    print(f"EJR satisfaction rate: {df['EJR'].sum() / len(df) * 100:.1f}%")
+    print(f"Beta-EJR range: {df['beta_EJR'].min():.3f} - {df['beta_EJR'].max():.3f}")
     
     return df
 
 
+def process_dataset(M, candidates, output_dir, description):
+    """Process a dataset through the full pipeline."""
+    print("\n" + "="*70)
+    print(f"PROCESSING: {description}")
+    print("="*70)
+    
+    # Create output directories
+    os.makedirs(output_dir, exist_ok=True)
+    by_size_dir = os.path.join(output_dir, 'by_size')
+    os.makedirs(by_size_dir, exist_ok=True)
+    
+    print(f"\nOutput directory: {output_dir}")
+    
+    n_candidates = len(candidates)
+    
+    # Step 1: Calculate raw scores
+    print("\n" + "="*70)
+    print("STEP 1: Calculating raw scores")
+    print("="*70)
+    calculate_all_scores_for_dataset(M, candidates, output_dir)
+    
+    # Step 2: Calculate alpha approximations (global)
+    print("\n" + "="*70)
+    print("STEP 2: Calculating alpha approximations (global)")
+    print("="*70)
+    calculate_alpha_approximations(
+        input_file='raw_scores.csv',
+        output_file='alpha_scores.csv',
+        output_dir=output_dir
+    )
+    
+    # Step 3: Calculate alpha approximations (by size)
+    print("\n" + "="*70)
+    print("STEP 3: Calculating alpha approximations (by size)")
+    print("="*70)
+    calculate_alpha_by_size(
+        input_file='raw_scores.csv',
+        output_file='alpha_scores_by_size.csv',
+        max_file='max_scores_by_size.csv',
+        output_dir=output_dir
+    )
+    
+    # Step 4: Run MES
+    print("\n" + "="*70)
+    print("STEP 4: Running Method of Equal Shares")
+    print("="*70)
+    run_mes_all_sizes(
+        output_file='mes_results.csv',
+        M=M,
+        candidates=candidates,
+        output_dir=output_dir
+    )
+    
+    # Step 5: Create plots (global)
+    print("\n" + "="*70)
+    print("STEP 5: Creating plots (global)")
+    print("="*70)
+    plot_results(
+        input_file='alpha_scores.csv',
+        output_file='alpha_plots.png',
+        mes_file='mes_results.csv',
+        output_dir=output_dir,
+        n_candidates=n_candidates
+    )
+    
+    # Step 6: Create plots (by size)
+    print("\n" + "="*70)
+    print("STEP 6: Creating plots (by size)")
+    print("="*70)
+    plot_results_by_size(
+        input_file='alpha_scores_by_size.csv',
+        output_file='alpha_plots_by_size.png',
+        mes_file='mes_results.csv',
+        output_dir=output_dir,
+        n_candidates=n_candidates
+    )
+    
+    # Step 7: Create individual size plots
+    print("\n" + "="*70)
+    print("STEP 7: Creating individual size plots")
+    print("="*70)
+    plot_all_sizes(
+        input_file='alpha_scores_by_size.csv',
+        output_dir='by_size',
+        mes_file='mes_results.csv',
+        base_dir=output_dir
+    )
+    
+    print("\n" + "="*70)
+    print(f"COMPLETED: {description}")
+    print(f"Output saved to: {output_dir}")
+    print("="*70)
+
+
+def run_french_election():
+    """Process the French Election dataset."""
+    print("\n" + "="*70)
+    print("FRENCH ELECTION DATASET PROCESSING")
+    print("="*70)
+    print(f"\n{FRENCH_ELECTION['description']}")
+    
+    start_time = time.time()
+    
+    # Load data
+    print("\n" + "="*70)
+    print("Loading French Election data...")
+    print("="*70)
+    M, candidates = load_and_combine_data()
+    
+    # Process through full pipeline
+    process_dataset(
+        M=M,
+        candidates=candidates,
+        output_dir='output/french_election',
+        description=FRENCH_ELECTION['description']
+    )
+    
+    total_elapsed = time.time() - start_time
+    
+    print("\n" + "="*70)
+    print("FRENCH ELECTION PROCESSING COMPLETE!")
+    print("="*70)
+    print(f"Total time: {total_elapsed:.2f}s ({total_elapsed/60:.2f} min)")
+    print("\nOutput directory: output/french_election/")
+    print("View plots with: open output/french_election/alpha_plots.png")
+
+
+def run_camp_songs(file_key=None):
+    """Process Camp Songs dataset files."""
+    print("\n" + "="*70)
+    print("CAMP SONGS DATASET PROCESSING")
+    print("="*70)
+    print("\nThis script processes the Camp Songs dataset (00059) from PrefLib.")
+    
+    # Determine which files to process
+    if file_key:
+        if file_key not in CAMP_SONGS_FILES:
+            print(f"Error: Unknown file key '{file_key}'")
+            print(f"Available options: {list(CAMP_SONGS_FILES.keys())}")
+            sys.exit(1)
+        files_to_process = {file_key: CAMP_SONGS_FILES[file_key]}
+    else:
+        files_to_process = CAMP_SONGS_FILES
+    
+    print("Files to process:")
+    for key, info in files_to_process.items():
+        print(f"  - {key}: {info['description']}")
+    
+    start_time = time.time()
+    
+    for file_key, file_info in files_to_process.items():
+        # Load data
+        print("\n" + "="*70)
+        print(f"Loading {file_key}...")
+        print("="*70)
+        M, candidates = load_preflib_file(file_info['url'])
+        
+        # Process through full pipeline
+        process_dataset(
+            M=M,
+            candidates=candidates,
+            output_dir=f'output/camp_songs/{file_key}',
+            description=file_info['description']
+        )
+    
+    total_elapsed = time.time() - start_time
+    
+    print("\n" + "="*70)
+    print("CAMP SONGS PROCESSING COMPLETE!")
+    print("="*70)
+    print(f"Total time: {total_elapsed:.2f}s ({total_elapsed/60:.2f} min)")
+    print("\nOutput directories:")
+    for key in files_to_process:
+        print(f"  - output/camp_songs/{key}/")
+    print("\nView plots with:")
+    for key in files_to_process:
+        print(f"  open output/camp_songs/{key}/alpha_plots.png")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Multi-winner bridging analysis for voting datasets',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python main.py french_election           # Run French election dataset
+  python main.py camp_songs                # Run all Camp Songs files
+  python main.py camp_songs --file file_02 # Run specific Camp Songs file
+        """
+    )
+    
+    parser.add_argument(
+        'dataset',
+        choices=['french_election', 'camp_songs'],
+        help='Dataset to process'
+    )
+    
+    parser.add_argument(
+        '--file',
+        choices=['file_02', 'file_04'],
+        help='Specific Camp Songs file to process (only for camp_songs dataset)'
+    )
+    
+    args = parser.parse_args()
+    
+    if args.dataset == 'french_election':
+        if args.file:
+            print("Warning: --file option is ignored for french_election dataset")
+        run_french_election()
+    elif args.dataset == 'camp_songs':
+        run_camp_songs(file_key=args.file)
+
+
 if __name__ == "__main__":
-    df = calculate_all_scores()
-
-
-
-
-
+    main()

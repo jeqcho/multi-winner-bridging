@@ -1,14 +1,22 @@
-# PrefLib Score Calculator
+# Multi-Winner Bridging
 
-A comprehensive Python system to calculate and analyze approval voting scores (AV, CC, PAIRS, CONS, EJR) for all possible committee subsets of the 2007 French Presidential Election data from PrefLib.
+A comprehensive Python system to calculate and analyze approval voting scores (AV, CC, PAIRS, CONS, EJR) for all possible committee subsets from PrefLib voting datasets.
 
 ## Overview
 
 This project:
-1. Loads and combines 6 approval voting files from PrefLib dataset 00071 (2,836 voters, 12 candidates)
-2. Calculates 5 different scoring metrics for all 2^12 = 4,096 possible committee subsets
+1. Loads approval voting data from PrefLib datasets
+2. Calculates 5 different scoring metrics for all possible committee subsets
 3. Computes alpha-approximations for each metric
-4. Visualizes the relationships between different metrics
+4. Runs the Method of Equal Shares (MES) algorithm
+5. Visualizes the relationships between different metrics
+
+## Supported Datasets
+
+- **French Election (2007)**: Dataset 00071 - 12 candidates, 2836 voters from 6 polling stations
+- **Camp Songs**: Dataset 00059
+  - `file_02`: 8 candidates, 39 voters
+  - `file_04`: 10 candidates, 56 voters
 
 ## Installation
 
@@ -23,80 +31,72 @@ uv sync
 ├── pyproject.toml              # Project configuration
 ├── reference.md                # Score definitions and formulas
 ├── src/
-│   ├── data_loader.py          # Load and combine PrefLib data
+│   ├── data_loader.py          # Load PrefLib data
 │   ├── scoring.py              # Scoring functions (AV, CC, PAIRS, CONS, EJR)
-│   ├── alpha_approx.py         # Alpha-approximation calculations
-│   ├── plot_results.py         # Visualization
+│   ├── alpha_approx.py         # Alpha-approximation calculations (global)
+│   ├── alpha_approx_by_size.py # Alpha-approximation calculations (by size)
+│   ├── run_mes.py              # Method of Equal Shares
+│   ├── plot_results.py         # Visualization (global)
+│   ├── plot_results_by_size.py # Visualization (by size)
+│   ├── plot_individual_sizes.py# Individual size plots
 │   └── timer.py                # Time estimation
 ├── tests/
 │   ├── test_scoring.py         # Unit tests for scoring functions
 │   └── test_data_loader.py     # Unit tests for data loader
-└── main.py                     # Main computation script
+├── main.py                     # Main runner script
+└── output/                     # Generated results and plots
 ```
 
 ## Usage
 
-### 1. Run Tests
+### Run Tests
 
 ```bash
 uv run python tests/test_scoring.py
 uv run python tests/test_data_loader.py
 ```
 
-### 2. Estimate Computation Time
+### Estimate Computation Time
 
 ```bash
 uv run python src/timer.py
 ```
 
-Expected output: ~34 minutes for all 4,096 subsets
+### Run Analysis
 
-### 3. Calculate Scores (Main Computation)
-
-⚠️ **WARNING: This will take approximately 34 minutes**
+The main script supports both datasets via command line arguments:
 
 ```bash
-uv run python main.py
+# Process French Election dataset (2007)
+uv run python main.py french_election
+
+# Process all Camp Songs files
+uv run python main.py camp_songs
+
+# Process a specific Camp Songs file
+uv run python main.py camp_songs --file file_02
+uv run python main.py camp_songs --file file_04
 ```
 
-This produces `raw_scores.csv` with columns:
-- `subset_size`: Committee size (0-12)
-- `subset_indices`: JSON array of candidate indices
-- `AV`, `CC`, `PAIRS`, `CONS`: Raw scores
-- `EJR`: Boolean (True/False)
-- `beta_EJR`: Maximum β for β-EJR satisfaction (0-1)
+#### Output
 
-### 4. Calculate Alpha-Approximations
+For each dataset, the pipeline produces:
 
-```bash
-uv run python src/alpha_approx.py
-```
+**CSV files:**
+- `raw_scores.csv` - Raw scores for all subsets
+- `alpha_scores.csv` - Alpha-approximations (global)
+- `alpha_scores_by_size.csv` - Alpha-approximations by committee size
+- `max_scores_by_size.csv` - Maximum scores per size
+- `mes_results.csv` - MES algorithm results
 
-This reads `raw_scores.csv` and produces `alpha_scores.csv` with additional columns:
-- `alpha_AV`, `alpha_CC`, `alpha_PAIRS`, `alpha_CONS`: Normalized scores (0-1)
-- `alpha_EJR`: Same as `beta_EJR`
+**Plots:**
+- `alpha_plots.png` - Global alpha approximation plots
+- `alpha_plots_by_size.png` - Alpha plots by committee size
+- `by_size/size_XX.png` - Individual plots for each committee size
 
-### 5. Create Visualizations
-
-```bash
-uv run python src/plot_results.py
-```
-
-This produces `alpha_plots.png` with 6 scatter plots (2×3 grid):
-
-**Row 1: alpha_PAIRS (x-axis)**
-- alpha_PAIRS vs beta_AV (average alpha_AV for each PAIRS value)
-- alpha_PAIRS vs beta_CC
-- alpha_PAIRS vs beta_EJR
-- Reference line: `beta = 1 - alpha` (a + b = 1)
-
-**Row 2: alpha_CONS (x-axis)**
-- alpha_CONS vs beta_AV
-- alpha_CONS vs beta_CC
-- alpha_CONS vs beta_EJR
-- Reference line: `beta = 1 - alpha²` (a² + b = 1)
-
-Points are colored by committee size (0-12) using the viridis colormap with transparency to handle overlapping points.
+Output is saved to:
+- `output/french_election/` for French Election
+- `output/camp_songs/file_02/` and `output/camp_songs/file_04/` for Camp Songs
 
 ## Scoring Metrics
 
@@ -123,9 +123,9 @@ See `reference.md` for detailed mathematical definitions.
 ## Performance
 
 - **PAIRS** is the bottleneck (~91% of computation time)
-- Average time per subset: ~500ms
-- Total time for 4,096 subsets: ~34 minutes
-- Output file sizes: ~500KB (CSV)
+- French Election (12 candidates, 4096 subsets): ~34 minutes
+- Camp Songs file_02 (8 candidates, 256 subsets): ~2 minutes
+- Camp Songs file_04 (10 candidates, 1024 subsets): ~10 minutes
 
 ## Key Findings
 
@@ -140,17 +140,13 @@ Run the analysis to discover:
 - Dong et al., "Selecting Interlacing Committees" (2024)
 - PrefLib: A Library for Preferences - https://preflib.github.io/PrefLib-Jekyll/
 - Dataset 00071: 2007 French Presidential Election Approval Voting
+- Dataset 00059: Camp Songs
 
 ## Citation
 
-If you use this code or the 2007 French Presidential Election data, please cite:
+If you use this code or the datasets, please cite:
 - Nicholas Mattei and Toby Walsh. PrefLib: A Library of Preference Data. Proceedings of Third International Conference on Algorithmic Decision Theory (ADT 2013)
 
 ## License
 
 MIT License - see project for details.
-
-
-
-
-
