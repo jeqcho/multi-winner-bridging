@@ -287,3 +287,7 @@ if __name__ == "__main__":
     print(f"EJR satisfied: {ejr_satisfied(M, W, k)}")
     print(f"Beta-EJR: {beta_ejr(M, W, k):.2f}")
 
+
+
+
+

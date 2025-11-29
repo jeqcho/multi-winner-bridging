@@ -143,3 +143,7 @@ def calculate_alpha_by_size(input_file='raw_scores.csv',
 if __name__ == "__main__":
     calculate_alpha_by_size()
 
+
+
+
+

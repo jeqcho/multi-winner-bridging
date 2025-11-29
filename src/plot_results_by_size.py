@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 
 
-def plot_results_by_size(input_file='alpha_scores_by_size.csv', 
-                         output_file='alpha_plots_by_size.png'):
+def plot_results_by_size(input_file='output/alpha_scores_by_size.csv', 
+                         output_file='output/alpha_plots_by_size.png'):
     """
     Create 6 plots showing relationships between alpha values (normalized by size).
     
@@ -159,13 +159,13 @@ def plot_results_by_size(input_file='alpha_scores_by_size.csv',
     ax.legend(loc='best', fontsize=9)
     ax.grid(True, alpha=0.3)
     
-    # Add colorbar for subset size
-    cbar = fig.colorbar(scatter, ax=axes.ravel().tolist(), 
-                       orientation='horizontal', pad=0.05, shrink=0.8)
-    cbar.set_label('Committee Size (k)', fontsize=12)
+    # Adjust layout first
+    plt.tight_layout(rect=[0, 0, 0.95, 1])
     
-    # Adjust layout
-    plt.tight_layout(rect=[0, 0.02, 1, 0.99])
+    # Add colorbar for subset size on the right side
+    cbar_ax = fig.add_axes([0.96, 0.15, 0.02, 0.7])
+    cbar = fig.colorbar(scatter, cax=cbar_ax)
+    cbar.set_label('Committee Size (k)', fontsize=12, rotation=270, labelpad=20)
     
     # Save figure
     print(f"\nSaving plot to {output_file}...")
