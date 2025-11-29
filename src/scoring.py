@@ -6,7 +6,45 @@ Implements AV, CC, PAIRS, CONS, and EJR scoring based on reference.md.
 
 import numpy as np
 from itertools import combinations
-from typing import Set, List, Tuple
+from typing import Set, List, Tuple, Iterator
+import random
+from math import comb
+
+
+# Maximum number of candidate subsets to sample per coalition size for EJR checks
+MAX_EJR_SAMPLES_PER_SIZE = 100
+
+
+def _sample_combinations(n: int, r: int, max_samples: int) -> Iterator[Tuple[int, ...]]:
+    """
+    Yield combinations of r elements from range(n).
+    If total combinations <= max_samples, yield all of them.
+    Otherwise, randomly sample max_samples combinations.
+    
+    Args:
+        n: Size of the set to choose from (range(n))
+        r: Size of each combination
+        max_samples: Maximum number of samples to return
+        
+    Yields:
+        Tuples of r integers from range(n)
+    """
+    total = comb(n, r)
+    
+    if total <= max_samples:
+        # Yield all combinations
+        yield from combinations(range(n), r)
+    else:
+        # Random sampling - use a set to avoid duplicates
+        seen = set()
+        elements = list(range(n))
+        
+        while len(seen) < max_samples:
+            # Generate a random combination
+            combo = tuple(sorted(random.sample(elements, r)))
+            if combo not in seen:
+                seen.add(combo)
+                yield combo
 
 
 def av_score(M: np.ndarray, W: List[int]) -> int:
@@ -143,24 +181,25 @@ def cons_score(M: np.ndarray, W: List[int]) -> int:
     return total_pairs
 
 
-def ejr_satisfied(M: np.ndarray, W: List[int], k: int) -> bool:
+def ejr_satisfied(M: np.ndarray, W: List[int], k: int, max_samples: int = MAX_EJR_SAMPLES_PER_SIZE) -> bool:
     """
     Check if committee W satisfies Extended Justified Representation (EJR).
     
     EJR requires: For every ℓ ∈ {1,...,k} and every ℓ-cohesive group S with
     |S| ≥ (ℓ/k)·n, there exists some voter i ∈ S with |A_i ∩ W| ≥ ℓ.
     
-    This implementation correctly checks ALL cohesive groups by focusing on
-    unsatisfied voters. A violation exists iff there's an ℓ-cohesive group
-    of unsatisfied voters that is large enough.
+    This implementation correctly checks cohesive groups by focusing on
+    unsatisfied voters. For efficiency, it samples at most max_samples
+    candidate subsets per coalition size.
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
         W: List of candidate indices in the committee
         k: Committee size |W|
+        max_samples: Maximum candidate subsets to check per coalition size
         
     Returns:
-        True if W satisfies EJR, False otherwise
+        True if W satisfies EJR (approximately), False if violation found
     """
     if k == 0:
         return len(W) == 0
@@ -183,8 +222,8 @@ def ejr_satisfied(M: np.ndarray, W: List[int], k: int) -> bool:
         # Find unsatisfied voters for this ℓ (have < ℓ approved in W)
         unsatisfied = approvals_in_W < ell
         
-        # For each ℓ-subset of candidates
-        for T in combinations(range(n_candidates), ell):
+        # Sample ℓ-subsets of candidates (at most max_samples)
+        for T in _sample_combinations(n_candidates, ell, max_samples):
             T_list = list(T)
             
             # Find voters who approve all candidates in T AND are unsatisfied
@@ -201,21 +240,22 @@ def ejr_satisfied(M: np.ndarray, W: List[int], k: int) -> bool:
     return True
 
 
-def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01) -> float:
+def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01, 
+              max_samples: int = MAX_EJR_SAMPLES_PER_SIZE) -> float:
     """
     Calculate maximum β such that W satisfies β-EJR.
     
     β-EJR: For every ℓ-cohesive group S with |S| ≥ (ℓ/k)·n, there exists 
     some voter i ∈ S with |A_i ∩ W| ≥ ⌊β·ℓ⌋.
     
-    This implementation correctly checks ALL cohesive groups by focusing on
-    unsatisfied voters for each β threshold.
+    This implementation samples candidate subsets for efficiency.
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
         W: List of candidate indices in the committee
         k: Committee size |W|
         precision: Step size for β search (default 0.01)
+        max_samples: Maximum candidate subsets to check per coalition size
         
     Returns:
         Maximum β value (between 0 and 1) for which W satisfies β-EJR
@@ -239,7 +279,7 @@ def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01) -> fl
     beta_min, beta_max = 0.0, 1.0
     
     # First check if β=1 works (full EJR)
-    if ejr_satisfied(M, W, k):
+    if ejr_satisfied(M, W, k, max_samples):
         return 1.0
     
     # Binary search with precision
@@ -259,8 +299,8 @@ def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01) -> fl
             # Find unsatisfied voters for this threshold
             unsatisfied = approvals_in_W < threshold
             
-            # For each ℓ-subset of candidates
-            for T in combinations(range(n_candidates), ell):
+            # Sample ℓ-subsets of candidates (at most max_samples)
+            for T in _sample_combinations(n_candidates, ell, max_samples):
                 T_list = list(T)
                 
                 # Find voters who approve all candidates in T AND are unsatisfied
