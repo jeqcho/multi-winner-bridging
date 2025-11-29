@@ -4,6 +4,51 @@ import numpy as np
 from preflibtools.instances import CategoricalInstance
 
 
+def load_preflib_file(url):
+    """
+    Load a single PrefLib categorical approval voting file from a URL.
+    
+    Args:
+        url: URL to the .cat file (e.g., from PrefLib-Data GitHub)
+    
+    Returns:
+        tuple: (M, candidate_names) where:
+            - M: numpy array of shape (n_voters, n_candidates), boolean matrix
+                 M[v][c] = 1 if voter v approves candidate c
+            - candidate_names: list of candidate names/IDs
+    """
+    print(f"Loading {url}...")
+    instance = CategoricalInstance()
+    instance.parse_url(url)
+    
+    # Get candidate information
+    candidate_names = list(instance.alternatives_name.values())
+    n_candidates = len(candidate_names)
+    print(f"Loaded {n_candidates} candidates: {candidate_names}")
+    
+    # Parse approval ballots
+    all_votes = []
+    for pref_tuple in instance.preferences:
+        approved_candidates = pref_tuple[0]  # Tuple of approved candidate IDs
+        count = instance.multiplicity[pref_tuple]
+        
+        # Convert to boolean vector (candidate IDs are 1-indexed)
+        ballot = np.zeros(n_candidates, dtype=bool)
+        for candidate_id in approved_candidates:
+            ballot[candidate_id - 1] = True  # Convert to 0-indexed
+        
+        # Add this ballot 'count' times
+        for _ in range(count):
+            all_votes.append(ballot)
+    
+    # Convert to numpy array
+    M = np.array(all_votes, dtype=bool)
+    
+    print(f"Total: {M.shape[0]} voters with {M.shape[1]} candidates")
+    
+    return M, candidate_names
+
+
 def load_and_combine_data():
     """
     Load and combine all 6 approval voting files from PrefLib dataset 00071

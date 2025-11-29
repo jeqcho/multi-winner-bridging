@@ -222,17 +222,23 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     plt.close()
 
 
-def plot_all_sizes(input_file='output/alpha_scores_by_size.csv', 
-                   output_dir='output/by_size',
-                   mes_file='output/mes_results.csv'):
+def plot_all_sizes(input_file='output/french_election/alpha_scores_by_size.csv', 
+                   output_dir='output/french_election/by_size',
+                   mes_file='output/french_election/mes_results.csv',
+                   base_dir=None):
     """
     Create individual plots for all committee sizes.
     
     Args:
-        input_file: Path to alpha scores CSV (normalized by size)
-        output_dir: Directory to save plots
-        mes_file: Path to MES results CSV
+        input_file: Path to alpha scores CSV (or filename if base_dir provided)
+        output_dir: Directory to save plots (or subdir name if base_dir provided)
+        mes_file: Path to MES results CSV (or filename if base_dir provided)
+        base_dir: Optional base directory prefix for all paths
     """
+    if base_dir:
+        input_file = os.path.join(base_dir, input_file)
+        output_dir = os.path.join(base_dir, output_dir)
+        mes_file = os.path.join(base_dir, mes_file)
     print("="*70)
     print("CREATING INDIVIDUAL PLOTS FOR EACH COMMITTEE SIZE")
     print("="*70)

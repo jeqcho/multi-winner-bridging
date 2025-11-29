@@ -8,14 +8,19 @@ import pandas as pd
 import numpy as np
 
 
-def calculate_alpha_approximations(input_file='raw_scores.csv', output_file='alpha_scores.csv'):
+def calculate_alpha_approximations(input_file='output/french_election/raw_scores.csv', output_file='output/french_election/alpha_scores.csv', output_dir=None):
     """
     Calculate alpha-approximation for all scores.
     
     Args:
-        input_file: Path to raw scores CSV
-        output_file: Path to output alpha scores CSV
+        input_file: Path to raw scores CSV (or filename if output_dir provided)
+        output_file: Path to output alpha scores CSV (or filename if output_dir provided)
+        output_dir: Optional directory prefix for input/output files
     """
+    import os
+    if output_dir:
+        input_file = os.path.join(output_dir, input_file)
+        output_file = os.path.join(output_dir, output_file)
     print("="*70)
     print("CALCULATING ALPHA-APPROXIMATIONS")
     print("="*70)

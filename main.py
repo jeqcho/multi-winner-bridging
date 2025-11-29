@@ -93,7 +93,7 @@ def calculate_all_scores():
     df = pd.DataFrame(results)
     
     # Save to CSV
-    output_file = "raw_scores.csv"
+    output_file = "output/french_election/raw_scores.csv"
     print(f"Saving to {output_file}...")
     df.to_csv(output_file, index=False)
     

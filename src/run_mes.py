@@ -9,32 +9,46 @@ import numpy as np
 import pandas as pd
 import json
 
-from data_loader import load_and_combine_data
+from data_loader import load_and_combine_data, load_preflib_file
 from mes import method_of_equal_shares
 from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
 
 
-def run_mes_all_sizes(output_file='output/mes_results.csv'):
+def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=None, candidates=None, output_dir=None):
     """
     Run MES for all committee sizes and save results.
     
     Args:
-        output_file: Path to save results CSV
+        output_file: Path to save results CSV (or filename if output_dir provided)
+        M: Optional pre-loaded approval matrix
+        candidates: Optional pre-loaded candidate names
+        output_dir: Optional directory prefix for input/output files
     """
+    import os
+    
+    # Handle output_dir prefixing
+    alpha_scores_file = 'output/french_election/alpha_scores.csv'
+    max_by_size_file = 'output/french_election/max_scores_by_size.csv'
+    if output_dir:
+        output_file = os.path.join(output_dir, 'mes_results.csv')
+        alpha_scores_file = os.path.join(output_dir, 'alpha_scores.csv')
+        max_by_size_file = os.path.join(output_dir, 'max_scores_by_size.csv')
+    
     print("="*70)
     print("RUNNING METHOD OF EQUAL SHARES")
     print("="*70)
     
-    # Load data
-    print("\nLoading data...")
-    M, candidates = load_and_combine_data()
+    # Load data if not provided
+    if M is None or candidates is None:
+        print("\nLoading data...")
+        M, candidates = load_and_combine_data()
     n_voters, n_candidates = M.shape
     print(f"Dataset: {n_voters} voters, {n_candidates} candidates")
     
     # Load max scores for alpha normalization
     print("\nLoading max scores for normalization...")
-    max_global = pd.read_csv('output/alpha_scores.csv')
-    max_by_size = pd.read_csv('output/max_scores_by_size.csv')
+    max_global = pd.read_csv(alpha_scores_file)
+    max_by_size = pd.read_csv(max_by_size_file)
     
     # Global max values
     global_max_av = max_global['AV'].max()

@@ -18,16 +18,22 @@ from matplotlib import cm
 import os
 
 
-def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha_plots.png',
-                 mes_file='output/mes_results.csv'):
+def plot_results(input_file='output/french_election/alpha_scores.csv', output_file='output/french_election/alpha_plots.png',
+                 mes_file='output/french_election/mes_results.csv', output_dir=None, n_candidates=12):
     """
     Create 6 plots showing relationships between alpha values.
     
     Args:
-        input_file: Path to alpha scores CSV
-        output_file: Path to output plot image
-        mes_file: Path to MES results CSV
+        input_file: Path to alpha scores CSV (or filename if output_dir provided)
+        output_file: Path to output plot image (or filename if output_dir provided)
+        mes_file: Path to MES results CSV (or filename if output_dir provided)
+        output_dir: Optional directory prefix for input/output files
+        n_candidates: Number of candidates (for colorbar normalization, default 12)
     """
+    if output_dir:
+        input_file = os.path.join(output_dir, input_file)
+        output_file = os.path.join(output_dir, output_file)
+        mes_file = os.path.join(output_dir, mes_file)
     print("="*70)
     print("CREATING PLOTS")
     print("="*70)
@@ -51,8 +57,8 @@ def plot_results(input_file='output/alpha_scores.csv', output_file='output/alpha
     fig.suptitle('Alpha-Approximation Analysis: Multi-Winner Bridging', 
                  fontsize=16, fontweight='bold', y=0.995)
     
-    # Color mapping by subset size (0-12)
-    norm = plt.Normalize(vmin=0, vmax=12)
+    # Color mapping by subset size
+    norm = plt.Normalize(vmin=0, vmax=n_candidates)
     cmap = cm.viridis
     
     # Plotting parameters
