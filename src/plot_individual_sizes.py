@@ -1,9 +1,9 @@
 """
-Create individual visualizations for each committee size (k=0 to 12).
+Create individual visualizations for each committee size (k=0 to n).
 
-For each size, creates a 2x3 grid of scatter plots showing relationships
+For each size, creates a 2x2 grid of scatter plots showing relationships
 between alpha values, filtered to only that specific committee size.
-MES (Method of Equal Shares) committee is shown as a gold star.
+Voting methods (MES, AV, CC, PAV) are shown as distinct markers.
 """
 
 import pandas as pd
@@ -13,7 +13,16 @@ from matplotlib import cm
 import os
 
 
-def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
+# Voting method visual properties
+VOTING_METHODS = {
+    'MES': {'marker': '*', 'color': 'gold', 'size': 400},
+    'AV': {'marker': 's', 'color': 'red', 'size': 150},
+    'CC': {'marker': '^', 'color': 'blue', 'size': 150},
+    'PAV': {'marker': 'D', 'color': 'green', 'size': 150},
+}
+
+
+def plot_single_size(df, k, output_dir='output/by_size', methods_df=None):
     """
     Create visualization for a single committee size.
     
@@ -21,7 +30,7 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
         df: DataFrame with alpha scores
         k: Committee size to plot
         output_dir: Directory to save plots
-        mes_df: DataFrame with MES results (optional)
+        methods_df: DataFrame with voting methods results (optional)
     """
     # Filter to only this size
     df_k = df[df['subset_size'] == k].copy()
@@ -32,17 +41,13 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     
     print(f"  Size k={k}: {len(df_k)} subsets")
     
-    # Get MES data for this size
-    mes_k = None
-    if mes_df is not None:
-        mes_k = mes_df[mes_df['subset_size'] == k]
-        if len(mes_k) > 0:
-            mes_k = mes_k.iloc[0]  # Get the single row
-        else:
-            mes_k = None
+    # Get voting methods data for this size
+    methods_k = None
+    if methods_df is not None:
+        methods_k = methods_df[methods_df['subset_size'] == k]
     
-    # Create figure with 2x3 subplots
-    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    # Create figure with 2x2 subplots
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
     fig.suptitle(f'Alpha-Approximation Analysis: Committee Size k={k} ({len(df_k)} subsets)', 
                  fontsize=16, fontweight='bold', y=0.995)
     
@@ -53,12 +58,18 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     alpha_transparency = 0.6  # Less transparency since fewer points per size
     marker_size = 30  # Larger markers for individual size plots
     
-    # MES marker parameters
-    mes_marker = '*'
-    mes_color = 'gold'
-    mes_size = 400  # Larger for individual plots
-    mes_edgecolor = 'black'
-    mes_linewidth = 1.5
+    # Helper function to add voting method points
+    def add_voting_methods(ax, x_col, y_col):
+        if methods_k is None or len(methods_k) == 0:
+            return
+        for method_name, props in VOTING_METHODS.items():
+            method_data = methods_k[methods_k['method'] == method_name]
+            if len(method_data) > 0:
+                row = method_data.iloc[0]
+                ax.scatter(row[x_col], row[y_col],
+                          marker=props['marker'], c=props['color'], s=props['size'],
+                          edgecolors='black', linewidths=1.5,
+                          label=method_name, zorder=10, alpha=0.9)
     
     # Row 1: alpha_PAIRS as x-axis
     
@@ -66,13 +77,11 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     pairs_grouped = df_k.groupby('alpha_PAIRS').agg({
         'alpha_AV': 'mean',
         'alpha_CC': 'mean',
-        'alpha_EJR': 'mean'
     }).reset_index()
     
     pairs_grouped.rename(columns={
         'alpha_AV': 'beta_AV',
         'alpha_CC': 'beta_CC',
-        'alpha_EJR': 'beta_EJR'
     }, inplace=True)
     
     # Plot 1: alpha_PAIRS vs beta_AV
@@ -83,16 +92,11 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     # Reference line: beta = 1 - alpha (a + b = 1)
     x_ref = np.linspace(0, 1, 100)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
-    # Add MES point
-    if mes_k is not None:
-        ax.scatter(mes_k['alpha_PAIRS'], mes_k['alpha_AV'],
-                  marker=mes_marker, c=mes_color, s=mes_size,
-                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
-                  label='MES', zorder=10)
+    add_voting_methods(ax, 'alpha_PAIRS', 'alpha_AV')
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_AV (avg)', fontsize=11)
     ax.set_title('PAIRS vs AV', fontsize=12, fontweight='bold')
-    ax.legend(loc='best', fontsize=9)
+    ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
@@ -103,36 +107,11 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
-    # Add MES point
-    if mes_k is not None:
-        ax.scatter(mes_k['alpha_PAIRS'], mes_k['alpha_CC'],
-                  marker=mes_marker, c=mes_color, s=mes_size,
-                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
-                  label='MES', zorder=10)
+    add_voting_methods(ax, 'alpha_PAIRS', 'alpha_CC')
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
     ax.set_ylabel('beta_CC (avg)', fontsize=11)
     ax.set_title('PAIRS vs CC', fontsize=12, fontweight='bold')
-    ax.legend(loc='best', fontsize=9)
-    ax.grid(True, alpha=0.3)
-    ax.set_xlim(-0.05, 1.05)
-    ax.set_ylim(-0.05, 1.05)
-    
-    # Plot 3: alpha_PAIRS vs beta_EJR
-    ax = axes[0, 2]
-    ax.scatter(pairs_grouped['alpha_PAIRS'], pairs_grouped['beta_EJR'],
-              c=point_color, alpha=alpha_transparency, s=marker_size, 
-              edgecolors='black', linewidths=0.5)
-    ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
-    # Add MES point
-    if mes_k is not None:
-        ax.scatter(mes_k['alpha_PAIRS'], mes_k['alpha_EJR'],
-                  marker=mes_marker, c=mes_color, s=mes_size,
-                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
-                  label='MES', zorder=10)
-    ax.set_xlabel('alpha_PAIRS', fontsize=11)
-    ax.set_ylabel('beta_EJR (avg)', fontsize=11)
-    ax.set_title('PAIRS vs EJR', fontsize=12, fontweight='bold')
-    ax.legend(loc='best', fontsize=9)
+    ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
@@ -143,72 +122,40 @@ def plot_single_size(df, k, output_dir='output/by_size', mes_df=None):
     cons_grouped = df_k.groupby('alpha_CONS').agg({
         'alpha_AV': 'mean',
         'alpha_CC': 'mean',
-        'alpha_EJR': 'mean'
     }).reset_index()
     
     cons_grouped.rename(columns={
         'alpha_AV': 'beta_AV',
         'alpha_CC': 'beta_CC',
-        'alpha_EJR': 'beta_EJR'
     }, inplace=True)
     
-    # Plot 4: alpha_CONS vs beta_AV
+    # Plot 3: alpha_CONS vs beta_AV
     ax = axes[1, 0]
     ax.scatter(cons_grouped['alpha_CONS'], cons_grouped['beta_AV'],
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     # Reference line: beta = 1 - alpha^2 (a^2 + b = 1)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
-    # Add MES point
-    if mes_k is not None:
-        ax.scatter(mes_k['alpha_CONS'], mes_k['alpha_AV'],
-                  marker=mes_marker, c=mes_color, s=mes_size,
-                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
-                  label='MES', zorder=10)
+    add_voting_methods(ax, 'alpha_CONS', 'alpha_AV')
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_AV (avg)', fontsize=11)
     ax.set_title('CONS vs AV', fontsize=12, fontweight='bold')
-    ax.legend(loc='best', fontsize=9)
+    ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
     
-    # Plot 5: alpha_CONS vs beta_CC
+    # Plot 4: alpha_CONS vs beta_CC
     ax = axes[1, 1]
     ax.scatter(cons_grouped['alpha_CONS'], cons_grouped['beta_CC'],
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
-    # Add MES point
-    if mes_k is not None:
-        ax.scatter(mes_k['alpha_CONS'], mes_k['alpha_CC'],
-                  marker=mes_marker, c=mes_color, s=mes_size,
-                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
-                  label='MES', zorder=10)
+    add_voting_methods(ax, 'alpha_CONS', 'alpha_CC')
     ax.set_xlabel('alpha_CONS', fontsize=11)
     ax.set_ylabel('beta_CC (avg)', fontsize=11)
     ax.set_title('CONS vs CC', fontsize=12, fontweight='bold')
-    ax.legend(loc='best', fontsize=9)
-    ax.grid(True, alpha=0.3)
-    ax.set_xlim(-0.05, 1.05)
-    ax.set_ylim(-0.05, 1.05)
-    
-    # Plot 6: alpha_CONS vs beta_EJR
-    ax = axes[1, 2]
-    ax.scatter(cons_grouped['alpha_CONS'], cons_grouped['beta_EJR'],
-              c=point_color, alpha=alpha_transparency, s=marker_size, 
-              edgecolors='black', linewidths=0.5)
-    ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
-    # Add MES point
-    if mes_k is not None:
-        ax.scatter(mes_k['alpha_CONS'], mes_k['alpha_EJR'],
-                  marker=mes_marker, c=mes_color, s=mes_size,
-                  edgecolors=mes_edgecolor, linewidths=mes_linewidth,
-                  label='MES', zorder=10)
-    ax.set_xlabel('alpha_CONS', fontsize=11)
-    ax.set_ylabel('beta_EJR (avg)', fontsize=11)
-    ax.set_title('CONS vs EJR', fontsize=12, fontweight='bold')
-    ax.legend(loc='best', fontsize=9)
+    ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
@@ -232,7 +179,7 @@ def plot_all_sizes(input_file='output/french_election/alpha_scores_by_size.csv',
     Args:
         input_file: Path to alpha scores CSV (or filename if base_dir provided)
         output_dir: Directory to save plots (or subdir name if base_dir provided)
-        mes_file: Path to MES results CSV (or filename if base_dir provided)
+        mes_file: Path to voting methods results CSV (or filename if base_dir provided)
         base_dir: Optional base directory prefix for all paths
     """
     if base_dir:
@@ -251,14 +198,14 @@ def plot_all_sizes(input_file='output/french_election/alpha_scores_by_size.csv',
     df = pd.read_csv(input_file)
     print(f"Loaded {len(df):,} subsets")
     
-    # Load MES results
-    mes_df = None
+    # Load voting methods results
+    methods_df = None
     if os.path.exists(mes_file):
-        print(f"Loading MES results from {mes_file}...")
-        mes_df = pd.read_csv(mes_file)
-        print(f"Loaded {len(mes_df)} MES committees")
+        print(f"Loading voting methods results from {mes_file}...")
+        methods_df = pd.read_csv(mes_file)
+        print(f"Loaded {len(methods_df)} voting method results")
     else:
-        print(f"Warning: MES results file not found at {mes_file}")
+        print(f"Warning: Voting methods results file not found at {mes_file}")
     
     # Get all unique sizes
     sizes = sorted(df['subset_size'].unique())
@@ -267,15 +214,14 @@ def plot_all_sizes(input_file='output/french_election/alpha_scores_by_size.csv',
     # Create plot for each size
     print(f"\nGenerating plots...")
     for k in sizes:
-        plot_single_size(df, k, output_dir, mes_df)
+        plot_single_size(df, k, output_dir, methods_df)
     
     print("\n" + "="*70)
     print("COMPLETED!")
     print("="*70)
     print(f"Generated {len(sizes)} plots in {output_dir}/")
-    print(f"Files: size_00.png to size_12.png")
-    if mes_df is not None:
-        print("MES committees marked with gold stars")
+    if methods_df is not None:
+        print("Voting methods marked: MES (star), AV (square), CC (triangle), PAV (diamond)")
     print("="*70)
 
 

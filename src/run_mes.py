@@ -1,22 +1,24 @@
 """
-Script to run Method of Equal Shares on the French 2007 approval voting data.
+Script to run Method of Equal Shares and other voting methods.
 
-Computes MES committees for each size k=1..12 and saves results with scores
-and alpha-approximations.
+Computes MES, AV, CC, PAV committees for each size k=1..n and saves results
+with scores and alpha-approximations.
 """
 
 import numpy as np
 import pandas as pd
 import json
+import time
 
 from data_loader import load_and_combine_data, load_preflib_file
 from mes import method_of_equal_shares
-from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+from scoring import av_score, cc_score, pairs_score, cons_score
+from voting_methods import approval_voting, chamberlin_courant_greedy, pav_greedy
 
 
 def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=None, candidates=None, output_dir=None):
     """
-    Run MES for all committee sizes and save results.
+    Run MES and other voting methods for all committee sizes and save results.
     
     Args:
         output_file: Path to save results CSV (or filename if output_dir provided)
@@ -25,6 +27,8 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
         output_dir: Optional directory prefix for input/output files
     """
     import os
+    
+    start_time = time.time()
     
     # Handle output_dir prefixing
     alpha_scores_file = 'output/french_election/alpha_scores.csv'
@@ -35,7 +39,7 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
         max_by_size_file = os.path.join(output_dir, 'max_scores_by_size.csv')
     
     print("="*70)
-    print("RUNNING METHOD OF EQUAL SHARES")
+    print("RUNNING VOTING METHODS (MES, AV, CC, PAV)")
     print("="*70)
     
     # Load data if not provided
@@ -58,27 +62,21 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
     
     print(f"Global max - AV: {global_max_av}, CC: {global_max_cc}, PAIRS: {global_max_pairs}, CONS: {global_max_cons}")
     
-    # Run MES for each committee size
-    results = []
+    # Define voting methods
+    voting_methods = {
+        'MES': method_of_equal_shares,
+        'AV': approval_voting,
+        'CC': chamberlin_courant_greedy,
+        'PAV': pav_greedy,
+    }
     
-    print("\nRunning MES for each committee size...")
+    # Run all methods for each committee size
+    results = []
+    timing = {name: 0 for name in voting_methods}
+    
+    print("\nRunning voting methods for each committee size...")
     for k in range(1, n_candidates + 1):
         print(f"\n  k={k}:")
-        
-        # Run MES
-        committee = method_of_equal_shares(M, k)
-        print(f"    Committee: {committee}")
-        
-        # Calculate scores
-        av = av_score(M, committee)
-        cc = cc_score(M, committee)
-        pairs = pairs_score(M, committee)
-        cons = cons_score(M, committee)
-        ejr = ejr_satisfied(M, committee, k)
-        beta = beta_ejr(M, committee, k)
-        
-        print(f"    AV={av}, CC={cc}, PAIRS={pairs}, CONS={cons}")
-        print(f"    EJR={ejr}, beta_EJR={beta:.3f}")
         
         # Get max scores for this size
         size_row = max_by_size[max_by_size['subset_size'] == k].iloc[0]
@@ -87,39 +85,50 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
         max_pairs_size = size_row['max_PAIRS']
         max_cons_size = size_row['max_CONS']
         
-        # Calculate alpha approximations (global)
-        alpha_av_global = av / global_max_av if global_max_av > 0 else 0
-        alpha_cc_global = cc / global_max_cc if global_max_cc > 0 else 0
-        alpha_pairs_global = pairs / global_max_pairs if global_max_pairs > 0 else 0
-        alpha_cons_global = cons / global_max_cons if global_max_cons > 0 else 0
-        
-        # Calculate alpha approximations (by size)
-        alpha_av_size = av / max_av_size if max_av_size > 0 else 0
-        alpha_cc_size = cc / max_cc_size if max_cc_size > 0 else 0
-        alpha_pairs_size = pairs / max_pairs_size if max_pairs_size > 0 else 0
-        alpha_cons_size = cons / max_cons_size if max_cons_size > 0 else 0
-        
-        results.append({
-            'subset_size': k,
-            'subset_indices': json.dumps(committee),
-            'AV': av,
-            'CC': cc,
-            'PAIRS': pairs,
-            'CONS': cons,
-            'EJR': ejr,
-            'beta_EJR': beta,
-            # Global alpha values (for alpha_plots.png)
-            'alpha_AV_global': alpha_av_global,
-            'alpha_CC_global': alpha_cc_global,
-            'alpha_PAIRS_global': alpha_pairs_global,
-            'alpha_CONS_global': alpha_cons_global,
-            'alpha_EJR': beta,  # Same as beta_EJR
-            # Size-normalized alpha values (for alpha_plots_by_size.png and by_size/)
-            'alpha_AV': alpha_av_size,
-            'alpha_CC': alpha_cc_size,
-            'alpha_PAIRS': alpha_pairs_size,
-            'alpha_CONS': alpha_cons_size,
-        })
+        for method_name, method_func in voting_methods.items():
+            t0 = time.time()
+            committee = method_func(M, k)
+            timing[method_name] += time.time() - t0
+            
+            # Calculate scores
+            av = av_score(M, committee)
+            cc = cc_score(M, committee)
+            pairs = pairs_score(M, committee)
+            cons = cons_score(M, committee)
+            
+            print(f"    {method_name}: {committee} | AV={av}, CC={cc}, PAIRS={pairs}, CONS={cons}")
+            
+            # Calculate alpha approximations (global)
+            alpha_av_global = av / global_max_av if global_max_av > 0 else 0
+            alpha_cc_global = cc / global_max_cc if global_max_cc > 0 else 0
+            alpha_pairs_global = pairs / global_max_pairs if global_max_pairs > 0 else 0
+            alpha_cons_global = cons / global_max_cons if global_max_cons > 0 else 0
+            
+            # Calculate alpha approximations (by size)
+            alpha_av_size = av / max_av_size if max_av_size > 0 else 0
+            alpha_cc_size = cc / max_cc_size if max_cc_size > 0 else 0
+            alpha_pairs_size = pairs / max_pairs_size if max_pairs_size > 0 else 0
+            alpha_cons_size = cons / max_cons_size if max_cons_size > 0 else 0
+            
+            results.append({
+                'method': method_name,
+                'subset_size': k,
+                'subset_indices': json.dumps(committee),
+                'AV': av,
+                'CC': cc,
+                'PAIRS': pairs,
+                'CONS': cons,
+                # Global alpha values (for alpha_plots.png)
+                'alpha_AV_global': alpha_av_global,
+                'alpha_CC_global': alpha_cc_global,
+                'alpha_PAIRS_global': alpha_pairs_global,
+                'alpha_CONS_global': alpha_cons_global,
+                # Size-normalized alpha values (for alpha_plots_by_size.png and by_size/)
+                'alpha_AV': alpha_av_size,
+                'alpha_CC': alpha_cc_size,
+                'alpha_PAIRS': alpha_pairs_size,
+                'alpha_CONS': alpha_cons_size,
+            })
     
     # Create DataFrame and save
     df = pd.DataFrame(results)
@@ -127,15 +136,25 @@ def run_mes_all_sizes(output_file='output/french_election/mes_results.csv', M=No
     print(f"\nSaving results to {output_file}...")
     df.to_csv(output_file, index=False)
     
+    # Timing breakdown
+    total_elapsed = time.time() - start_time
+    print("\n" + "="*70)
+    print("TIMING BREAKDOWN")
+    print("="*70)
+    for method_name, elapsed in sorted(timing.items(), key=lambda x: -x[1]):
+        pct = elapsed / total_elapsed * 100
+        print(f"  {method_name}: {elapsed:.2f}s ({pct:.1f}%)")
+    
     # Summary
     print("\n" + "="*70)
-    print("MES RESULTS SUMMARY")
+    print("VOTING METHODS RESULTS SUMMARY")
     print("="*70)
     print(df.to_string(index=False))
     
     print("\n" + "="*70)
     print("COMPLETED!")
     print("="*70)
+    print(f"Total time: {total_elapsed:.2f}s")
     print(f"Output file: {output_file}")
     
     return df

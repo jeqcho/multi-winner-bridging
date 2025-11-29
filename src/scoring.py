@@ -85,9 +85,12 @@ def cc_score(M: np.ndarray, W: List[int]) -> int:
 
 def pairs_score(M: np.ndarray, W: List[int]) -> int:
     """
-    Calculate PAIRS score (direct pair coverage).
+    Calculate PAIRS score (direct pair coverage) using vectorized operations.
     
     PAIRS(W) = |{ {u, v} ⊆ V : (A_u ∩ A_v ∩ W) ≠ ∅ }|
+    
+    Uses matrix multiplication for O(n² × k) vectorized computation instead of
+    O(k × s²) Python loops, which is much faster for large voter counts.
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
@@ -100,19 +103,21 @@ def pairs_score(M: np.ndarray, W: List[int]) -> int:
         return 0
     
     n_voters = M.shape[0]
-    covered_pairs = set()
     
-    # For each candidate in W, find voters who approve them
-    for c in W:
-        supporters = np.where(M[:, c])[0]
-        
-        # Add all pairs of supporters
-        for i in range(len(supporters)):
-            for j in range(i + 1, len(supporters)):
-                pair = (int(supporters[i]), int(supporters[j]))
-                covered_pairs.add(pair)
+    # Extract submatrix for committee candidates: n_voters × k
+    M_W = M[:, W].astype(np.uint8)
     
-    return len(covered_pairs)
+    # Compute shared approvals matrix: shared[i,j] = # of W candidates both i and j approve
+    # This is O(n² × k) but highly optimized in numpy
+    shared = M_W @ M_W.T
+    
+    # Count pairs where shared > 0 (they share at least one candidate in W)
+    # Use upper triangle only to avoid counting pairs twice
+    # np.triu with k=1 excludes diagonal
+    upper_shared = np.triu(shared, k=1)
+    pairs_count = int((upper_shared > 0).sum())
+    
+    return pairs_count
 
 
 class UnionFind:

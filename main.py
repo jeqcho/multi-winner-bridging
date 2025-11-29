@@ -24,13 +24,14 @@ import argparse
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from data_loader import load_preflib_file, load_and_combine_data
-from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, beta_ejr
+from scoring import av_score, cc_score, pairs_score, cons_score
 from alpha_approx import calculate_alpha_approximations
 from alpha_approx_by_size import calculate_alpha_by_size
 from plot_results import plot_results
 from plot_results_by_size import plot_results_by_size
 from plot_individual_sizes import plot_all_sizes
 from run_mes import run_mes_all_sizes
+from plot_ejr import plot_ejr_results
 
 
 # Dataset configurations
@@ -64,6 +65,9 @@ def calculate_all_scores_for_dataset(M, candidates, output_dir):
     # Prepare results storage
     results = []
     
+    # Timing breakdown
+    timing = {'AV': 0, 'CC': 0, 'PAIRS': 0, 'CONS': 0}
+    
     # Start timing
     start_time = time.time()
     
@@ -86,15 +90,24 @@ def calculate_all_scores_for_dataset(M, candidates, output_dir):
         for i, W in enumerate(subsets):
             W_list = list(W)
             
-            # Calculate all scores
+            # Calculate all scores with timing
+            t0 = time.time()
             av = av_score(M, W_list)
-            cc = cc_score(M, W_list)
-            pairs = pairs_score(M, W_list)
-            cons = cons_score(M, W_list)
-            ejr = ejr_satisfied(M, W_list, k)
-            beta = beta_ejr(M, W_list, k)
+            timing['AV'] += time.time() - t0
             
-            # Store result
+            t0 = time.time()
+            cc = cc_score(M, W_list)
+            timing['CC'] += time.time() - t0
+            
+            t0 = time.time()
+            pairs = pairs_score(M, W_list)
+            timing['PAIRS'] += time.time() - t0
+            
+            t0 = time.time()
+            cons = cons_score(M, W_list)
+            timing['CONS'] += time.time() - t0
+            
+            # Store result (EJR removed)
             results.append({
                 'subset_size': k,
                 'subset_indices': json.dumps(W_list),
@@ -102,8 +115,6 @@ def calculate_all_scores_for_dataset(M, candidates, output_dir):
                 'CC': cc,
                 'PAIRS': pairs,
                 'CONS': cons,
-                'EJR': ejr,
-                'beta_EJR': beta
             })
             
             # Progress update every 100 subsets or at the end
@@ -111,9 +122,16 @@ def calculate_all_scores_for_dataset(M, candidates, output_dir):
                 elapsed = time.time() - subset_start
                 avg_time = elapsed / (i + 1)
                 remaining = avg_time * (len(subsets) - i - 1)
-                print(f"    {i+1:4d}/{len(subsets):4d} subsets | "
-                      f"Avg: {avg_time*1000:6.1f} ms | "
-                      f"Remaining: {remaining:5.1f}s")
+                # Calculate per-score averages
+                n_done = i + 1
+                avg_av = timing['AV'] / n_done * 1000
+                avg_cc = timing['CC'] / n_done * 1000
+                avg_pairs = timing['PAIRS'] / n_done * 1000
+                avg_cons = timing['CONS'] / n_done * 1000
+                print(f"    {i+1:4d}/{len(subsets):4d} | "
+                      f"Avg: {avg_time*1000:5.1f}ms | "
+                      f"AV:{avg_av:4.1f} CC:{avg_cc:4.1f} PAIRS:{avg_pairs:5.1f} CONS:{avg_cons:5.1f} | "
+                      f"ETA: {remaining:5.1f}s")
         
         subset_elapsed = time.time() - subset_start
         print(f"  Completed in {subset_elapsed:.2f}s ({subset_elapsed/60:.2f} min)")
@@ -138,6 +156,14 @@ def calculate_all_scores_for_dataset(M, candidates, output_dir):
     print(f"Average time per subset: {total_elapsed/len(results)*1000:.2f} ms")
     print(f"Output file: {output_file}")
     
+    # Timing breakdown
+    print("\n" + "="*70)
+    print("TIMING BREAKDOWN")
+    print("="*70)
+    for score_name, elapsed in sorted(timing.items(), key=lambda x: -x[1]):
+        pct = elapsed / total_elapsed * 100
+        print(f"  {score_name}: {elapsed:.2f}s ({pct:.1f}%)")
+    
     # Display some statistics
     print("\n" + "="*70)
     print("SCORE STATISTICS")
@@ -146,8 +172,6 @@ def calculate_all_scores_for_dataset(M, candidates, output_dir):
     print(f"CC score range: {df['CC'].min()} - {df['CC'].max()}")
     print(f"PAIRS score range: {df['PAIRS'].min()} - {df['PAIRS'].max()}")
     print(f"CONS score range: {df['CONS'].min()} - {df['CONS'].max()}")
-    print(f"EJR satisfaction rate: {df['EJR'].sum() / len(df) * 100:.1f}%")
-    print(f"Beta-EJR range: {df['beta_EJR'].min():.3f} - {df['beta_EJR'].max():.3f}")
     
     return df
 
@@ -238,6 +262,16 @@ def process_dataset(M, candidates, output_dir, description):
         output_dir='by_size',
         mes_file='mes_results.csv',
         base_dir=output_dir
+    )
+    
+    # Step 8: Create EJR-specific plots with voting methods
+    print("\n" + "="*70)
+    print("STEP 8: Creating EJR plots with voting methods")
+    print("="*70)
+    plot_ejr_results(
+        M=M,
+        candidates=candidates,
+        output_dir=output_dir
     )
     
     print("\n" + "="*70)

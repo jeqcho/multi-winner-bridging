@@ -51,9 +51,6 @@ def calculate_alpha_approximations(input_file='output/french_election/raw_scores
     df['alpha_PAIRS'] = df['PAIRS'] / max_pairs if max_pairs > 0 else 0
     df['alpha_CONS'] = df['CONS'] / max_cons if max_cons > 0 else 0
     
-    # For EJR, alpha_EJR is the same as beta_EJR (already calculated)
-    df['alpha_EJR'] = df['beta_EJR']
-    
     # Save to CSV
     print(f"\nSaving to {output_file}...")
     df.to_csv(output_file, index=False)
@@ -83,12 +80,6 @@ def calculate_alpha_approximations(input_file='output/french_election/raw_scores
     print(f"  Mean: {df['alpha_CONS'].mean():.4f}")
     print(f"  Median: {df['alpha_CONS'].median():.4f}")
     
-    print("\nAlpha EJR (= Beta EJR):")
-    print(f"  Range: [{df['alpha_EJR'].min():.4f}, {df['alpha_EJR'].max():.4f}]")
-    print(f"  Mean: {df['alpha_EJR'].mean():.4f}")
-    print(f"  Median: {df['alpha_EJR'].median():.4f}")
-    print(f"  Full EJR (alpha=1.0): {(df['alpha_EJR'] >= 0.999).sum()} subsets ({(df['alpha_EJR'] >= 0.999).sum() / len(df) * 100:.1f}%)")
-    
     # Find best subsets
     print("\n" + "="*70)
     print("BEST SUBSETS")
@@ -99,7 +90,6 @@ def calculate_alpha_approximations(input_file='output/french_election/raw_scores
     best_cc_idx = df['CC'].idxmax()
     best_pairs_idx = df['PAIRS'].idxmax()
     best_cons_idx = df['CONS'].idxmax()
-    best_ejr_idx = df.loc[df['alpha_EJR'] >= 0.999, 'AV'].idxmax() if (df['alpha_EJR'] >= 0.999).any() else None
     
     print(f"\nBest AV (score={df.loc[best_av_idx, 'AV']}):")
     print(f"  Committee: {df.loc[best_av_idx, 'subset_indices']}")
@@ -112,10 +102,6 @@ def calculate_alpha_approximations(input_file='output/french_election/raw_scores
     
     print(f"\nBest CONS (score={df.loc[best_cons_idx, 'CONS']}):")
     print(f"  Committee: {df.loc[best_cons_idx, 'subset_indices']}")
-    
-    if best_ejr_idx is not None:
-        print(f"\nBest AV among EJR-satisfying subsets (score={df.loc[best_ejr_idx, 'AV']}):")
-        print(f"  Committee: {df.loc[best_ejr_idx, 'subset_indices']}")
     
     print("\n" + "="*70)
     print("COMPLETED!")

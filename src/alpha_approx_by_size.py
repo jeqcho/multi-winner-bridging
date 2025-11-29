@@ -77,9 +77,6 @@ def calculate_alpha_by_size(input_file='output/french_election/raw_scores.csv',
         lambda row: row['CONS'] / row['max_CONS'] if row['max_CONS'] > 0 else 0, axis=1
     )
     
-    # For EJR, alpha_EJR is the same as beta_EJR (already calculated)
-    df['alpha_EJR'] = df['beta_EJR']
-    
     # Drop the max_ columns before saving (keep output clean)
     output_df = df.drop(columns=['max_AV', 'max_CC', 'max_PAIRS', 'max_CONS'])
     
@@ -111,11 +108,6 @@ def calculate_alpha_by_size(input_file='output/french_election/raw_scores.csv',
     print(f"  Range: [{output_df['alpha_CONS'].min():.4f}, {output_df['alpha_CONS'].max():.4f}]")
     print(f"  Mean: {output_df['alpha_CONS'].mean():.4f}")
     print(f"  Median: {output_df['alpha_CONS'].median():.4f}")
-    
-    print("\nAlpha EJR (= Beta EJR):")
-    print(f"  Range: [{output_df['alpha_EJR'].min():.4f}, {output_df['alpha_EJR'].max():.4f}]")
-    print(f"  Mean: {output_df['alpha_EJR'].mean():.4f}")
-    print(f"  Median: {output_df['alpha_EJR'].median():.4f}")
     
     # Count how many subsets achieve max for each metric at each size
     print("\n" + "="*70)
