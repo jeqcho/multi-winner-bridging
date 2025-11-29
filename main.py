@@ -1,7 +1,5 @@
 """
-Main script to calculate scores for all 2^12 = 4,096 candidate subsets.
-
-DO NOT RUN YET - This will take approximately 34 minutes.
+Main script to calculate scores for all candidate subsets.
 """
 
 import numpy as np
@@ -28,7 +26,6 @@ def calculate_all_scores():
     print(f"\nDataset: {M.shape[0]} voters, {n_candidates} candidates")
     print(f"Candidates: {candidates}")
     print(f"Total subsets to process: {total_subsets:,}")
-    print(f"Estimated time: ~34 minutes")
     
     # Prepare results storage
     results = []
@@ -108,16 +105,7 @@ def calculate_all_scores():
     print(f"Output file: {output_file}")
     print(f"File size: {df.memory_usage(deep=True).sum() / 1024:.2f} KB")
     
-    # Display some statistics
-    print("\n" + "="*70)
-    print("SCORE STATISTICS")
-    print("="*70)
-    print(f"\nAV score range: {df['AV'].min()} - {df['AV'].max()}")
-    print(f"CC score range: {df['CC'].min()} - {df['CC'].max()}")
-    print(f"PAIRS score range: {df['PAIRS'].min()} - {df['PAIRS'].max()}")
-    print(f"CONS score range: {df['CONS'].min()} - {df['CONS'].max()}")
-    print(f"EJR satisfaction rate: {df['EJR'].sum() / len(df) * 100:.1f}%")
-    print(f"Beta-EJR range: {df['beta_EJR'].min():.3f} - {df['beta_EJR'].max():.3f}")
+    
     
     print("\n" + "="*70)
     print("Next step: Run src/alpha_approx.py to compute alpha-approximations")
@@ -127,15 +115,7 @@ def calculate_all_scores():
 
 
 if __name__ == "__main__":
-    print("\n" + "="*70)
-    print("⚠️  WARNING: This script will take approximately 34 minutes to run.")
-    print("="*70)
-    response = input("\nAre you sure you want to proceed? (yes/no): ")
-    
-    if response.lower() in ['yes', 'y']:
-        df = calculate_all_scores()
-    else:
-        print("\nAborted. When ready, run: uv run python main.py")
+    df = calculate_all_scores()
 
 
 

@@ -229,6 +229,88 @@ def test_edge_cases():
     print("✓ test_edge_cases passed")
 
 
+def test_ejr_non_maximal_cohesive_group():
+    """
+    Test EJR detection for non-maximal cohesive groups.
+    
+    This tests a case where a cohesive subgroup S violates EJR, but the
+    maximal group S_T (used by naive algorithms) includes additional
+    satisfied voters. The correct algorithm must still detect the violation.
+    """
+    # Setup:
+    # - Voters 0,1: approve {0,1} - form a cohesive group
+    # - Voter 2: approves {0,1,2} - overlaps with group but also approves 2
+    # - Voter 3: approves {2,3}
+    M = np.array([
+        [1, 1, 0, 0],  # Voter 0: approves {0, 1}
+        [1, 1, 0, 0],  # Voter 1: approves {0, 1}
+        [1, 1, 1, 0],  # Voter 2: approves {0, 1, 2}
+        [0, 0, 1, 1],  # Voter 3: approves {2, 3}
+    ], dtype=bool)
+    
+    k = 2
+    W = [2, 3]  # Committee with candidates 2 and 3
+    
+    # Analysis for l=1:
+    # - Group S = {voter 0, voter 1}:
+    #   - Cohesive: ⋂ A_v = {0,1}, size=2 >= l=1 ✓
+    #   - Large enough: |S|=2 >= (1/2)*4=2 ✓
+    #   - Voter 0: |{0,1} ∩ {2,3}| = 0 < 1 ✗
+    #   - Voter 1: |{0,1} ∩ {2,3}| = 0 < 1 ✗
+    #   - NO voter in S is satisfied! This is an EJR VIOLATION.
+    #
+    # The naive algorithm would check S_T for T={0}, getting S_T = {0,1,2}.
+    # Voter 2 in S_T has 1 approved in W, so naive algorithm says "satisfied".
+    # But voter 2 is NOT in the cohesive group S={0,1}!
+    
+    result = ejr_satisfied(M, W, k)
+    assert result == False, f"Expected EJR violation, but got {result}"
+    
+    # The beta value should be less than 1.0
+    beta = beta_ejr(M, W, k)
+    assert beta < 1.0, f"Expected beta < 1.0, but got {beta}"
+    
+    # Verify the good committee works
+    W_good = [0, 2]  # One candidate from each group
+    assert ejr_satisfied(M, W_good, k) == True, "Committee [0,2] should satisfy EJR"
+    
+    print("✓ test_ejr_non_maximal_cohesive_group passed")
+
+
+def test_ejr_multiple_violations():
+    """Test EJR with multiple potential violations."""
+    # 6 voters split into 3 groups of 2
+    M = np.array([
+        [1, 1, 0, 0, 0, 0],  # Voters 0,1: approve {0,1}
+        [1, 1, 0, 0, 0, 0],
+        [0, 0, 1, 1, 0, 0],  # Voters 2,3: approve {2,3}
+        [0, 0, 1, 1, 0, 0],
+        [0, 0, 0, 0, 1, 1],  # Voters 4,5: approve {4,5}
+        [0, 0, 0, 0, 1, 1],
+    ], dtype=bool)
+    
+    k = 3
+    
+    # Committee with only candidates from first group - violates EJR for groups 2 and 3
+    W_bad = [0, 1, 0]  # Invalid - duplicate, but let's use [0, 1, 2] instead
+    # Actually, let's test [0, 1, 2] which only covers group 1 and part of group 2
+    
+    # Wait, let me think about this more carefully
+    # With k=3 and n=6, threshold for l=1 is (1/3)*6 = 2
+    # Each group has 2 voters, so each group deserves 1 seat
+    
+    # W = [0, 2, 4] - one from each group, should satisfy EJR
+    W_good = [0, 2, 4]
+    assert ejr_satisfied(M, W_good, k) == True
+    
+    # W = [0, 1, 2] - two from group 1, one from group 2, none from group 3
+    # Group 3 (voters 4,5) shares {4,5}, deserves 1 seat, but gets 0 in W
+    W_bad = [0, 1, 2]
+    assert ejr_satisfied(M, W_bad, k) == False
+    
+    print("✓ test_ejr_multiple_violations passed")
+
+
 if __name__ == "__main__":
     test_av_score()
     test_cc_score()
@@ -238,5 +320,7 @@ if __name__ == "__main__":
     test_ejr_satisfied()
     test_beta_ejr()
     test_edge_cases()
+    test_ejr_non_maximal_cohesive_group()
+    test_ejr_multiple_violations()
     print("\n✅ All tests passed!")
 

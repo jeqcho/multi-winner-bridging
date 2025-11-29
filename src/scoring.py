@@ -147,6 +147,13 @@ def ejr_satisfied(M: np.ndarray, W: List[int], k: int) -> bool:
     """
     Check if committee W satisfies Extended Justified Representation (EJR).
     
+    EJR requires: For every ℓ ∈ {1,...,k} and every ℓ-cohesive group S with
+    |S| ≥ (ℓ/k)·n, there exists some voter i ∈ S with |A_i ∩ W| ≥ ℓ.
+    
+    This implementation correctly checks ALL cohesive groups by focusing on
+    unsatisfied voters. A violation exists iff there's an ℓ-cohesive group
+    of unsatisfied voters that is large enough.
+    
     Args:
         M: Boolean matrix (n_voters, n_candidates)
         W: List of candidate indices in the committee
@@ -165,26 +172,30 @@ def ejr_satisfied(M: np.ndarray, W: List[int], k: int) -> bool:
     n_voters = M.shape[0]
     n_candidates = M.shape[1]
     
+    # Precompute approvals in W for each voter
+    if len(W) > 0:
+        approvals_in_W = M[:, W].sum(axis=1)
+    else:
+        approvals_in_W = np.zeros(n_voters, dtype=int)
+    
     # For each ℓ from 1 to k
     for ell in range(1, k + 1):
+        # Find unsatisfied voters for this ℓ (have < ℓ approved in W)
+        unsatisfied = approvals_in_W < ell
+        
         # For each ℓ-subset of candidates
         for T in combinations(range(n_candidates), ell):
             T_list = list(T)
             
-            # Find voters who approve all candidates in T
-            # S_T = { v : T ⊆ A_v }
+            # Find voters who approve all candidates in T AND are unsatisfied
+            # This gives us the unsatisfied ℓ-cohesive group for this T
             voters_approve_all_T = M[:, T_list].all(axis=1)
-            S_T_size = voters_approve_all_T.sum()
+            cohesive_unsatisfied = voters_approve_all_T & unsatisfied
+            group_size = cohesive_unsatisfied.sum()
             
-            # Check if this group deserves ℓ seats
-            if S_T_size * k >= ell * n_voters:
-                # Check if at least one voter in S_T approves ℓ or more candidates in W
-                if len(W) > 0:
-                    approvals_in_W = M[voters_approve_all_T][:, W].sum(axis=1)
-                    if (approvals_in_W >= ell).any():
-                        continue  # This group is satisfied
-                
-                # Violation: no voter in S_T approves ℓ candidates in W
+            # Check if this unsatisfied cohesive group deserves ℓ seats
+            # If so, it's an EJR violation (no one in the group is satisfied)
+            if group_size * k >= ell * n_voters:
                 return False
     
     return True
@@ -194,8 +205,11 @@ def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01) -> fl
     """
     Calculate maximum β such that W satisfies β-EJR.
     
-    β-EJR: For every ℓ-cohesive group S, there exists some voter i ∈ S
-    with |A_i ∩ W| ≥ ⌊β·ℓ⌋.
+    β-EJR: For every ℓ-cohesive group S with |S| ≥ (ℓ/k)·n, there exists 
+    some voter i ∈ S with |A_i ∩ W| ≥ ⌊β·ℓ⌋.
+    
+    This implementation correctly checks ALL cohesive groups by focusing on
+    unsatisfied voters for each β threshold.
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
@@ -215,6 +229,12 @@ def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01) -> fl
     n_voters = M.shape[0]
     n_candidates = M.shape[1]
     
+    # Precompute approvals in W for each voter
+    if len(W) > 0:
+        approvals_in_W = M[:, W].sum(axis=1)
+    else:
+        approvals_in_W = np.zeros(n_voters, dtype=int)
+    
     # Binary search for maximum β
     beta_min, beta_max = 0.0, 1.0
     
@@ -233,25 +253,23 @@ def beta_ejr(M: np.ndarray, W: List[int], k: int, precision: float = 0.01) -> fl
             threshold = int(beta * ell)  # ⌊β·ℓ⌋
             
             if threshold == 0:
-                # Vacuous constraint
+                # Vacuous constraint (any voter trivially has ≥0 approvals)
                 continue
+            
+            # Find unsatisfied voters for this threshold
+            unsatisfied = approvals_in_W < threshold
             
             # For each ℓ-subset of candidates
             for T in combinations(range(n_candidates), ell):
                 T_list = list(T)
                 
-                # Find voters who approve all candidates in T
+                # Find voters who approve all candidates in T AND are unsatisfied
                 voters_approve_all_T = M[:, T_list].all(axis=1)
-                S_T_size = voters_approve_all_T.sum()
+                cohesive_unsatisfied = voters_approve_all_T & unsatisfied
+                group_size = cohesive_unsatisfied.sum()
                 
-                # Check if this group deserves ℓ seats
-                if S_T_size * k >= ell * n_voters:
-                    # Check if at least one voter in S_T approves threshold or more candidates in W
-                    if len(W) > 0:
-                        approvals_in_W = M[voters_approve_all_T][:, W].sum(axis=1)
-                        if (approvals_in_W >= threshold).any():
-                            continue  # This group is satisfied
-                    
+                # Check if this unsatisfied cohesive group deserves ℓ seats
+                if group_size * k >= ell * n_voters:
                     # Violation found
                     satisfies = False
                     break
