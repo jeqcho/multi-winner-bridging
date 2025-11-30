@@ -5,46 +5,28 @@ Implements AV, CC, PAIRS, CONS, and EJR scoring based on reference.md.
 """
 
 import numpy as np
-from itertools import combinations
-from typing import Set, List, Tuple, Iterator
-import random
-from math import comb
+from typing import List
+
+from abcvoting.preferences import Profile
+from abcvoting.properties import check_EJR
 
 
-# Maximum number of candidate subsets to sample per coalition size for EJR checks
-MAX_EJR_SAMPLES_PER_SIZE = 100
-
-
-def _sample_combinations(n: int, r: int, max_samples: int) -> Iterator[Tuple[int, ...]]:
+def _matrix_to_profile(M: np.ndarray) -> Profile:
     """
-    Yield combinations of r elements from range(n).
-    If total combinations <= max_samples, yield all of them.
-    Otherwise, randomly sample max_samples combinations.
+    Convert numpy approval matrix to abcvoting Profile.
     
     Args:
-        n: Size of the set to choose from (range(n))
-        r: Size of each combination
-        max_samples: Maximum number of samples to return
+        M: Boolean matrix (n_voters, n_candidates) where M[v][c] = 1 if voter v approves candidate c
         
-    Yields:
-        Tuples of r integers from range(n)
+    Returns:
+        abcvoting Profile object
     """
-    total = comb(n, r)
-    
-    if total <= max_samples:
-        # Yield all combinations
-        yield from combinations(range(n), r)
-    else:
-        # Random sampling - use a set to avoid duplicates
-        seen = set()
-        elements = list(range(n))
-        
-        while len(seen) < max_samples:
-            # Generate a random combination
-            combo = tuple(sorted(random.sample(elements, r)))
-            if combo not in seen:
-                seen.add(combo)
-                yield combo
+    n_voters, n_candidates = M.shape
+    profile = Profile(n_candidates)
+    for voter_idx in range(n_voters):
+        approved = list(np.where(M[voter_idx])[0])
+        profile.add_voter(approved)
+    return profile
 
 
 def av_score(M: np.ndarray, W: List[int]) -> int:
@@ -186,25 +168,22 @@ def cons_score(M: np.ndarray, W: List[int]) -> int:
     return total_pairs
 
 
-def ejr_satisfied(M: np.ndarray, W: List[int], k: int, max_samples: int = MAX_EJR_SAMPLES_PER_SIZE) -> bool:
+def ejr_satisfied(M: np.ndarray, W: List[int], k: int) -> bool:
     """
     Check if committee W satisfies Extended Justified Representation (EJR).
     
     EJR requires: For every ℓ ∈ {1,...,k} and every ℓ-cohesive group S with
     |S| ≥ (ℓ/k)·n, there exists some voter i ∈ S with |A_i ∩ W| ≥ ℓ.
     
-    This implementation correctly checks cohesive groups by focusing on
-    unsatisfied voters. For efficiency, it samples at most max_samples
-    candidate subsets per coalition size.
+    Uses abcvoting's check_EJR for exact (non-sampling) verification.
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
         W: List of candidate indices in the committee
         k: Committee size |W|
-        max_samples: Maximum candidate subsets to check per coalition size
         
     Returns:
-        True if W satisfies EJR (approximately), False if violation found
+        True if W satisfies EJR, False otherwise
     """
     if k == 0:
         return len(W) == 0
@@ -213,90 +192,57 @@ def ejr_satisfied(M: np.ndarray, W: List[int], k: int, max_samples: int = MAX_EJ
         # Committee size doesn't match k
         return False
     
-    n_voters = M.shape[0]
-    n_candidates = M.shape[1]
-    
-    # Precompute approvals in W for each voter
-    if len(W) > 0:
-        approvals_in_W = M[:, W].sum(axis=1)
-    else:
-        approvals_in_W = np.zeros(n_voters, dtype=int)
-    
-    # For each ℓ from 1 to k
-    for ell in range(1, k + 1):
-        # Find unsatisfied voters for this ℓ (have < ℓ approved in W)
-        unsatisfied = approvals_in_W < ell
-        
-        # Sample ℓ-subsets of candidates (at most max_samples)
-        for T in _sample_combinations(n_candidates, ell, max_samples):
-            T_list = list(T)
-            
-            # Find voters who approve all candidates in T AND are unsatisfied
-            # This gives us the unsatisfied ℓ-cohesive group for this T
-            voters_approve_all_T = M[:, T_list].all(axis=1)
-            cohesive_unsatisfied = voters_approve_all_T & unsatisfied
-            group_size = cohesive_unsatisfied.sum()
-            
-            # Check if this unsatisfied cohesive group deserves ℓ seats
-            # If so, it's an EJR violation (no one in the group is satisfied)
-            if group_size * k >= ell * n_voters:
-                return False
-    
-    return True
+    profile = _matrix_to_profile(M)
+    return check_EJR(profile, set(W))
 
 
-def alpha_ejr(M: np.ndarray, W: List[int], k: int, 
-              max_samples: int = MAX_EJR_SAMPLES_PER_SIZE) -> float:
+def alpha_ejr(M: np.ndarray, W: List[int], k: int, tolerance: float = 0.01) -> float:
     """
     Compute the maximum α such that committee W satisfies α-EJR.
     
     α-EJR: For every ℓ ∈ [k] and every ℓ-cohesive group S,
     if α·|S| ≥ (ℓ/k)·n, then some voter in S has ≥ℓ approved in W.
     
-    For each violating group (ℓ-cohesive S where no voter has ≥ℓ in W),
-    the violation threshold is α = (ℓ·n) / (k·|S|).
-    Returns the minimum such threshold, or 1.0 if no violations (full EJR).
+    Uses binary search with abcvoting's check_EJR and the quota parameter.
+    For α-EJR, we set quota = n/(α·k) = (n/k)/α.
     
     Args:
         M: Boolean matrix (n_voters, n_candidates)
         W: List of candidate indices in the committee
         k: Committee size |W|
-        max_samples: Maximum candidate subsets to check per coalition size
+        tolerance: Binary search tolerance for α precision
         
     Returns:
         Maximum α value in (0, 1] for which W satisfies α-EJR
     """
-    n_voters, n_candidates = M.shape
-    
     if k == 0 or len(W) == 0:
         return 0.0
     
-    # Precompute how many W-candidates each voter approves
-    approvals_in_W = M[:, W].sum(axis=1)
+    profile = _matrix_to_profile(M)
+    n = len(profile)
     
-    min_alpha = 1.0  # Start assuming full EJR
+    # Check full EJR first (α = 1)
+    if check_EJR(profile, set(W)):
+        return 1.0
     
-    for ell in range(1, k + 1):
-        # Find voters who are "unsatisfied" at level ℓ
-        unsatisfied = approvals_in_W < ell
+    # Binary search for maximum α where EJR is satisfied
+    # For α-EJR, quota = n/(α·k)
+    lo, hi = 0.0, 1.0
+    
+    while hi - lo > tolerance:
+        mid = (lo + hi) / 2
+        if mid == 0:
+            # Avoid division by zero
+            lo = tolerance
+            continue
         
-        # Check ℓ-sized candidate subsets T (with sampling)
-        for T in _sample_combinations(n_candidates, ell, max_samples):
-            T_list = list(T)
-            # Voters who approve ALL candidates in T (ℓ-cohesive group)
-            voters_approve_all_T = M[:, T_list].all(axis=1)
-            
-            # The violating group: ℓ-cohesive AND unsatisfied
-            cohesive_unsatisfied = voters_approve_all_T & unsatisfied
-            group_size = cohesive_unsatisfied.sum()
-            
-            if group_size > 0:
-                # This group causes a violation when α ≥ (ℓ·n) / (k·|S|)
-                threshold = (ell * n_voters) / (k * group_size)
-                if threshold < min_alpha:
-                    min_alpha = threshold
+        quota = n / (mid * k)
+        if check_EJR(profile, set(W), quota=quota):
+            lo = mid  # α works, try higher
+        else:
+            hi = mid  # α fails, try lower
     
-    return min_alpha
+    return lo
 
 
 if __name__ == "__main__":

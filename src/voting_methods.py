@@ -6,11 +6,58 @@ Implements:
 - Chamberlin-Courant (CC): Greedy coverage maximization  
 - Proportional Approval Voting (PAV): Greedy harmonic weighting
 - Method of Equal Shares (MES): Already in mes.py
+- Max-score methods (PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC): Select from exhaustive scores
 """
 
 import numpy as np
+import pandas as pd
+import json
+import random
 from typing import List, Tuple
 from scoring import av_score, cc_score, pairs_score, cons_score
+
+
+def select_max_committee(df: pd.DataFrame, size: int, primary_score: str, secondary_score: str) -> List[int]:
+    """
+    Select the committee that maximizes primary_score, using secondary_score as tiebreaker.
+    
+    Args:
+        df: DataFrame with columns: subset_size, subset_indices, AV, CC, PAIRS, CONS
+        size: Committee size k to filter for
+        primary_score: Column name for primary score to maximize (e.g., 'PAIRS')
+        secondary_score: Column name for secondary score for tiebreaking (e.g., 'AV')
+        
+    Returns:
+        List of candidate indices for the selected committee
+    """
+    # Filter for the requested committee size
+    size_df = df[df['subset_size'] == size].copy()
+    
+    if len(size_df) == 0:
+        return []
+    
+    # Find max primary score
+    max_primary = size_df[primary_score].max()
+    
+    # Filter to rows with max primary score
+    primary_max_df = size_df[size_df[primary_score] == max_primary]
+    
+    # Find max secondary score among those
+    max_secondary = primary_max_df[secondary_score].max()
+    
+    # Filter to rows with max secondary score
+    final_df = primary_max_df[primary_max_df[secondary_score] == max_secondary]
+    
+    # If multiple rows remain, randomly select one
+    if len(final_df) > 1:
+        selected_row = final_df.sample(n=1, random_state=random.randint(0, 2**31-1)).iloc[0]
+    else:
+        selected_row = final_df.iloc[0]
+    
+    # Parse the subset_indices (stored as JSON string)
+    committee = json.loads(selected_row['subset_indices'])
+    
+    return sorted(committee)
 
 
 def approval_voting(M: np.ndarray, k: int) -> List[int]:

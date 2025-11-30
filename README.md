@@ -78,6 +78,22 @@ uv run python main.py camp_songs --file file_02
 uv run python main.py camp_songs --file file_04
 ```
 
+### Run with Timestamped Logs
+
+To save output to a timestamped log file (recommended for long-running analyses):
+
+```bash
+# French Election with logging
+LOG_FILE="logs/french_election_$(date +%Y%m%d_%H%M%S).log" && \
+uv run python -u main.py french_election 2>&1 | tee "$LOG_FILE"
+
+# Camp Songs with logging
+LOG_FILE="logs/camp_songs_$(date +%Y%m%d_%H%M%S).log" && \
+uv run python -u main.py camp_songs 2>&1 | tee "$LOG_FILE"
+```
+
+The `-u` flag ensures unbuffered output for real-time logging. Logs are saved to the `logs/` directory with format `{dataset}_{YYYYMMDD_HHMMSS}.log`.
+
 #### Output
 
 For each dataset, the pipeline produces:

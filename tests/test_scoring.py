@@ -167,7 +167,7 @@ def test_ejr_satisfied():
 
 
 def test_alpha_ejr():
-    """Test alpha-EJR calculation."""
+    """Test alpha-EJR calculation using abcvoting with binary search."""
     M = np.array([
         [1, 1, 0, 0],
         [1, 1, 0, 0],
@@ -177,17 +177,18 @@ def test_alpha_ejr():
     
     # W = [0, 2] satisfies full EJR, so alpha = 1.0
     alpha = alpha_ejr(M, [0, 2], k=2)
-    assert alpha >= 0.99, f"Expected alpha ~1.0, got {alpha}"
+    assert alpha == 1.0, f"Expected alpha=1.0, got {alpha}"
     
     # W = [0, 1] does not satisfy full EJR
     # Group {2,3} (size 2) shares {2,3}, deserves 1 seat but gets 0
-    # Violation threshold: alpha = (1 * 4) / (2 * 2) = 1.0
-    # So alpha_ejr should be 1.0 (the threshold at which violation occurs)
+    # The max alpha where EJR is satisfied is just below 1.0
+    # (at alpha < 1, the group size 2 < quota = n/(alpha*k) = 4/(alpha*2))
     alpha = alpha_ejr(M, [0, 1], k=2)
-    assert alpha == 1.0, f"Expected alpha=1.0 (violation threshold), got {alpha}"
+    assert alpha < 1.0, f"Expected alpha < 1.0 (EJR violated), got {alpha}"
+    assert alpha > 0.9, f"Expected alpha close to 1.0, got {alpha}"
     
-    # Test a case where alpha < 1.0 (partial satisfaction)
-    # 6 voters, 3 groups of 2, committee size 3
+    # Test a case with satisfied EJR
+    # 6 voters, committee size 2
     M2 = np.array([
         [1, 1, 1, 0, 0, 0],  # Group 1: voters 0,1
         [1, 1, 1, 0, 0, 0],
@@ -201,7 +202,7 @@ def test_alpha_ejr():
     # Group 1 (voters 0,1) share {0,1,2}, deserve 1 seat, get 1 approval each -> OK
     # Group 2 (voters 2,3) share {3,4,5}, deserve 1 seat, get 1 approval each -> OK
     alpha = alpha_ejr(M2, [0, 3], k=2)
-    assert alpha >= 0.99, f"Expected alpha ~1.0 for fair committee, got {alpha}"
+    assert alpha == 1.0, f"Expected alpha=1.0 for fair committee, got {alpha}"
     
     print("✓ test_alpha_ejr passed")
 
@@ -264,12 +265,11 @@ def test_ejr_non_maximal_cohesive_group():
     result = ejr_satisfied(M, W, k)
     assert result == False, f"Expected EJR violation, but got {result}"
     
-    # The alpha value = threshold at which violation occurs
-    # For this case: group size = 2, l=1, n=4, k=2
-    # Threshold: alpha = (l * n) / (k * |S|) = (1 * 4) / (2 * 2) = 1.0
-    # This means the committee fails full EJR (alpha=1.0)
+    # The committee fails full EJR, so alpha < 1.0
+    # The max alpha where EJR is satisfied is just below 1.0
     alpha = alpha_ejr(M, W, k)
-    assert alpha == 1.0, f"Expected alpha=1.0 (fails full EJR), got {alpha}"
+    assert alpha < 1.0, f"Expected alpha < 1.0 (fails full EJR), got {alpha}"
+    assert alpha > 0.9, f"Expected alpha close to 1.0, got {alpha}"
     
     # Verify the good committee works
     W_good = [0, 2]  # One candidate from each group

@@ -5,7 +5,7 @@ Creates 2 plots (1x2 grid):
 - Plot 1: alpha_PAIRS (x-axis) vs alpha_EJR (y-axis)
 - Plot 2: alpha_CONS (x-axis) vs alpha_EJR (y-axis)
 
-Points are shown for MES, AV, CC, PAV at each committee size.
+Points are shown for MES, AV, CC, PAV, and max-score methods at each committee size.
 """
 
 import numpy as np
@@ -17,7 +17,7 @@ import time
 
 from scoring import av_score, cc_score, pairs_score, cons_score, ejr_satisfied, alpha_ejr
 from mes import method_of_equal_shares
-from voting_methods import approval_voting, chamberlin_courant_greedy, pav_greedy
+from voting_methods import approval_voting, chamberlin_courant_greedy, pav_greedy, select_max_committee
 
 
 def plot_ejr_results(M, candidates, output_dir):
@@ -46,12 +46,27 @@ def plot_ejr_results(M, candidates, output_dir):
     print("Max scores by size:")
     print(max_by_size.to_string(index=False))
     
-    # Define voting methods with their visual properties
-    voting_methods = {
+    # Load raw scores for max-score methods
+    raw_scores_file = os.path.join(output_dir, 'raw_scores.csv')
+    print(f"\nLoading raw scores from {raw_scores_file}...")
+    raw_scores = pd.read_csv(raw_scores_file)
+    
+    # Define greedy voting methods with their visual properties
+    # Format: (function, marker, color, size)
+    greedy_methods = {
         'MES': (method_of_equal_shares, '*', 'gold', 200),      # Star, gold
         'AV': (approval_voting, 's', 'red', 100),                # Square, red
         'CC': (chamberlin_courant_greedy, '^', 'blue', 100),     # Triangle up, blue
         'PAV': (pav_greedy, 'D', 'green', 100),                  # Diamond, green
+    }
+    
+    # Define max-score methods with their visual properties
+    # Format: (primary_score, secondary_score, marker, color, size)
+    max_score_methods = {
+        'PAIRS-AV': ('PAIRS', 'AV', 'o', 'purple', 100),        # Circle, purple
+        'PAIRS-CC': ('PAIRS', 'CC', 'p', 'magenta', 100),       # Pentagon, magenta
+        'CONS-AV': ('CONS', 'AV', 'h', 'orange', 100),          # Hexagon, orange
+        'CONS-CC': ('CONS', 'CC', 'v', 'cyan', 100),            # Triangle down, cyan
     }
     
     # Compute scores and EJR for each method at each k
@@ -67,9 +82,44 @@ def plot_ejr_results(M, candidates, output_dir):
         
         print(f"  k={k} (max_PAIRS={max_pairs_k}, max_CONS={max_cons_k}):", end=" ")
         
-        for method_name, (method_func, marker, color, size) in voting_methods.items():
+        # Run greedy methods
+        for method_name, (method_func, marker, color, size) in greedy_methods.items():
             # Get committee
             committee = method_func(M, k)
+            
+            # Calculate scores
+            t0 = time.time()
+            pairs = pairs_score(M, committee)
+            cons = cons_score(M, committee)
+            timing['scoring'] += time.time() - t0
+            
+            # Calculate EJR
+            t0 = time.time()
+            alpha = alpha_ejr(M, committee, k)
+            timing['ejr'] += time.time() - t0
+            
+            # Normalize BY SIZE (consistent with alpha_plots_by_size.png)
+            alpha_pairs = pairs / max_pairs_k if max_pairs_k > 0 else 0
+            alpha_cons = cons / max_cons_k if max_cons_k > 0 else 0
+            
+            results.append({
+                'method': method_name,
+                'k': k,
+                'committee': committee,
+                'alpha_PAIRS': alpha_pairs,
+                'alpha_CONS': alpha_cons,
+                'alpha_EJR': alpha,
+                'marker': marker,
+                'color': color,
+                'size': size,
+            })
+            
+            print(f"{method_name}(EJR={alpha:.2f})", end=" ")
+        
+        # Run max-score methods
+        for method_name, (primary, secondary, marker, color, size) in max_score_methods.items():
+            # Get committee from raw scores
+            committee = select_max_committee(raw_scores, k, primary, secondary)
             
             # Calculate scores
             t0 = time.time()
