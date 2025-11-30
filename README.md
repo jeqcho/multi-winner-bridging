@@ -25,6 +25,16 @@ This project:
 uv sync
 ```
 
+### Gurobi Optimizer
+
+This project requires [Gurobi Optimizer](https://www.gurobi.com/) for verifying EJR. We use the implementation of EJR checking from abcvoting, which uses Gurobi.
+
+**Academic licenses are free!** If you're a student, faculty, or staff at a degree-granting academic institution:
+
+1. Register for a free academic license at [Gurobi Academic Program](https://www.gurobi.com/academia/academic-program-and-licenses/)
+2. Download your license key
+3. Follow Gurobi's instructions to install the license (typically placing the `gurobi.lic` file in your home directory or setting the `GRB_LICENSE_FILE` environment variable)
+
 ## Project Structure
 
 ```
