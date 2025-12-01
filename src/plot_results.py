@@ -22,8 +22,8 @@ import os
 VOTING_METHODS = {
     'MES': {'marker': '*', 'color': 'gold', 'size': 200},
     'AV': {'marker': 's', 'color': 'red', 'size': 100},
-    'CC': {'marker': '^', 'color': 'blue', 'size': 100},
-    'PAV': {'marker': 'D', 'color': 'green', 'size': 100},
+    'greedy-CC': {'marker': '^', 'color': 'blue', 'size': 100},
+    'greedy-PAV': {'marker': 'D', 'color': 'green', 'size': 100},
 }
 
 

@@ -202,6 +202,12 @@ Run the analysis to discover:
 - How connectivity (PAIRS/CONS) relates to representation (AV/CC/EJR)
 - The Pareto frontier for multi-objective optimization
 
+## Notes
+
+We used data from Preflib and Pabulib.
+
+For Pabulib, we filtered for PBs that have at most 20 projects, 10k voters, use approval voting, excluded experimental runs, and then we chose the top 10 PBs by "quality" as defined by the Pabulib authors. The data is at `data/pb_selected_18_20251201_214702`. 
+
 ## References
 
 - Dong et al., "Selecting Interlacing Committees" (2024)

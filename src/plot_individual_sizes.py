@@ -17,8 +17,8 @@ import os
 VOTING_METHODS = {
     'MES': {'marker': '*', 'color': 'gold', 'size': 400},
     'AV': {'marker': 's', 'color': 'red', 'size': 150},
-    'CC': {'marker': '^', 'color': 'blue', 'size': 150},
-    'PAV': {'marker': 'D', 'color': 'green', 'size': 150},
+    'greedy-CC': {'marker': '^', 'color': 'blue', 'size': 150},
+    'greedy-PAV': {'marker': 'D', 'color': 'green', 'size': 150},
 }
 
 
@@ -221,7 +221,7 @@ def plot_all_sizes(input_file='output/french_election/alpha_scores_by_size.csv',
     print("="*70)
     print(f"Generated {len(sizes)} plots in {output_dir}/")
     if methods_df is not None:
-        print("Voting methods marked: MES (star), AV (square), CC (triangle), PAV (diamond)")
+        print("Voting methods marked: MES (star), AV (square), greedy-CC (triangle), greedy-PAV (diamond)")
     print("="*70)
 
 

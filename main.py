@@ -206,9 +206,9 @@ def process_dataset(M, candidates, output_dir, description):
         output_dir=output_dir
     )
     
-    # Step 3: Run voting methods (MES, AV, CC, PAV)
+    # Step 3: Run voting methods (MES, AV, greedy-CC, greedy-PAV)
     print("\n" + "="*70)
-    print("STEP 3: Running voting methods (MES, AV, CC, PAV)")
+    print("STEP 3: Running voting methods (MES, AV, greedy-CC, greedy-PAV)")
     print("="*70)
     run_mes_all_sizes(
         output_file='voting_results.csv',

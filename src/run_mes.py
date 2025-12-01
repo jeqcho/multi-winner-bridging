@@ -1,7 +1,7 @@
 """
 Script to run Method of Equal Shares and other voting methods.
 
-Computes MES, AV, CC, PAV, and max-score committees for each size k=1..n 
+Computes MES, AV, greedy-CC, greedy-PAV, and max-score committees for each size k=1..n 
 and saves results with scores and alpha-approximations.
 """
 
@@ -39,7 +39,7 @@ def run_mes_all_sizes(output_file='output/french_election/voting_results.csv', M
         raw_scores_file = os.path.join(output_dir, 'raw_scores.csv')
     
     print("="*70)
-    print("RUNNING VOTING METHODS (MES, AV, CC, PAV, PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC)")
+    print("RUNNING VOTING METHODS (MES, AV, greedy-CC, greedy-PAV, PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC)")
     print("="*70)
     
     # Load data if not provided
@@ -61,8 +61,8 @@ def run_mes_all_sizes(output_file='output/french_election/voting_results.csv', M
     greedy_methods = {
         'MES': method_of_equal_shares,
         'AV': approval_voting,
-        'CC': chamberlin_courant_greedy,
-        'PAV': pav_greedy,
+        'greedy-CC': chamberlin_courant_greedy,
+        'greedy-PAV': pav_greedy,
     }
     
     # Define max-score methods (computed from raw_scores.csv)

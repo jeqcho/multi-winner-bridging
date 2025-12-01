@@ -17,7 +17,7 @@ def main():
     ejr_files = list(output_dir.rglob("ejr_data.csv"))
     
     # Methods to analyze
-    methods = ["MES", "AV", "CC", "PAV", "PAIRS-AV", "PAIRS-CC", "CONS-AV", "CONS-CC"]
+    methods = ["MES", "AV", "greedy-CC", "greedy-PAV", "PAIRS-AV", "PAIRS-CC", "CONS-AV", "CONS-CC"]
     
     # Metrics from voting_results.csv
     voting_metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS"]

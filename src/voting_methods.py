@@ -174,8 +174,8 @@ def get_all_voting_methods() -> dict:
     """
     return {
         'AV': (approval_voting, 's', 'red'),         # Square, red
-        'CC': (chamberlin_courant_greedy, '^', 'blue'),  # Triangle, blue
-        'PAV': (pav_greedy, 'D', 'green'),           # Diamond, green
+        'greedy-CC': (chamberlin_courant_greedy, '^', 'blue'),  # Triangle, blue
+        'greedy-PAV': (pav_greedy, 'D', 'green'),           # Diamond, green
     }
 
 
@@ -184,7 +184,7 @@ def run_voting_method(method_name: str, M: np.ndarray, k: int) -> List[int]:
     Run a voting method by name.
     
     Args:
-        method_name: One of 'AV', 'CC', 'PAV'
+        method_name: One of 'AV', 'greedy-CC', 'greedy-PAV'
         M: Boolean matrix (n_voters, n_candidates)
         k: Committee size
         

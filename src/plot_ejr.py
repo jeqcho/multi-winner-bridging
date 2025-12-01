@@ -56,8 +56,8 @@ def plot_ejr_results(M, candidates, output_dir):
     greedy_methods = {
         'MES': (method_of_equal_shares, '*', 'gold', 200),      # Star, gold
         'AV': (approval_voting, 's', 'red', 100),                # Square, red
-        'CC': (chamberlin_courant_greedy, '^', 'blue', 100),     # Triangle up, blue
-        'PAV': (pav_greedy, 'D', 'green', 100),                  # Diamond, green
+        'greedy-CC': (chamberlin_courant_greedy, '^', 'blue', 100),     # Triangle up, blue
+        'greedy-PAV': (pav_greedy, 'D', 'green', 100),                  # Diamond, green
     }
     
     # Define max-score methods with their visual properties
