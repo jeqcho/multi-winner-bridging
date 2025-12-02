@@ -165,6 +165,179 @@ def pav_greedy(M: np.ndarray, k: int) -> List[int]:
     return sorted(committee)
 
 
+def approval_voting_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
+    """
+    Select committee using Approval Voting with budget constraint.
+    
+    Greedily selects projects with highest approval counts that fit within budget.
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects)
+        costs: List of project costs
+        budget: Total budget constraint
+        
+    Returns:
+        List of project indices in the selected committee
+    """
+    n_projects = M.shape[1]
+    
+    # Count approvals for each project
+    approval_counts = M.sum(axis=0)
+    
+    # Sort projects by approval count (descending)
+    sorted_indices = np.argsort(approval_counts)[::-1]
+    
+    committee = []
+    remaining_budget = budget
+    
+    for idx in sorted_indices:
+        if costs[idx] <= remaining_budget:
+            committee.append(idx)
+            remaining_budget -= costs[idx]
+    
+    return sorted(committee)
+
+
+def chamberlin_courant_greedy_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
+    """
+    Select committee using greedy Chamberlin-Courant with budget constraint.
+    
+    Greedily selects projects that maximize coverage while respecting budget.
+    Uses cost-effectiveness: marginal coverage / cost.
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects)
+        costs: List of project costs
+        budget: Total budget constraint
+        
+    Returns:
+        List of project indices in the selected committee
+    """
+    n_voters, n_projects = M.shape
+    committee = []
+    covered = np.zeros(n_voters, dtype=bool)
+    remaining_budget = budget
+    available = set(range(n_projects))
+    
+    while available:
+        best_project = -1
+        best_marginal = -1
+        
+        for p in available:
+            if costs[p] > remaining_budget:
+                continue
+            
+            # Marginal coverage: new voters covered by adding p
+            marginal = ((M[:, p]) & (~covered)).sum()
+            
+            if marginal > best_marginal:
+                best_marginal = marginal
+                best_project = p
+        
+        if best_project < 0:
+            break
+        
+        committee.append(best_project)
+        covered = covered | M[:, best_project]
+        remaining_budget -= costs[best_project]
+        available.remove(best_project)
+    
+    return sorted(committee)
+
+
+def pav_greedy_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
+    """
+    Select committee using greedy Proportional Approval Voting with budget constraint.
+    
+    Uses harmonic weights: voter i contributes 1/(1 + |A_i ∩ W|) for each
+    new project added, while respecting budget constraint.
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects)
+        costs: List of project costs
+        budget: Total budget constraint
+        
+    Returns:
+        List of project indices in the selected committee
+    """
+    n_voters, n_projects = M.shape
+    committee = []
+    remaining_budget = budget
+    available = set(range(n_projects))
+    
+    # Track how many committee members each voter has approved so far
+    voter_approvals = np.zeros(n_voters, dtype=int)
+    
+    while available:
+        best_project = -1
+        best_score = -1
+        
+        for p in available:
+            if costs[p] > remaining_budget:
+                continue
+            
+            # PAV marginal gain for adding p:
+            # For each voter i who approves p, add 1/(1 + current_approvals)
+            approvers = M[:, p]
+            marginal = (approvers / (1.0 + voter_approvals)).sum()
+            
+            if marginal > best_score:
+                best_score = marginal
+                best_project = p
+        
+        if best_project < 0:
+            break
+        
+        committee.append(best_project)
+        voter_approvals += M[:, best_project].astype(int)
+        remaining_budget -= costs[best_project]
+        available.remove(best_project)
+    
+    return sorted(committee)
+
+
+def select_max_committee_budget(df: pd.DataFrame, primary_score: str, secondary_score: str) -> List[int]:
+    """
+    Select the committee that maximizes primary_score from budget-feasible committees.
+    
+    For PB, there's no size constraint - we select from ALL valid committees
+    (those fitting within budget).
+    
+    Args:
+        df: DataFrame with columns: subset_indices, AV, CC, PAIRS, CONS
+        primary_score: Column name for primary score to maximize (e.g., 'PAIRS')
+        secondary_score: Column name for secondary score for tiebreaking (e.g., 'AV')
+        
+    Returns:
+        List of project indices for the selected committee
+    """
+    if len(df) == 0:
+        return []
+    
+    # Find max primary score
+    max_primary = df[primary_score].max()
+    
+    # Filter to rows with max primary score
+    primary_max_df = df[df[primary_score] == max_primary]
+    
+    # Find max secondary score among those
+    max_secondary = primary_max_df[secondary_score].max()
+    
+    # Filter to rows with max secondary score
+    final_df = primary_max_df[primary_max_df[secondary_score] == max_secondary]
+    
+    # If multiple rows remain, randomly select one
+    if len(final_df) > 1:
+        selected_row = final_df.sample(n=1, random_state=random.randint(0, 2**31-1)).iloc[0]
+    else:
+        selected_row = final_df.iloc[0]
+    
+    # Parse the subset_indices (stored as JSON string)
+    committee = json.loads(selected_row['subset_indices'])
+    
+    return sorted(committee)
+
+
 def get_all_voting_methods() -> dict:
     """
     Return dictionary of all voting method functions.
@@ -176,6 +349,20 @@ def get_all_voting_methods() -> dict:
         'AV': (approval_voting, 's', 'red'),         # Square, red
         'greedy-CC': (chamberlin_courant_greedy, '^', 'blue'),  # Triangle, blue
         'greedy-PAV': (pav_greedy, 'D', 'green'),           # Diamond, green
+    }
+
+
+def get_budget_voting_methods() -> dict:
+    """
+    Return dictionary of budget-constrained voting method functions.
+    
+    Returns:
+        Dict mapping method name to (function, marker, color) tuple
+    """
+    return {
+        'AV': (approval_voting_budget, 's', 'red'),         # Square, red
+        'greedy-CC': (chamberlin_courant_greedy_budget, '^', 'blue'),  # Triangle, blue
+        'greedy-PAV': (pav_greedy_budget, 'D', 'green'),           # Diamond, green
     }
 
 
@@ -217,4 +404,16 @@ if __name__ == "__main__":
     print(f"\nAV committee: {approval_voting(M, k)}")
     print(f"CC committee: {chamberlin_courant_greedy(M, k)}")
     print(f"PAV committee: {pav_greedy(M, k)}")
+    
+    # Test budget-constrained versions
+    costs = [10, 20, 15, 25]  # Project costs
+    budget = 35
+    
+    print(f"\n--- Budget-constrained test ---")
+    print(f"Costs: {costs}")
+    print(f"Budget: {budget}")
+    
+    print(f"\nAV (budget): {approval_voting_budget(M, costs, budget)}")
+    print(f"CC (budget): {chamberlin_courant_greedy_budget(M, costs, budget)}")
+    print(f"PAV (budget): {pav_greedy_budget(M, costs, budget)}")
 

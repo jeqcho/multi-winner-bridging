@@ -6,7 +6,7 @@ from approval voting data.
 """
 
 import numpy as np
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 
 def compute_price(M: np.ndarray, candidate: int, budgets: np.ndarray) -> Optional[float]:
@@ -152,6 +152,168 @@ def method_of_equal_shares(M: np.ndarray, k: int) -> List[int]:
     return selected
 
 
+def compute_price_budget(M: np.ndarray, project: int, project_cost: int, 
+                          voter_budgets: np.ndarray) -> Optional[float]:
+    """
+    Compute the minimum price rho for a project with given cost such that supporters can afford it.
+    
+    The price rho satisfies: sum(min(voter_budget_v, rho * project_cost) for v in supporters) = project_cost
+    
+    In other words, we need to find the smallest fraction rho such that supporters
+    can collectively pay for the project.
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects)
+        project: Index of the project
+        project_cost: Cost of the project
+        voter_budgets: Current budget for each voter
+        
+    Returns:
+        The price per unit cost rho if affordable, None otherwise
+    """
+    if project_cost <= 0:
+        return 0.0
+    
+    # Get supporters of this project
+    supporters = np.where(M[:, project])[0]
+    
+    if len(supporters) == 0:
+        return None
+    
+    # Get budgets of supporters
+    supporter_budgets = voter_budgets[supporters]
+    
+    # Total budget available from supporters
+    total_available = supporter_budgets.sum()
+    
+    if total_available < project_cost - 1e-9:
+        return None
+    
+    # Sort budgets in ascending order to find the right price
+    sorted_budgets = np.sort(supporter_budgets)
+    
+    n_supporters = len(supporters)
+    cumulative_budget = 0.0
+    
+    for i, budget in enumerate(sorted_budgets):
+        # Number of supporters with budget >= current budget level
+        remaining_supporters = n_supporters - i
+        
+        # If everyone from here pays `budget`, total contribution would be:
+        max_contribution = cumulative_budget + remaining_supporters * budget
+        
+        if max_contribution >= project_cost - 1e-9:
+            # Found the right level
+            # Need: cumulative_budget + remaining_supporters * payment = project_cost
+            payment = (project_cost - cumulative_budget) / remaining_supporters
+            # rho is payment / project_cost (normalized)
+            rho = payment / project_cost
+            return rho
+        
+        cumulative_budget += budget
+    
+    # Edge case: everyone pays their full budget
+    if cumulative_budget >= project_cost - 1e-9:
+        return sorted_budgets[-1] / project_cost if len(sorted_budgets) > 0 else None
+    
+    return None
+
+
+def method_of_equal_shares_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
+    """
+    Select a committee using Method of Equal Shares with budget constraint.
+    
+    Algorithm (PB variant):
+    1. Each voter starts with voter_budget = total_budget / n_voters
+    2. Each project has a cost (not necessarily 1)
+    3. Iteratively select the project with minimum "price per unit cost" rho
+       where supporters can collectively afford to pay the project's cost
+    4. If MES runs out of affordable projects, complete with greedy AV
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects) where M[v][p] = 1 if voter v approves project p
+        costs: List of project costs
+        budget: Total budget constraint
+        
+    Returns:
+        List of project indices in the selected committee
+    """
+    if budget <= 0:
+        return []
+    
+    n_voters, n_projects = M.shape
+    
+    # Initialize budgets: each voter gets budget/n share
+    voter_budgets = np.full(n_voters, budget / n_voters)
+    
+    # Track selected projects, remaining projects, and remaining budget
+    selected = []
+    remaining = set(range(n_projects))
+    remaining_budget = budget
+    
+    # Phase 1: MES selection
+    while len(remaining) > 0:
+        best_project = None
+        best_price = float('inf')
+        
+        # Find project with minimum price per unit cost
+        for project in remaining:
+            if costs[project] > remaining_budget:
+                continue
+            
+            price = compute_price_budget(M, project, costs[project], voter_budgets)
+            
+            if price is not None and price < best_price:
+                best_price = price
+                best_project = project
+            elif price is not None and price == best_price:
+                # Tie-breaking by project index (smaller index wins)
+                if best_project is None or project < best_project:
+                    best_project = project
+        
+        if best_project is None:
+            # No affordable project, switch to greedy completion
+            break
+        
+        # Select the best project
+        selected.append(best_project)
+        remaining.remove(best_project)
+        remaining_budget -= costs[best_project]
+        
+        # Deduct costs from supporters
+        supporters = np.where(M[:, best_project])[0]
+        payment = best_price * costs[best_project]
+        for v in supporters:
+            cost = min(voter_budgets[v], payment)
+            voter_budgets[v] -= cost
+    
+    # Phase 2: Greedy AV completion if budget remains
+    while len(remaining) > 0 and remaining_budget > 0:
+        best_project = None
+        best_approvals = -1
+        
+        for project in remaining:
+            if costs[project] > remaining_budget:
+                continue
+            
+            approvals = M[:, project].sum()
+            if approvals > best_approvals:
+                best_approvals = approvals
+                best_project = project
+            elif approvals == best_approvals:
+                if best_project is None or project < best_project:
+                    best_project = project
+        
+        if best_project is not None:
+            selected.append(best_project)
+            remaining.remove(best_project)
+            remaining_budget -= costs[best_project]
+        else:
+            break
+    
+    return selected
+
+
 if __name__ == "__main__":
     # Simple test
     M = np.array([
@@ -167,4 +329,15 @@ if __name__ == "__main__":
     for k in range(1, 5):
         committee = method_of_equal_shares(M, k)
         print(f"  k={k}: Committee = {committee}")
+    
+    # Test budget-constrained MES
+    print("\n--- Budget-constrained MES test ---")
+    costs = [10, 20, 15, 25]
+    budget = 40
+    print(f"Costs: {costs}")
+    print(f"Budget: {budget}")
+    
+    committee = method_of_equal_shares_budget(M, costs, budget)
+    print(f"MES (budget) committee: {committee}")
+    print(f"Total cost: {sum(costs[i] for i in committee)}")
 
