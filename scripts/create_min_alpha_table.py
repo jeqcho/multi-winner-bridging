@@ -1,6 +1,6 @@
 """
 Script to create a summary table of minimum alpha scores observed for each voting method.
-Rows: voting methods (MES, AV, CC, PAV, PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC)
+Rows: voting methods (MES, AV, greedy-AV/cost, greedy-AV/cost^2, greedy-CC, greedy-PAV, PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC)
 Columns: metrics (alpha_AV, alpha_CC, alpha_PAIRS, alpha_CONS, alpha_EJR)
 Cell values: minimum value observed across all files and k values
 """
@@ -17,7 +17,7 @@ def main():
     ejr_files = list(output_dir.rglob("ejr_data.csv"))
     
     # Methods to analyze
-    methods = ["MES", "AV", "greedy-CC", "greedy-PAV", "PAIRS-AV", "PAIRS-CC", "CONS-AV", "CONS-CC"]
+    methods = ["MES", "AV", "greedy-AV/cost", "greedy-AV/cost^2", "greedy-CC", "greedy-PAV", "PAIRS-AV", "PAIRS-CC", "CONS-AV", "CONS-CC"]
     
     # Metrics from voting_results.csv
     voting_metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS"]
