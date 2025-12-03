@@ -72,44 +72,33 @@ def plot_single_size(df, k, output_dir='output/by_size', methods_df=None):
                           label=method_name, zorder=10, alpha=0.9)
     
     # Row 1: alpha_PAIRS as x-axis
+    x_ref = np.linspace(-0.05, 1.05, 100)
     
-    # Group by alpha_PAIRS and calculate mean (beta) values
-    pairs_grouped = df_k.groupby('alpha_PAIRS').agg({
-        'alpha_AV': 'mean',
-        'alpha_CC': 'mean',
-    }).reset_index()
-    
-    pairs_grouped.rename(columns={
-        'alpha_AV': 'beta_AV',
-        'alpha_CC': 'beta_CC',
-    }, inplace=True)
-    
-    # Plot 1: alpha_PAIRS vs beta_AV
+    # Plot 1: alpha_PAIRS vs alpha_AV (raw points)
     ax = axes[0, 0]
-    ax.scatter(pairs_grouped['alpha_PAIRS'], pairs_grouped['beta_AV'],
+    ax.scatter(df_k['alpha_PAIRS'], df_k['alpha_AV'],
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
-    # Reference line: beta = 1 - alpha (a + b = 1)
-    x_ref = np.linspace(0, 1, 100)
+    # Reference line: y = 1 - x (a + b = 1)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
     add_voting_methods(ax, 'alpha_PAIRS', 'alpha_AV')
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
-    ax.set_ylabel('beta_AV (avg)', fontsize=11)
+    ax.set_ylabel('alpha_AV', fontsize=11)
     ax.set_title('PAIRS vs AV', fontsize=12, fontweight='bold')
     ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
     
-    # Plot 2: alpha_PAIRS vs beta_CC
+    # Plot 2: alpha_PAIRS vs alpha_CC (raw points)
     ax = axes[0, 1]
-    ax.scatter(pairs_grouped['alpha_PAIRS'], pairs_grouped['beta_CC'],
+    ax.scatter(df_k['alpha_PAIRS'], df_k['alpha_CC'],
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref, 'k--', linewidth=2, alpha=0.5, label='a + b = 1')
     add_voting_methods(ax, 'alpha_PAIRS', 'alpha_CC')
     ax.set_xlabel('alpha_PAIRS', fontsize=11)
-    ax.set_ylabel('beta_CC (avg)', fontsize=11)
+    ax.set_ylabel('alpha_CC', fontsize=11)
     ax.set_title('PAIRS vs CC', fontsize=12, fontweight='bold')
     ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
@@ -118,42 +107,31 @@ def plot_single_size(df, k, output_dir='output/by_size', methods_df=None):
     
     # Row 2: alpha_CONS as x-axis
     
-    # Group by alpha_CONS and calculate mean (beta) values
-    cons_grouped = df_k.groupby('alpha_CONS').agg({
-        'alpha_AV': 'mean',
-        'alpha_CC': 'mean',
-    }).reset_index()
-    
-    cons_grouped.rename(columns={
-        'alpha_AV': 'beta_AV',
-        'alpha_CC': 'beta_CC',
-    }, inplace=True)
-    
-    # Plot 3: alpha_CONS vs beta_AV
+    # Plot 3: alpha_CONS vs alpha_AV (raw points)
     ax = axes[1, 0]
-    ax.scatter(cons_grouped['alpha_CONS'], cons_grouped['beta_AV'],
+    ax.scatter(df_k['alpha_CONS'], df_k['alpha_AV'],
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
-    # Reference line: beta = 1 - alpha^2 (a^2 + b = 1)
+    # Reference line: y = 1 - x^2 (a^2 + b = 1)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
     add_voting_methods(ax, 'alpha_CONS', 'alpha_AV')
     ax.set_xlabel('alpha_CONS', fontsize=11)
-    ax.set_ylabel('beta_AV (avg)', fontsize=11)
+    ax.set_ylabel('alpha_AV', fontsize=11)
     ax.set_title('CONS vs AV', fontsize=12, fontweight='bold')
     ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
     
-    # Plot 4: alpha_CONS vs beta_CC
+    # Plot 4: alpha_CONS vs alpha_CC (raw points)
     ax = axes[1, 1]
-    ax.scatter(cons_grouped['alpha_CONS'], cons_grouped['beta_CC'],
+    ax.scatter(df_k['alpha_CONS'], df_k['alpha_CC'],
               c=point_color, alpha=alpha_transparency, s=marker_size, 
               edgecolors='black', linewidths=0.5)
     ax.plot(x_ref, 1 - x_ref**2, 'k--', linewidth=2, alpha=0.5, label='a² + b = 1')
     add_voting_methods(ax, 'alpha_CONS', 'alpha_CC')
     ax.set_xlabel('alpha_CONS', fontsize=11)
-    ax.set_ylabel('beta_CC (avg)', fontsize=11)
+    ax.set_ylabel('alpha_CC', fontsize=11)
     ax.set_title('CONS vs CC', fontsize=12, fontweight='bold')
     ax.legend(loc='best', fontsize=8)
     ax.grid(True, alpha=0.3)

@@ -206,7 +206,7 @@ Run the analysis to discover:
 
 We used data from Preflib and Pabulib.
 
-For Pabulib, we filtered for PBs that have at most 13 projects, 10k voters, use approval voting, excluded experimental runs, and then we chose the top 10 PBs by "quality" as defined by the Pabulib authors. The data is at `data/pb_selected_10_20251202_023743`. 
+For Pabulib, we filtered for PBs that have at most 13 projects, 10k voters, use approval voting, excluded experimental runs, and then we chose the top 10 PBs by "quality" as defined by the Pabulib authors. The corresponding link with these filters applied is [this](https://pabulib.org/?votes_max=10000&projects_max=13&type=approval&exclude_experimental=true). The data is at `data/pb_selected_10_20251202_023743`.
 
 ## References
 
