@@ -22,7 +22,7 @@ PRESENTATION_OUTPUT = Path(__file__).parent.parent / "outputs"
 # Featured election
 FEATURED_ELECTION = "poland_warszawa_2018_wawrzyszew"
 
-# Plot configurations for 4 plot types
+# Plot configurations for 5 plot types
 PLOT_CONFIGS = [
     {
         "name": "pairs_vs_av",
@@ -63,6 +63,26 @@ PLOT_CONFIGS = [
         "title": "CONS vs CC",
         "ref_func": lambda x: 1 - x**2,  # a² + b = 1
         "ref_label": "a² + b = 1"
+    },
+    {
+        "name": "cc_vs_av",
+        "x_col": "alpha_CC",
+        "y_col": "alpha_AV",
+        "x_label": "α_CC",
+        "y_label": "α_AV",
+        "title": "CC vs AV",
+        "ref_func": None,  # No theoretical trade-off
+        "ref_label": None
+    },
+    {
+        "name": "pairs_vs_cons",
+        "x_col": "alpha_PAIRS",
+        "y_col": "alpha_CONS",
+        "x_label": "α_PAIRS",
+        "y_label": "α_CONS",
+        "title": "PAIRS vs CONS",
+        "ref_func": None,  # No theoretical trade-off
+        "ref_label": None
     },
 ]
 
@@ -189,10 +209,11 @@ def generate_empty_plots():
     for config in PLOT_CONFIGS:
         fig, ax = plt.subplots(figsize=(10, 8))
         
-        # Reference line (extended for margins)
-        x_ref = np.linspace(-0.05, 1.05, 100)
-        y_ref = config["ref_func"](x_ref)
-        ax.plot(x_ref, y_ref, 'k-', linewidth=3, alpha=0.9)
+        # Reference line (extended for margins) - only if defined
+        if config["ref_func"] is not None:
+            x_ref = np.linspace(-0.05, 1.05, 100)
+            y_ref = config["ref_func"](x_ref)
+            ax.plot(x_ref, y_ref, 'k-', linewidth=3, alpha=0.9)
         
         # Axis labels
         ax.set_xlabel(config["x_label"], fontsize=FONT_SIZES["label"], fontweight='bold')
@@ -257,10 +278,11 @@ def generate_featured_plots():
             s=15
         )
         
-        # Reference line (extended for margins)
-        x_ref = np.linspace(-0.05, 1.05, 100)
-        y_ref = config["ref_func"](x_ref)
-        ax.plot(x_ref, y_ref, 'k-', linewidth=3, alpha=0.9)
+        # Reference line (extended for margins) - only if defined
+        if config["ref_func"] is not None:
+            x_ref = np.linspace(-0.05, 1.05, 100)
+            y_ref = config["ref_func"](x_ref)
+            ax.plot(x_ref, y_ref, 'k-', linewidth=3, alpha=0.9)
         
         # Axis labels
         ax.set_xlabel(config["x_label"], fontsize=FONT_SIZES["label"], fontweight='bold')
@@ -343,10 +365,11 @@ def generate_mega_plots():
                 s=8
             )
             
-            # Reference line (extended for margins)
-            x_ref = np.linspace(-0.05, 1.05, 100)
-            y_ref = config["ref_func"](x_ref)
-            ax.plot(x_ref, y_ref, 'k-', linewidth=2, alpha=0.9)
+            # Reference line (extended for margins) - only if defined
+            if config["ref_func"] is not None:
+                x_ref = np.linspace(-0.05, 1.05, 100)
+                y_ref = config["ref_func"](x_ref)
+                ax.plot(x_ref, y_ref, 'k-', linewidth=2, alpha=0.9)
             
             # Title (shortened)
             ax.set_title(election["display_name"], fontsize=FONT_SIZES["subplot_title"], fontweight='bold')
@@ -454,10 +477,11 @@ def generate_mega_plots_with_methods():
                             alpha=0.9
                         )
             
-            # Reference line (extended for margins)
-            x_ref = np.linspace(-0.05, 1.05, 100)
-            y_ref = config["ref_func"](x_ref)
-            ax.plot(x_ref, y_ref, 'k-', linewidth=2, alpha=0.9)
+            # Reference line (extended for margins) - only if defined
+            if config["ref_func"] is not None:
+                x_ref = np.linspace(-0.05, 1.05, 100)
+                y_ref = config["ref_func"](x_ref)
+                ax.plot(x_ref, y_ref, 'k-', linewidth=2, alpha=0.9)
             
             # Title (shortened)
             ax.set_title(election["display_name"], fontsize=FONT_SIZES["subplot_title"], fontweight='bold')
