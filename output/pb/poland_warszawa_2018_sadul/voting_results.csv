@@ -1,0 +1,7 @@
+method,subset_size,total_cost,subset_indices,AV,CC,PAIRS,CONS,alpha_AV,alpha_CC,alpha_PAIRS,alpha_CONS,EJR
+MES,2,112600,"[0, 1]",163,91,4025,4095,1.0,1.0,1.0,1.0,True
+greedy-AV,2,112600,"[0, 1]",163,91,4025,4095,1.0,1.0,1.0,1.0,True
+greedy-AV/cost,2,112600,"[0, 1]",163,91,4025,4095,1.0,1.0,1.0,1.0,True
+greedy-AV/cost^2,2,112600,"[0, 1]",163,91,4025,4095,1.0,1.0,1.0,1.0,True
+greedy-CC,2,112600,"[0, 1]",163,91,4025,4095,1.0,1.0,1.0,1.0,True
+greedy-PAV,2,112600,"[0, 1]",163,91,4025,4095,1.0,1.0,1.0,1.0,True

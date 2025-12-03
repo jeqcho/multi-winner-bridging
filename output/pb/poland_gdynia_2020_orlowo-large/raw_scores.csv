@@ -1,0 +1,4 @@
+subset_size,total_cost,subset_indices,AV,CC,PAIRS,CONS
+0,0,[],0,0,0,0
+1,20000,[1],180,180,16110,16110
+1,374988,[0],336,336,56280,56280

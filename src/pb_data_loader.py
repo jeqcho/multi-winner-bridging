@@ -12,7 +12,7 @@ def parse_pb_file(filepath: str) -> Dict[str, Any]:
     
     The .pb format has three sections:
     - META: key;value pairs with metadata (budget, num_projects, etc.)
-    - PROJECTS: project_id;cost;votes;name
+    - PROJECTS: header row defines columns (project_id, cost, votes, name, etc.)
     - VOTES: voter_id;vote (comma-separated project IDs)
     
     Args:
@@ -37,7 +37,8 @@ def parse_pb_file(filepath: str) -> Dict[str, Any]:
     }
     
     current_section = None
-    header_line = None
+    project_header = None  # Store column names for PROJECTS section
+    votes_header = None    # Store column names for VOTES section
     
     for line in lines:
         line = line.strip()
@@ -74,13 +75,37 @@ def parse_pb_file(filepath: str) -> Dict[str, Any]:
                 
         elif current_section == 'projects':
             if line.startswith('project_id;'):
-                continue  # Skip header
-            parts = line.split(';', 3)
-            if len(parts) >= 3:
-                project_id = parts[0]
-                cost = int(parts[1])
-                votes = int(parts[2])
-                name = parts[3] if len(parts) > 3 else ''
+                # Parse the header row to get column positions
+                project_header = line.split(';')
+                continue
+            
+            if project_header is None:
+                # Fallback for files without header (shouldn't happen)
+                project_header = ['project_id', 'cost', 'votes', 'name']
+            
+            parts = line.split(';')
+            if len(parts) >= len(project_header):
+                # Create a dict from header and values
+                row_data = dict(zip(project_header, parts))
+                
+                project_id = row_data.get('project_id', parts[0])
+                
+                # Parse cost (handle float values like "4000.0")
+                cost_str = row_data.get('cost', '0')
+                try:
+                    cost = int(float(cost_str))
+                except ValueError:
+                    cost = 0
+                
+                # Parse votes count (from PROJECTS section, if present)
+                votes_str = row_data.get('votes', '0')
+                try:
+                    votes = int(votes_str)
+                except ValueError:
+                    votes = 0
+                
+                name = row_data.get('name', '')
+                
                 result['projects'][project_id] = {
                     'cost': cost,
                     'votes': votes,
@@ -89,11 +114,24 @@ def parse_pb_file(filepath: str) -> Dict[str, Any]:
                 
         elif current_section == 'votes':
             if line.startswith('voter_id;'):
-                continue  # Skip header
-            parts = line.split(';', 1)
-            if len(parts) == 2:
+                # Parse the header row
+                votes_header = line.split(';')
+                continue
+                
+            if votes_header is None:
+                votes_header = ['voter_id', 'vote']
+            
+            parts = line.split(';')
+            if len(parts) >= 2:
+                # Find 'vote' column position
+                try:
+                    vote_idx = votes_header.index('vote')
+                except ValueError:
+                    vote_idx = 1  # Default to second column
+                
                 voter_id = parts[0]
-                approved_projects = parts[1].split(',') if parts[1] else []
+                vote_str = parts[vote_idx] if vote_idx < len(parts) else ''
+                approved_projects = vote_str.split(',') if vote_str else []
                 # Clean up project IDs
                 approved_projects = [p.strip() for p in approved_projects if p.strip()]
                 result['votes'][voter_id] = approved_projects
@@ -121,7 +159,9 @@ def load_pb_file(filepath: str) -> Tuple[np.ndarray, List[str], List[int], int]:
     data = parse_pb_file(filepath)
     
     # Extract metadata
-    budget = data['meta'].get('budget', 0)
+    budget_raw = data['meta'].get('budget', 0)
+    # Budget can be float in some files, convert to int
+    budget = int(float(budget_raw)) if isinstance(budget_raw, (int, float, str)) else 0
     num_projects = data['meta'].get('num_projects', len(data['projects']))
     num_votes = data['meta'].get('num_votes', len(data['votes']))
     
