@@ -1,0 +1,36 @@
+[
+  {
+    "election": "poland_lodz_2023_baluty-zachodnie",
+    "n_voters": 3253,
+    "n_projects": 8,
+    "budget": 499000,
+    "total_subsets": 81,
+    "maximal_subsets": 6,
+    "ejr_committee": {
+      "indices": [
+        1
+      ],
+      "size": 1,
+      "cost": 499000,
+      "checked_count": 6
+    }
+  },
+  {
+    "election": "us_stanford-dataset_2022-jersey-city-ward-f_vote-knapsacks",
+    "n_voters": 132,
+    "n_projects": 9,
+    "budget": 50000,
+    "total_subsets": 112,
+    "maximal_subsets": 25,
+    "ejr_committee": {
+      "indices": [
+        3,
+        6,
+        8
+      ],
+      "size": 3,
+      "cost": 50000,
+      "checked_count": 21
+    }
+  }
+]
