@@ -530,6 +530,106 @@ def generate_mega_plots_with_methods():
     print("Mega plots with voting methods completed!")
 
 
+def generate_mega_plots_by_cost():
+    """Task 5: Generate mega plots (3x4 grid) colored by total cost."""
+    print("\n" + "="*70)
+    print("TASK 5: GENERATING MEGA PLOTS BY COST (3x4 grid, 12 elections)")
+    print("="*70)
+    
+    # Get all elections except the featured one
+    all_elections = get_all_elections()
+    elections = [e for e in all_elections if e["name"] != FEATURED_ELECTION]
+    
+    print(f"Found {len(elections)} elections (excluding featured):")
+    for e in elections:
+        print(f"  - {e['display_name']}")
+    
+    if len(elections) != 12:
+        print(f"Warning: Expected 12 elections, found {len(elections)}")
+    
+    for config in PLOT_CONFIGS:
+        # Create 3x4 grid (wide layout: 3 rows, 4 columns)
+        fig, axes = plt.subplots(3, 4, figsize=(24, 16))
+        axes = axes.flatten()
+        
+        for idx, election in enumerate(elections[:12]):
+            ax = axes[idx]
+            
+            # Load data
+            if not election["data_file"].exists():
+                ax.text(0.5, 0.5, "No data", ha='center', va='center', fontsize=FONT_SIZES["subplot_label"])
+                ax.set_title(election["display_name"], fontsize=FONT_SIZES["subplot_title"], fontweight='bold')
+                continue
+            
+            df = pd.read_csv(election["data_file"])
+            
+            # Get cost column - use total_cost if available, otherwise use subset_size
+            if 'total_cost' in df.columns:
+                cost_col = 'total_cost'
+            else:
+                cost_col = 'subset_size'  # For french_election and camp_songs (cost = 1 per candidate)
+            
+            max_cost = df[cost_col].max()
+            
+            # Color mapping by cost
+            norm = plt.Normalize(vmin=0, vmax=max_cost)
+            cmap = cm.viridis
+            
+            # Raw scatter plot (no aggregation)
+            scatter = ax.scatter(
+                df[config["x_col"]], 
+                df[config["y_col"]],
+                c=df[cost_col], 
+                cmap=cmap, 
+                norm=norm,
+                alpha=0.35, 
+                s=8
+            )
+            
+            # Reference line (extended for margins) - only if defined
+            if config["ref_func"] is not None:
+                x_ref = np.linspace(-0.05, 1.05, 100)
+                y_ref = config["ref_func"](x_ref)
+                ax.plot(x_ref, y_ref, 'k-', linewidth=2, alpha=0.9)
+            
+            # Title (shortened)
+            ax.set_title(election["display_name"], fontsize=FONT_SIZES["subplot_title"], fontweight='bold')
+            
+            # Axis labels (only on edges)
+            if idx >= 8:  # Bottom row (3x4 grid: indices 8, 9, 10, 11)
+                ax.set_xlabel(config["x_label"], fontsize=FONT_SIZES["subplot_label"])
+            if idx % 4 == 0:  # Left column (3x4 grid: indices 0, 4, 8)
+                ax.set_ylabel(config["y_label"], fontsize=FONT_SIZES["subplot_label"])
+            
+            # Axis limits with margins to see edge points
+            ax.set_xlim(-0.05, 1.05)
+            ax.set_ylim(-0.05, 1.05)
+            
+            # Tick sizes
+            ax.tick_params(axis='both', labelsize=FONT_SIZES["subplot_tick"])
+            
+            # Grid
+            ax.grid(True, alpha=0.3)
+        
+        # Hide unused subplots (if any)
+        for idx in range(len(elections), 12):
+            axes[idx].set_visible(False)
+        
+        # Main title
+        fig.suptitle(f'{config["title"]} - All Elections (colored by cost)', 
+                     fontsize=FONT_SIZES["title"] + 4, fontweight='bold', y=0.995)
+        
+        plt.tight_layout(rect=[0, 0, 1, 0.98])
+        
+        # Save
+        output_file = PRESENTATION_OUTPUT / f"{config['name']}_mega_cost.png"
+        plt.savefig(output_file, dpi=300, bbox_inches='tight', facecolor='white')
+        plt.close()
+        print(f"  Saved: {output_file.name}")
+    
+    print("Mega plots by cost completed!")
+
+
 def main():
     """Generate all presentation plots."""
     print("="*70)
@@ -545,6 +645,7 @@ def main():
     generate_featured_plots()
     generate_mega_plots()
     generate_mega_plots_with_methods()
+    generate_mega_plots_by_cost()
     
     print("\n" + "="*70)
     print("ALL PLOTS GENERATED SUCCESSFULLY!")
