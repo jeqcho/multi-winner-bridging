@@ -198,6 +198,90 @@ def approval_voting_budget(M: np.ndarray, costs: List[int], budget: int) -> List
     return sorted(committee)
 
 
+def approval_voting_cost_ratio_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
+    """
+    Select committee using greedy AV/cost with budget constraint.
+    
+    Greedily selects projects with highest (approval_count / cost) ratio that fit within budget.
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects)
+        costs: List of project costs
+        budget: Total budget constraint
+        
+    Returns:
+        List of project indices in the selected committee
+    """
+    n_projects = M.shape[1]
+    
+    # Count approvals for each project
+    approval_counts = M.sum(axis=0)
+    
+    # Calculate cost-effectiveness ratio: approvals / cost
+    # Handle zero costs by setting ratio to infinity (or a very large number)
+    cost_ratios = np.zeros(n_projects, dtype=float)
+    for i in range(n_projects):
+        if costs[i] > 0:
+            cost_ratios[i] = approval_counts[i] / costs[i]
+        else:
+            cost_ratios[i] = float('inf') if approval_counts[i] > 0 else 0.0
+    
+    # Sort projects by cost-effectiveness ratio (descending)
+    sorted_indices = np.argsort(cost_ratios)[::-1]
+    
+    committee = []
+    remaining_budget = budget
+    
+    for idx in sorted_indices:
+        if costs[idx] <= remaining_budget:
+            committee.append(idx)
+            remaining_budget -= costs[idx]
+    
+    return sorted(committee)
+
+
+def approval_voting_cost_squared_ratio_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
+    """
+    Select committee using greedy AV/cost^2 with budget constraint.
+    
+    Greedily selects projects with highest (approval_count / cost^2) ratio that fit within budget.
+    
+    Args:
+        M: Boolean matrix (n_voters, n_projects)
+        costs: List of project costs
+        budget: Total budget constraint
+        
+    Returns:
+        List of project indices in the selected committee
+    """
+    n_projects = M.shape[1]
+    
+    # Count approvals for each project
+    approval_counts = M.sum(axis=0)
+    
+    # Calculate cost-effectiveness ratio: approvals / cost^2
+    # Handle zero costs by setting ratio to infinity (or a very large number)
+    cost_squared_ratios = np.zeros(n_projects, dtype=float)
+    for i in range(n_projects):
+        if costs[i] > 0:
+            cost_squared_ratios[i] = approval_counts[i] / (costs[i] ** 2)
+        else:
+            cost_squared_ratios[i] = float('inf') if approval_counts[i] > 0 else 0.0
+    
+    # Sort projects by cost-effectiveness ratio (descending)
+    sorted_indices = np.argsort(cost_squared_ratios)[::-1]
+    
+    committee = []
+    remaining_budget = budget
+    
+    for idx in sorted_indices:
+        if costs[idx] <= remaining_budget:
+            committee.append(idx)
+            remaining_budget -= costs[idx]
+    
+    return sorted(committee)
+
+
 def chamberlin_courant_greedy_budget(M: np.ndarray, costs: List[int], budget: int) -> List[int]:
     """
     Select committee using greedy Chamberlin-Courant with budget constraint.

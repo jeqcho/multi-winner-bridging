@@ -22,6 +22,13 @@ import os
 import sys
 import argparse
 from tqdm import tqdm
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import multiprocessing
+
+# Limit numpy thread usage to avoid oversubscription with multiprocessing
+os.environ['OMP_NUM_THREADS'] = '1'
+os.environ['MKL_NUM_THREADS'] = '1'
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
 
 # Add src to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
@@ -30,11 +37,32 @@ from pb_data_loader import load_pb_file, get_pb_files, enumerate_valid_committee
 from scoring import av_score, cc_score, pairs_score, cons_score
 from mes import method_of_equal_shares_budget
 from voting_methods import (
-    approval_voting_budget, 
+    approval_voting_budget,
+    approval_voting_cost_ratio_budget,
+    approval_voting_cost_squared_ratio_budget,
     chamberlin_courant_greedy_budget, 
     pav_greedy_budget,
     select_max_committee_budget
 )
+
+
+def _score_committee(args):
+    """
+    Worker function for parallel scoring of a single committee.
+    
+    Must be at module level to be picklable for multiprocessing.
+    """
+    M, project_costs, W = args
+    W_list = list(W)
+    return {
+        'subset_size': len(W_list),
+        'total_cost': sum(project_costs[j] for j in W_list),
+        'subset_indices': json.dumps(W_list),
+        'AV': av_score(M, W_list),
+        'CC': cc_score(M, W_list),
+        'PAIRS': pairs_score(M, W_list),
+        'CONS': cons_score(M, W_list),
+    }
 
 
 def calculate_all_scores_for_pb(M, project_costs, budget, output_dir):
@@ -68,60 +96,28 @@ def calculate_all_scores_for_pb(M, project_costs, budget, output_dir):
     valid_committees = enumerate_valid_committees(project_costs, budget, show_progress=True)
     print(f"Enumerated {len(valid_committees):,} committees")
     
-    # Prepare results storage
-    results = []
-    
-    # Timing breakdown
-    timing = {'AV': 0, 'CC': 0, 'PAIRS': 0, 'CONS': 0}
-    
     # Start timing
     start_time = time.time()
     
-    print(f"\nProcessing {len(valid_committees):,} committees...")
+    # Parallel scoring using all available cores
+    n_workers = min(32, multiprocessing.cpu_count())
+    print(f"\nProcessing {len(valid_committees):,} committees using {n_workers} workers...")
     
-    pbar = tqdm(valid_committees, desc="Scoring committees", unit="committee")
-    for W in pbar:
-        W_list = list(W)
-        subset_size = len(W_list)
-        total_cost = sum(project_costs[j] for j in W_list)
+    # Prepare args for each committee
+    args_list = [(M, project_costs, W) for W in valid_committees]
+    
+    results = []
+    with ProcessPoolExecutor(max_workers=n_workers) as executor:
+        # Submit all tasks
+        futures = {executor.submit(_score_committee, args): i 
+                   for i, args in enumerate(args_list)}
         
-        # Calculate all scores with timing
-        t0 = time.time()
-        av = av_score(M, W_list)
-        timing['AV'] += time.time() - t0
-        
-        t0 = time.time()
-        cc = cc_score(M, W_list)
-        timing['CC'] += time.time() - t0
-        
-        t0 = time.time()
-        pairs = pairs_score(M, W_list)
-        timing['PAIRS'] += time.time() - t0
-        
-        t0 = time.time()
-        cons = cons_score(M, W_list)
-        timing['CONS'] += time.time() - t0
-        
-        # Store result
-        results.append({
-            'subset_size': subset_size,
-            'total_cost': total_cost,
-            'subset_indices': json.dumps(W_list),
-            'AV': av,
-            'CC': cc,
-            'PAIRS': pairs,
-            'CONS': cons,
-        })
-        
-        # Update progress bar with timing info
-        if len(results) % 1000 == 0:
-            elapsed = time.time() - start_time
-            pbar.set_postfix({
-                'AV': f"{timing['AV']:.1f}s",
-                'CC': f"{timing['CC']:.1f}s",
-                'PAIRS': f"{timing['PAIRS']:.1f}s",
-                'CONS': f"{timing['CONS']:.1f}s"
-            })
+        # Collect results with progress bar
+        for future in tqdm(as_completed(futures), 
+                          total=len(futures),
+                          desc="Scoring committees",
+                          unit="committee"):
+            results.append(future.result())
     
     # Convert to DataFrame
     print("\nConverting to DataFrame...")
@@ -140,12 +136,8 @@ def calculate_all_scores_for_pb(M, project_costs, budget, output_dir):
     print(f"Total time: {total_elapsed:.2f}s ({total_elapsed/60:.2f} min)")
     print(f"Total committees processed: {len(results):,}")
     print(f"Average time per committee: {total_elapsed/len(results)*1000:.2f} ms")
-    
-    # Timing breakdown
-    print("\nTiming breakdown:")
-    for score_name, elapsed in sorted(timing.items(), key=lambda x: -x[1]):
-        pct = elapsed / total_elapsed * 100
-        print(f"  {score_name}: {elapsed:.2f}s ({pct:.1f}%)")
+    print(f"Effective throughput: {len(results)/total_elapsed:.1f} committees/sec")
+    print(f"Workers used: {n_workers}")
     
     return df
 
@@ -211,9 +203,9 @@ def calculate_alpha_scores_pb(output_dir):
 
 def run_voting_methods_pb(M, project_costs, budget, output_dir):
     """
-    Run all 8 voting methods for PB data.
+    Run all 10 voting methods for PB data.
     
-    Greedy methods (4): MES, AV, greedy-CC, greedy-PAV (budget-aware)
+    Greedy methods (6): MES, AV, greedy-AV/cost, greedy-AV/cost^2, greedy-CC, greedy-PAV (budget-aware)
     Max-score methods (4): PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC (from exhaustive)
     """
     print("="*70)
@@ -242,6 +234,8 @@ def run_voting_methods_pb(M, project_costs, budget, output_dir):
     greedy_methods = {
         'MES': method_of_equal_shares_budget,
         'AV': approval_voting_budget,
+        'greedy-AV/cost': approval_voting_cost_ratio_budget,
+        'greedy-AV/cost^2': approval_voting_cost_squared_ratio_budget,
         'greedy-CC': chamberlin_courant_greedy_budget,
         'greedy-PAV': pav_greedy_budget,
     }
@@ -379,6 +373,8 @@ def create_pb_plots(M, project_costs, budget, output_dir):
     method_props = {
         'MES': {'marker': '*', 'color': 'gold', 'size': 200},
         'AV': {'marker': 's', 'color': 'red', 'size': 100},
+        'greedy-AV/cost': {'marker': 'X', 'color': 'crimson', 'size': 100},
+        'greedy-AV/cost^2': {'marker': '+', 'color': 'darkred', 'size': 100},
         'greedy-CC': {'marker': '^', 'color': 'blue', 'size': 100},
         'greedy-PAV': {'marker': 'D', 'color': 'green', 'size': 100},
         'PAIRS-AV': {'marker': 'o', 'color': 'purple', 'size': 100},
