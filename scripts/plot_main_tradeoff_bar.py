@@ -1,12 +1,13 @@
 """
 Plot main grouped bar chart showing (1,1) achievement for best-possible and all voting methods.
 
-X-axis: 4 trade-off pairs (PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC)
+X-axis: 6 trade-off pairs (PAIRS-AV, PAIRS-CC, CONS-AV, CONS-CC, PAIRS-EJR, CONS-EJR)
 Bars: 7 colors (Best Possible + 6 voting methods)
 
 Output: analysis/main_tradeoff_bar.png
 """
 
+import json
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -41,6 +42,11 @@ def main():
         ("alpha_CONS", "alpha_AV", "CONS-AV"),
         ("alpha_CONS", "alpha_CC", "CONS-CC"),
     ]
+    # EJR trade-off pairs (handled separately)
+    ejr_pairs = [
+        ("alpha_PAIRS", "EJR", "PAIRS-EJR"),
+        ("alpha_CONS", "EJR", "CONS-EJR"),
+    ]
     
     # Voting methods (ordered for plot)
     methods = ["MES", "greedy-CC", "greedy-PAV", "greedy-AV", "greedy-AV/cost", "greedy-AV/cost^2"]
@@ -66,6 +72,19 @@ def main():
                 best_possible[name] += 1
     
     best_possible_prop = {name: best_possible[name] / total_elections for name in best_possible}
+    
+    # Load EJR best-possible from JSON files
+    ejr_pairs_json = analysis_dir / "ejr_best_pairs.json"
+    ejr_cons_json = analysis_dir / "ejr_best_cons.json"
+    
+    with open(ejr_pairs_json) as f:
+        ejr_pairs_data = json.load(f)
+    with open(ejr_cons_json) as f:
+        ejr_cons_data = json.load(f)
+    
+    best_possible_prop["PAIRS-EJR"] = ejr_pairs_data["ejr_satisfied_proportion"]
+    best_possible_prop["CONS-EJR"] = ejr_cons_data["ejr_satisfied_proportion"]
+    
     print(f"\nBest Possible (out of {total_elections} elections):")
     for name, prop in best_possible_prop.items():
         print(f"  {name}: {prop:.4f}")
@@ -84,6 +103,10 @@ def main():
         for col1, col2, name in pairs_voting:
             achieved = ((method_data[col1] == 1.0) & (method_data[col2] == 1.0)).sum()
             method_props[method][name] = achieved / total if total > 0 else 0
+        # EJR trade-off pairs (EJR is boolean True/False)
+        for col1, col2, name in ejr_pairs:
+            achieved = ((method_data[col1] == 1.0) & (method_data[col2] == True)).sum()
+            method_props[method][name] = achieved / total if total > 0 else 0
     
     print("\nVoting Methods:")
     for method in methods:
@@ -92,7 +115,7 @@ def main():
     # ===== Create Grouped Bar Chart =====
     fig, ax = plt.subplots(figsize=(14, 7))
     
-    pair_names = [name for _, _, name in pairs_raw]
+    pair_names = ["PAIRS-AV", "PAIRS-CC", "PAIRS-EJR", "CONS-AV", "CONS-CC", "CONS-EJR"]
     n_pairs = len(pair_names)
     n_bars = 1 + len(methods)  # Best Possible + voting methods
     
@@ -126,14 +149,16 @@ def main():
     
     # Formatting
     ax.set_xticks(x)
-    ax.set_xticklabels(pair_names, fontsize=12)
-    ax.set_ylabel("Proportion of Elections with (1,1)", fontsize=12)
-    ax.set_xlabel("Trade-off Pair", fontsize=12)
-    ax.set_title("(1,1) Achievement: Best Possible vs Voting Methods", fontsize=14, fontweight="bold")
+    ax.set_xticklabels(pair_names, fontsize=14)
+    ax.set_ylabel("Proportion of Elections with (1,1)", fontsize=16)
+    ax.set_xlabel("Trade-off Pair", fontsize=16)
+    ax.set_title("(1,1) Achievement: Best Possible vs Voting Methods", fontsize=18, fontweight="bold")
     ax.set_ylim(0, 1.1)
     ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5)
-    ax.legend(loc="upper right", fontsize=10)
+    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5)
+    ax.legend(loc="upper right", fontsize=12)
     ax.grid(True, alpha=0.3, axis="y")
+    ax.tick_params(axis='both', labelsize=14)
     
     plt.tight_layout()
     

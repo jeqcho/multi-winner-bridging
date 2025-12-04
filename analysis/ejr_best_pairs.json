@@ -1,0 +1,6806 @@
+{
+  "metric": "PAIRS",
+  "total_elections": 338,
+  "ejr_satisfied_count": 332,
+  "ejr_satisfied_proportion": 0.9822485207100592,
+  "elections_with_ties": 3,
+  "results": [
+    {
+      "election": "France_Toulouse_2022_10_-_Jolimont_Soupetard_Roseraie_Gloire_Gramont_Amouroux",
+      "score": 32960,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            7,
+            8,
+            5,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee",
+      "score": 12280,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            2,
+            3,
+            9,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_12_-_Pont_des_Demoiselles_Ormeau_Montaudran_La_Terrasse_Malepere",
+      "score": 144474,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            5,
+            6,
+            7,
+            4,
+            8
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville",
+      "score": 19117,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            0,
+            9,
+            7,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_14_-_Saint-Simon_Lafourguette_Oncopole-Campus_Sante_du_Futur",
+      "score": 9050,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            1,
+            0,
+            5,
+            2,
+            3,
+            4,
+            7,
+            9
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_15_-_Croix_de_Pierre_Route_dEspagne",
+      "score": 14196,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            7,
+            3
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette",
+      "score": 9225,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            7,
+            4,
+            2,
+            5,
+            6
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_17_-_Mirail-Universite_Reynerie_Bellefontaine",
+      "score": 770,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            2,
+            0,
+            6,
+            3
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo",
+      "score": 24647,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            7,
+            6,
+            1,
+            2,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_19_-_Casselardit_Fontaine-Bayonne_Cartoucherie",
+      "score": 13110,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            7,
+            5,
+            4
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_1_-_Capitole_Arnaud_Bernard_Carmes",
+      "score": 185090,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            4,
+            6,
+            8,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan",
+      "score": 17381,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            9,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_2_-_Amidonniers_Compans-Caffarelli_Brouardel",
+      "score": 30659,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            3,
+            0,
+            7,
+            9,
+            5,
+            6,
+            1
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_3_-_Les_Chalets_Bayard_Belfort_Saint_Aubin_Dupuy",
+      "score": 10512,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            8,
+            6,
+            1,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_4_-_Lapujade_Bonnefoy_Periole_Marengo_La_Colonne",
+      "score": 11543,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            3,
+            8,
+            1,
+            0,
+            2,
+            6,
+            4
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_5_-_Saint-Michel_Saint-Agne_Empalot_Le_Busca_Ile_du_Ramier_Monplaisir",
+      "score": 32400,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            7,
+            9,
+            4,
+            2,
+            0,
+            5
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_6_-_Saint-Cyprien",
+      "score": 35093,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            7,
+            5,
+            9
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_7_-_Sept_Deniers_Ginestous-Sesquieres_Lalande",
+      "score": 3733,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            8,
+            2,
+            4,
+            1,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_8_-_Minimes_Barriere_de_Paris_Ponts-Jumeaux_La_Vache_Raisins_Fondeyre",
+      "score": 46528,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            1,
+            0,
+            3,
+            4,
+            6,
+            2
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "France_Toulouse_2022_9_-_Trois_Cocus_Borderouge_Croix-Daurade_Paleficat_Grand_Selve",
+      "score": 8387,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            3,
+            4,
+            8,
+            2,
+            5,
+            6,
+            7
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "netherlands_amsterdam_515_",
+      "score": 4460965,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "netherlands_amsterdam_523_",
+      "score": 271320,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "netherlands_amsterdam_619_",
+      "score": 318355,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            6,
+            5,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_babie-doly-large",
+      "score": 27495,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_babie-doly-small",
+      "score": 30261,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_chwarzno-wiczlino-large",
+      "score": 5615075,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            1,
+            4,
+            0,
+            3
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_chwarzno-wiczlino-small",
+      "score": 3578761,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            8,
+            5,
+            6,
+            2,
+            0,
+            1,
+            3
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_chylonia-large",
+      "score": 270710,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            1,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_chylonia-small",
+      "score": 381856,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            3,
+            2,
+            0,
+            1,
+            6
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_cisowa-large",
+      "score": 149331,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_cisowa-small",
+      "score": 125049,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_dabrowa-large",
+      "score": 1126193,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            5,
+            4,
+            1,
+            2,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_dzialki-lesne-large",
+      "score": 102222,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            4,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_dzialki-lesne-small",
+      "score": 129163,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            4,
+            1,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_grabowek-large",
+      "score": 375411,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_grabowek-small",
+      "score": 286557,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            4
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_kamienna-gora-large",
+      "score": 66213,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_kamienna-gora-small",
+      "score": 61827,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_karwiny-large",
+      "score": 227475,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_karwiny-small",
+      "score": 355576,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            4,
+            0,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_leszczynki-large",
+      "score": 95703,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_leszczynki-small",
+      "score": 90089,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_maly-kack-large",
+      "score": 1276003,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_maly-kack-small",
+      "score": 1779659,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            0,
+            4,
+            2,
+            1,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_obluze-large",
+      "score": 341551,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_obluze-small",
+      "score": 1202905,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            3,
+            0,
+            1,
+            2
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_oksywie-large",
+      "score": 246753,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_oksywie-small",
+      "score": 202385,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_orlowo-large",
+      "score": 56280,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_orlowo-small",
+      "score": 57586,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            4,
+            2,
+            0,
+            3
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_pogorze-large",
+      "score": 347041,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_pogorze-small",
+      "score": 141325,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_pustki-cisowskie-demptowo-large",
+      "score": 303810,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_pustki-cisowskie-demptowo-small",
+      "score": 327315,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_redlowo-large",
+      "score": 874612,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            5,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_redlowo-small",
+      "score": 789500,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_srodmiescie-large",
+      "score": 242556,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_srodmiescie-small",
+      "score": 168772,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            8,
+            0,
+            2,
+            3
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_wielki-kack-large",
+      "score": 709836,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_wielki-kack-small",
+      "score": 522424,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            0,
+            1,
+            3,
+            2
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_witomino-large",
+      "score": 362772,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_witomino-small",
+      "score": 372274,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-large",
+      "score": 108593,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            7,
+            4
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-small",
+      "score": 267477,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_andrzejow",
+      "score": 260108,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            2,
+            1,
+            7,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_baluty-zachodnie",
+      "score": 479901,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": false,
+      "ejr_satisfied_count": 0,
+      "committees": [
+        {
+          "committee": [
+            5,
+            3,
+            8,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": false
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_dolina-lodki",
+      "score": 89728,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_gorniak",
+      "score": 91046,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            1,
+            4
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_koziny",
+      "score": 440378,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            6,
+            0,
+            8,
+            1,
+            3,
+            4
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_lagiewniki",
+      "score": 60083,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            3,
+            4,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_lublinek-pienista",
+      "score": 1087634,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            4,
+            5,
+            9,
+            3,
+            0,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_mileszki",
+      "score": 164451,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_nad-nerem",
+      "score": 51047,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            0,
+            5,
+            1,
+            2
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_nowosolna",
+      "score": 513591,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_nr-33",
+      "score": 11216,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            1,
+            3,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_olechow-janow",
+      "score": 1575684,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            5,
+            6,
+            8,
+            7,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_piastow-kurak",
+      "score": 741663,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            6,
+            2,
+            0,
+            4,
+            7,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_retkinia-zachod-smulsko",
+      "score": 1050744,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            7,
+            5,
+            6,
+            1,
+            11,
+            2
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_rokicie",
+      "score": 803692,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            5,
+            4,
+            2,
+            8,
+            3,
+            7,
+            1,
+            6
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_ruda",
+      "score": 1241088,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            9,
+            8,
+            4,
+            1,
+            10,
+            2,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_stare-polesie",
+      "score": 984010,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            9,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_widzew-wschod",
+      "score": 1703666,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            5,
+            7,
+            4,
+            6,
+            0,
+            1
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_wiskitno",
+      "score": 893968,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            1,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_wzniesien-lodzkich",
+      "score": 106655,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            0,
+            4,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2020_zdrowie-mania",
+      "score": 126303,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            2,
+            8,
+            6,
+            9,
+            10,
+            12,
+            5,
+            1,
+            0,
+            3,
+            11
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_andrzejow",
+      "score": 206042,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            5,
+            4,
+            6
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_gorniak",
+      "score": 360365,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            0,
+            5,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_im-jozefa-montwilla-mireckiego",
+      "score": 86462,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            2,
+            7,
+            0,
+            6,
+            1
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_lagiewniki",
+      "score": 146070,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_lublinek-pienista",
+      "score": 575993,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            8,
+            3,
+            2,
+            4,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_mileszki",
+      "score": 123256,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_nad-nerem",
+      "score": 25176,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            2,
+            5,
+            4,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_nowosolna",
+      "score": 165686,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_nr-33",
+      "score": 65634,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            4,
+            2,
+            0,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_olechow-janow",
+      "score": 1705319,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            3,
+            5,
+            7,
+            4,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_piastow-kurak",
+      "score": 2019471,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            4,
+            1,
+            3,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_rokicie",
+      "score": 778112,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            7,
+            10,
+            0,
+            3,
+            5,
+            4,
+            1,
+            2,
+            6
+          ],
+          "committee_size": 10,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_widzew-wschod",
+      "score": 2225275,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            12,
+            11,
+            10,
+            3,
+            5,
+            8,
+            1,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_wiskitno",
+      "score": 591631,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            1,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_wzniesien-lodzkich",
+      "score": 152628,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_zarzew",
+      "score": 1122332,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            1,
+            9,
+            5,
+            8,
+            4,
+            0,
+            2,
+            6,
+            3
+          ],
+          "committee_size": 10,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2022_zlotno",
+      "score": 2445954,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            12,
+            9,
+            8,
+            2,
+            1,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_andrzejow",
+      "score": 251314,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            9,
+            4,
+            1,
+            3,
+            5,
+            2,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_baluty-zachodnie",
+      "score": 1799076,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": false,
+      "ejr_satisfied_count": 0,
+      "committees": [
+        {
+          "committee": [
+            5,
+            6,
+            7,
+            4,
+            2,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": false
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_dolina-lodki",
+      "score": 232687,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            12,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_gorniak",
+      "score": 464951,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_im-jozefa-montwilla-mireckiego",
+      "score": 64007,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            4,
+            5,
+            7,
+            2,
+            6,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_lagiewniki",
+      "score": 166183,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            1,
+            10,
+            3,
+            8,
+            0,
+            9
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_mileszki",
+      "score": 344035,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_nad-nerem",
+      "score": 47030,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            6,
+            4,
+            1,
+            0,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_nowosolna",
+      "score": 418155,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_nr-33",
+      "score": 178500,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            5,
+            2,
+            0,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_piastow-kurak",
+      "score": 373019,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            6,
+            7,
+            10,
+            8,
+            12,
+            4,
+            3,
+            9,
+            5,
+            0
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_ruda",
+      "score": 796027,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            5,
+            7,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_wiskitno",
+      "score": 629731,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_wzniesien-lodzkich",
+      "score": 34453,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2023_zdrowie-mania",
+      "score": 249721,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            7,
+            10,
+            1,
+            9,
+            3,
+            2,
+            0,
+            5
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_andrzejow",
+      "score": 1530375,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_baluty-zachodnie",
+      "score": 9320756,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            11,
+            12,
+            9,
+            5,
+            8,
+            3,
+            7,
+            1,
+            0
+          ],
+          "committee_size": 10,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_dolina-lodki",
+      "score": 106030,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_im-jozefa-montwilla-mireckiego",
+      "score": 146684,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            12,
+            7,
+            8,
+            5,
+            4,
+            0,
+            1
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_julianow-marysin-rogi",
+      "score": 561410,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            12,
+            3,
+            4,
+            8,
+            1,
+            7,
+            0,
+            6,
+            2,
+            9,
+            5,
+            10
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_lagiewniki",
+      "score": 324612,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            4,
+            1,
+            2,
+            3
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_mileszki",
+      "score": 162325,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            2,
+            4,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_nad-nerem",
+      "score": 24835,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            6,
+            0,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_nowosolna",
+      "score": 619665,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            5,
+            4,
+            7,
+            6,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_nr-33",
+      "score": 70334,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            2,
+            6,
+            0,
+            1,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_wiskitno",
+      "score": 643442,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            5,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_wzniesien-lodzkich",
+      "score": 97133,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_lodz_2024_zdrowie-mania",
+      "score": 163578,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            4,
+            3,
+            0,
+            5,
+            2
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn",
+      "score": 12399665,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            1,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_poznan_2023_7-morasko-radojewo-naramowice-umultowo",
+      "score": 14280109,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_poznan_2023_9-stare-miasto",
+      "score": 2312325,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_aleksandrow",
+      "score": 20069,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_boernerowo-fort-radiowo-groty-gorce",
+      "score": 190701,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_chomiczowka",
+      "score": 184936,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            10,
+            9,
+            2,
+            1,
+            8,
+            3,
+            6,
+            4,
+            0
+          ],
+          "committee_size": 10,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_falenica",
+      "score": 72460,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            3,
+            7,
+            2,
+            4,
+            6,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_kamionek",
+      "score": 230737,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            5,
+            2,
+            3,
+            4,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_las",
+      "score": 8302,
+      "num_tied_committees": 2,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 2,
+      "committees": [
+        {
+          "committee": [
+            4,
+            2,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        },
+        {
+          "committee": [
+            2,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_marymont-potok-zoliborz-dziennikarski",
+      "score": 142084,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            8,
+            5,
+            0,
+            4,
+            3,
+            1,
+            2,
+            7
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_marysin-polnocny",
+      "score": 38290,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            1,
+            4,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_marysin-poludniowy",
+      "score": 9180,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_miedzeszyn",
+      "score": 78995,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            1,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_miedzylesie",
+      "score": 61311,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            0,
+            2,
+            5,
+            1,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_nadwisle",
+      "score": 5133,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            2,
+            1,
+            3,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_niskie-okecie",
+      "score": 58851,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": false,
+      "ejr_satisfied_count": 0,
+      "committees": [
+        {
+          "committee": [
+            3,
+            4,
+            0,
+            2
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": false
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_piaski",
+      "score": 139022,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            3,
+            0,
+            6
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_plac-wojska-polskiego",
+      "score": 228,
+      "num_tied_committees": 2,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 2,
+      "committees": [
+        {
+          "committee": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        },
+        {
+          "committee": [
+            1,
+            0,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_przyczolek-grochowski",
+      "score": 8519,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_radiowo-wolka-weglowa-placowka-huta",
+      "score": 19701,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_radosc",
+      "score": 29656,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            5,
+            2,
+            4,
+            3,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_sadul",
+      "score": 5698,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_slodowiec",
+      "score": 106895,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            3,
+            0,
+            2,
+            4,
+            1
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_subunit-wawer",
+      "score": 46459,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_targowek-fabryczny-elsnerow-i-utrata",
+      "score": 61552,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            9,
+            2,
+            6,
+            1,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_ursus-polnocny",
+      "score": 394658,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            7,
+            4,
+            2,
+            9,
+            0,
+            6
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_wawrzyszew",
+      "score": 1609274,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            8,
+            10,
+            1,
+            4,
+            0,
+            5,
+            3,
+            2
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_zerzen",
+      "score": 34980,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_zielona-grzybowa",
+      "score": 19554,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": false,
+      "ejr_satisfied_count": 0,
+      "committees": [
+        {
+          "committee": [
+            6,
+            2,
+            7,
+            4,
+            0,
+            3,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": false
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_zielony-ursynow",
+      "score": 170235,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            10,
+            3,
+            9,
+            5,
+            4,
+            6,
+            1
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2017_zoliborz-poludniowy-powazki",
+      "score": 1117737,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_aleksandrow",
+      "score": 73247,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_czyste-mirow",
+      "score": 124370,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_falenica",
+      "score": 81773,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            5,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_grochow-polnocny",
+      "score": 340672,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            4,
+            7,
+            5,
+            6,
+            2,
+            3
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_kamionek",
+      "score": 319285,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            0,
+            3,
+            6
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_kolo",
+      "score": 146138,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            9,
+            11,
+            5,
+            8,
+            10,
+            0,
+            2,
+            6,
+            12,
+            4
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_las",
+      "score": 50428,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            11,
+            0,
+            6,
+            10,
+            9,
+            2,
+            7,
+            4,
+            1,
+            3,
+            8
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_marysin-wawerski-polnocny",
+      "score": 27147,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            2,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_marysin-wawerski-poludniowy",
+      "score": 79018,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_miedzeszyn",
+      "score": 61680,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_miedzylesie",
+      "score": 59745,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_muranow",
+      "score": 331911,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            6,
+            7,
+            1,
+            2,
+            5,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_nadwisle",
+      "score": 10427,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_niskie-okecie",
+      "score": 15242,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            6,
+            8,
+            2,
+            5,
+            1
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona",
+      "score": 345757,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            1,
+            2,
+            7,
+            5,
+            4,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-2-stara-milosna",
+      "score": 265269,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            2,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-4-zoliborz-poludniowy-powazki",
+      "score": 1668051,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_pole-mokotowskie",
+      "score": 28,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_przyczolek-grochowski",
+      "score": 4371,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_przywisle",
+      "score": 286496,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            8,
+            3,
+            4,
+            6,
+            10,
+            7,
+            2,
+            5,
+            1,
+            0
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_radiowo-wolka-weglowa-placowka-huta",
+      "score": 11026,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_radosc",
+      "score": 171903,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_rejon-4",
+      "score": 276272,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            5,
+            6,
+            4,
+            0,
+            3
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_rejon-7",
+      "score": 284082,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            4,
+            11,
+            0,
+            2,
+            9,
+            1,
+            12,
+            8,
+            5,
+            6
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_sadul",
+      "score": 4025,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_slodowiec",
+      "score": 195251,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            3,
+            1,
+            0,
+            2,
+            4
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_srodmiescie-polnocne",
+      "score": 86186,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            1,
+            6,
+            7,
+            4,
+            5,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_stare-miasto",
+      "score": 27326,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            3,
+            5,
+            2,
+            0,
+            1,
+            6
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_subunit-wawer",
+      "score": 25258,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_wawrzyszew",
+      "score": 1408015,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            9,
+            11,
+            1,
+            5,
+            8,
+            2,
+            3,
+            6,
+            0,
+            7,
+            4
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_wilanow-obszar-i",
+      "score": 1249019,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            4,
+            1,
+            7,
+            8,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_wilanow-obszar-ii",
+      "score": 202902,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            2,
+            3,
+            8,
+            1,
+            4,
+            6,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_wola",
+      "score": 12616922,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            5,
+            7,
+            6,
+            4,
+            2,
+            10,
+            0,
+            1,
+            3,
+            8
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2018_zerzen",
+      "score": 115227,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            4,
+            3,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_aleksandrow",
+      "score": 40267,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_bemowo-lotnisko-fort-bema",
+      "score": 155248,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            5,
+            4,
+            2,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_boernerowo-fort-radiowo-gorce-groty",
+      "score": 285054,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            1,
+            2,
+            3,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_brodno-podgrodzie",
+      "score": 70869,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            4,
+            7,
+            3,
+            6,
+            8,
+            5,
+            10,
+            1
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_chrzanow-jelonki-poludniowe-jelonki-polnocne",
+      "score": 869912,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            4,
+            3,
+            6,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_falenica",
+      "score": 112243,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2,
+            4,
+            3,
+            9,
+            6,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-centrum",
+      "score": 112233,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            0,
+            2,
+            3
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-kinowa",
+      "score": 51394,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            2,
+            0,
+            5,
+            1,
+            4
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-polnocny",
+      "score": 179241,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            0,
+            4,
+            2
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_kamionek",
+      "score": 162174,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            4,
+            5,
+            0,
+            1
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_las",
+      "score": 7509,
+      "num_tied_committees": 4,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 4,
+      "committees": [
+        {
+          "committee": [
+            2,
+            8,
+            11,
+            7,
+            3,
+            12,
+            0,
+            9,
+            10,
+            6,
+            5,
+            4,
+            1
+          ],
+          "committee_size": 13,
+          "ejr_satisfied": true
+        },
+        {
+          "committee": [
+            2,
+            8,
+            11,
+            7,
+            3,
+            0,
+            9,
+            10,
+            6,
+            5,
+            4,
+            1
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        },
+        {
+          "committee": [
+            2,
+            8,
+            7,
+            3,
+            12,
+            0,
+            9,
+            10,
+            6,
+            5,
+            4,
+            1
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        },
+        {
+          "committee": [
+            2,
+            8,
+            7,
+            3,
+            0,
+            9,
+            10,
+            6,
+            5,
+            4,
+            1
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_marysin-wawerski-polnocny",
+      "score": 48769,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            0,
+            5,
+            1,
+            4,
+            7,
+            6,
+            10,
+            8
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_marysin-wawerski-poludniowy",
+      "score": 2790,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_miasto-ogrod-sadyba",
+      "score": 246523,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            3,
+            6,
+            8,
+            5,
+            4
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_miedzeszyn",
+      "score": 20092,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_miedzylesie",
+      "score": 55229,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            5,
+            7,
+            6,
+            3,
+            1,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_muranow",
+      "score": 14828,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_nadwisle",
+      "score": 14607,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            1,
+            0,
+            2
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-3-marymont-potok-zoliborz-dziennikarski",
+      "score": 123984,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            2,
+            5,
+            10,
+            7,
+            0,
+            4,
+            6
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-4-piekielko-zeran-annopol",
+      "score": 257412,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            4,
+            1,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-4-zoliborz-poludniowy",
+      "score": 52591,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-5-powazki",
+      "score": 50703,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            1,
+            5,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-i-wilanow-wysoki-wilanow-niski-zachodni",
+      "score": 26297,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            2,
+            3,
+            1,
+            4,
+            6,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki",
+      "score": 5958,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            1,
+            2,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_piaski",
+      "score": 116393,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            3,
+            2,
+            7,
+            1,
+            4,
+            6
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_przyczolek-grochowski",
+      "score": 19503,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_przywisle",
+      "score": 308868,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            2,
+            5,
+            3,
+            7,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_radiowo-wolka-weglowa-placowka-huta",
+      "score": 10011,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_radosc",
+      "score": 14315,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            4,
+            0,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_rejon-poludniowy",
+      "score": 389094,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            4,
+            12,
+            6,
+            1,
+            10,
+            8,
+            0,
+            9,
+            7,
+            5,
+            3,
+            2
+          ],
+          "committee_size": 13,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_ruda-marymont-las-bielanski",
+      "score": 201812,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            5,
+            8,
+            1,
+            0,
+            2,
+            3,
+            4
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_sadul",
+      "score": 5795,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_slodowiec",
+      "score": 82373,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            6,
+            2,
+            3,
+            1,
+            5,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_sluzew",
+      "score": 131321,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            2,
+            4,
+            5,
+            3,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_srodmiescie-polnocne",
+      "score": 63873,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            8,
+            4,
+            0,
+            5,
+            3,
+            1,
+            7,
+            6
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_stara-ochota",
+      "score": 174813,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            8,
+            7,
+            5,
+            2,
+            4,
+            0,
+            3,
+            1
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_stare-bielany",
+      "score": 202755,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            5,
+            0,
+            4,
+            3,
+            7,
+            2,
+            1,
+            6
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_stare-miasto",
+      "score": 46431,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            0,
+            3,
+            4,
+            7,
+            5,
+            1,
+            2
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_subunit-wawer",
+      "score": 21426,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2019_zerzen",
+      "score": 46717,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            5,
+            3,
+            2,
+            6,
+            4,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_blonia-wilanowskie",
+      "score": 164354,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            9,
+            5,
+            3,
+            10,
+            6,
+            8,
+            2,
+            4,
+            0,
+            1
+          ],
+          "committee_size": 10,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_boernerowo-lotnisko-fort-radiowo-groty",
+      "score": 85615,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_brodno-podgrodzie-zacisze",
+      "score": 242843,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            0,
+            2,
+            3
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_kobialka-grodzisk-brzeziny",
+      "score": 1011907,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            0,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_las-bielanski-marymont-ruda-marymont-kaskada",
+      "score": 102896,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            12,
+            10,
+            4,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_las-zerzen-wawer-sadul",
+      "score": 416751,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            4,
+            6,
+            5,
+            2,
+            1
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_miedzylesie-radosc",
+      "score": 187159,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            3,
+            4,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_mirow-czyste-odolany",
+      "score": 1528743,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            3,
+            0,
+            4,
+            7,
+            2
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_mlociny-wolka-weglowa-placowka-radiowo-huta",
+      "score": 26896,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            1
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_muranow-nowe-miasto-stare-miasto",
+      "score": 109622,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            7,
+            6,
+            2,
+            5,
+            3,
+            0
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_nowodwory",
+      "score": 1235168,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            9,
+            2,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_olszynka-grochowska-goclawek",
+      "score": 103824,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            0,
+            4,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_powazki-nowolipki-mlynow",
+      "score": 415405,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            12,
+            11,
+            4,
+            1,
+            6,
+            9,
+            0,
+            5
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_siekierki-augustowka",
+      "score": 41104,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            3,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_sielce",
+      "score": 33411,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_sluzew",
+      "score": 436133,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            6,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_srodmiescie",
+      "score": 1908460,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            5,
+            4,
+            7,
+            9,
+            1,
+            3,
+            2,
+            0
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_srodmiescie-polnocne",
+      "score": 36674,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            4,
+            5,
+            7,
+            6,
+            2,
+            0,
+            1
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_srodmiescie-poludniowe",
+      "score": 136306,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            4,
+            10,
+            12,
+            7,
+            6,
+            0,
+            8,
+            1,
+            3,
+            5
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_stary-mokotow",
+      "score": 862293,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            2,
+            5,
+            1,
+            4,
+            7,
+            3,
+            9
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_stegny",
+      "score": 327739,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            11,
+            9,
+            2,
+            7,
+            3,
+            6,
+            10,
+            8,
+            5,
+            1,
+            0
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_tarchomin",
+      "score": 371114,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            6,
+            7,
+            5,
+            2,
+            1
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_wawrzyszew",
+      "score": 170361,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            8,
+            3,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_wilanow",
+      "score": 860409,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            2,
+            6,
+            5,
+            4,
+            7,
+            1,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_wlochy",
+      "score": 1894664,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            9,
+            6,
+            5,
+            2,
+            4,
+            3,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_wrzeciono",
+      "score": 107432,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            9,
+            6,
+            3,
+            7,
+            8,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "poland_warszawa_2026_wygledow-sluzewiec",
+      "score": 159336,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2021-22-cal-high-library-pb_vote-knapsacks",
+      "score": 23653,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2022-central-falls-high-school-participatory-budgeting-vote_vote-approvals",
+      "score": 22953,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            0
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-b_vote-knapsacks",
+      "score": 1176,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks",
+      "score": 1225,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-d_vote-knapsacks",
+      "score": 5671,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-e_vote-knapsacks",
+      "score": 16278,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": false,
+      "ejr_satisfied_count": 0,
+      "committees": [
+        {
+          "committee": [
+            3,
+            8,
+            0,
+            5,
+            4
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": false
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-f_vote-knapsacks",
+      "score": 2892,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": false,
+      "ejr_satisfied_count": 0,
+      "committees": [
+        {
+          "committee": [
+            0,
+            4,
+            3,
+            6,
+            2
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": false
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals",
+      "score": 16290,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_participatory-budgeting-project-pb2-2021-ballot_vote-approvals",
+      "score": 3343,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_participatory-budgeting-project-pb2-2022-ballot_vote-approvals",
+      "score": 9696,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-10th-ward-2017_vote-approvals",
+      "score": 5050,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-29th-ward-2020_vote-approvals",
+      "score": 5007,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            1,
+            6,
+            3,
+            2,
+            5
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-29th-ward-2021_vote-approvals",
+      "score": 34711,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            5,
+            1,
+            3,
+            7,
+            4,
+            6
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals",
+      "score": 224785,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-knapsacks",
+      "score": 25425,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-approvals",
+      "score": 274139,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            6,
+            4,
+            11,
+            8,
+            9,
+            10,
+            1,
+            7,
+            5,
+            12,
+            3
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-knapsacks",
+      "score": 33930,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-35th-ward-2019_vote-approvals",
+      "score": 6105,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-35th-ward-2021_vote-knapsacks",
+      "score": 39049,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            1
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2017_vote-approvals",
+      "score": 11175,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2020_vote-approvals",
+      "score": 104196,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2020_vote-knapsacks",
+      "score": 18336,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-approvals",
+      "score": 357247,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            9,
+            10,
+            11,
+            7,
+            8,
+            12,
+            0,
+            1,
+            6,
+            4,
+            3
+          ],
+          "committee_size": 12,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-knapsacks",
+      "score": 36361,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            3,
+            0,
+            5,
+            4,
+            9
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-40th-ward-2020_vote-approvals",
+      "score": 29161,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-40th-ward-2021_vote-approvals",
+      "score": 222111,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-40th-ward-2021_vote-knapsacks",
+      "score": 29646,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2020_vote-approvals",
+      "score": 897432,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            0,
+            2,
+            3,
+            4
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2020_vote-knapsacks",
+      "score": 122060,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            0,
+            3,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2021_vote-approvals",
+      "score": 842267,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2021_vote-knapsacks",
+      "score": 91988,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-approvals",
+      "score": 491585,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-knapsacks",
+      "score": 66605,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1
+          ],
+          "committee_size": 2,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals",
+      "score": 58152,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            3,
+            5,
+            8,
+            1,
+            6,
+            9,
+            2,
+            7
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2016_vote-approvals",
+      "score": 111170,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            5,
+            3,
+            8,
+            1,
+            7,
+            6,
+            4
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2017_vote-approvals",
+      "score": 302274,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            8,
+            5,
+            6,
+            1,
+            2,
+            3,
+            7
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2018_vote-approvals",
+      "score": 152628,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2019_vote-approvals",
+      "score": 169071,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2020_vote-approvals",
+      "score": 49455,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0
+          ],
+          "committee_size": 1,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-1-2019_vote-knapsacks",
+      "score": 75857,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            3,
+            1,
+            4,
+            2
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-2-2019_vote-knapsacks",
+      "score": 100707,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0,
+            2,
+            3,
+            6
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-3-2019_vote-knapsacks",
+      "score": 771034,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            0,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-4-2019_vote-knapsacks",
+      "score": 694261,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-5-2019_vote-knapsacks",
+      "score": 123662,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-long-beach-district-9-2015_vote-approvals",
+      "score": 17482,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            2,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-long-beach-district-9-2016_vote-approvals",
+      "score": 9751,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            6,
+            1,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-merced-county-district-2-2018_vote-approvals",
+      "score": 152667,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            5,
+            9,
+            0,
+            1,
+            3
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-north-east-san-fernando-valley-2021_vote-approvals",
+      "score": 155375,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-oakland-2017-district-1_vote-approvals",
+      "score": 126304,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-vallejo-2018_vote-approvals",
+      "score": 1641863,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            6,
+            8,
+            4,
+            5,
+            2,
+            9,
+            3,
+            0
+          ],
+          "committee_size": 9,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-vallejo-2019-2_vote-approvals",
+      "score": 507090,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            10,
+            1,
+            3,
+            7,
+            9,
+            4,
+            5,
+            11,
+            8,
+            0
+          ],
+          "committee_size": 11,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_pb-vallejo-2021_vote-approvals",
+      "score": 540092,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            5,
+            6,
+            0,
+            1,
+            2,
+            3
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-1_vote-approvals",
+      "score": 54845,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            4,
+            0,
+            1
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-2_vote-approvals",
+      "score": 162996,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            4,
+            6,
+            0,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-3_vote-approvals",
+      "score": 43959,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            6,
+            7,
+            0,
+            1
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-4_vote-approvals",
+      "score": 102890,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            7,
+            0,
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-5_vote-approvals",
+      "score": 345865,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            8,
+            1,
+            2,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-6_vote-approvals",
+      "score": 271399,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2,
+            5,
+            3,
+            7,
+            1,
+            4
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-7_vote-approvals",
+      "score": 118952,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            4,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-1_vote-approvals",
+      "score": 67314,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            10,
+            6,
+            0,
+            5,
+            9,
+            1,
+            3
+          ],
+          "committee_size": 7,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-3_vote-approvals",
+      "score": 91237,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            3,
+            8,
+            2,
+            5,
+            1,
+            4,
+            7,
+            0
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-4_vote-approvals",
+      "score": 98768,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            4,
+            2,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-5_vote-approvals",
+      "score": 70431,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            10,
+            4,
+            8,
+            0,
+            1,
+            5,
+            3
+          ],
+          "committee_size": 8,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals",
+      "score": 151619,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            5,
+            1,
+            4,
+            6,
+            0
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-7_vote-approvals",
+      "score": 55995,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            1,
+            2
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-1_vote-approvals",
+      "score": 156198,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            1,
+            4,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-1_vote-knapsacks",
+      "score": 18849,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2,
+            1,
+            4,
+            3,
+            6
+          ],
+          "committee_size": 6,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-2_vote-approvals",
+      "score": 42714,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            6,
+            7,
+            2,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-approvals",
+      "score": 66148,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            5,
+            1,
+            2
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-knapsacks",
+      "score": 11464,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            0,
+            2,
+            1,
+            4
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-4_vote-approvals",
+      "score": 22664,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            0,
+            3
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-approvals",
+      "score": 75368,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            0,
+            1
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks",
+      "score": 7625,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            2,
+            3,
+            4,
+            0
+          ],
+          "committee_size": 4,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-6_vote-approvals",
+      "score": 198521,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            4,
+            5,
+            6,
+            1,
+            0
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-6_vote-knapsacks",
+      "score": 19716,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            1,
+            3,
+            2,
+            0,
+            4
+          ],
+          "committee_size": 5,
+          "ejr_satisfied": true
+        }
+      ]
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-7_vote-approvals",
+      "score": 13750,
+      "num_tied_committees": 1,
+      "ejr_satisfied_any": true,
+      "ejr_satisfied_count": 1,
+      "committees": [
+        {
+          "committee": [
+            6,
+            4,
+            0
+          ],
+          "committee_size": 3,
+          "ejr_satisfied": true
+        }
+      ]
+    }
+  ]
+}

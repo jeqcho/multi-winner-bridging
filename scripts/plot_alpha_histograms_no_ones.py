@@ -1,11 +1,12 @@
 """
 Plot histograms of alpha metrics for each voting method across all PB elections.
+Excludes values equal to 1.0 to show distribution of non-perfect scores.
 
 Creates a 2x2 subplot figure where each subplot shows the distribution of one alpha metric
 (alpha_AV, alpha_CC, alpha_PAIRS, alpha_CONS) with overlapping transparent histograms
 for each voting method.
 
-Output: analysis/alpha_histograms.png
+Output: analysis/alpha_histograms_no_ones.png
 """
 
 import pandas as pd
@@ -63,6 +64,8 @@ def main():
         
         for method in methods:
             method_data = all_data[all_data["method"] == method][metric].dropna()
+            # Filter out values equal to 1.0
+            method_data = method_data[method_data < 1.0]
             if len(method_data) > 0:
                 ax.hist(
                     method_data,
@@ -76,19 +79,18 @@ def main():
         
         ax.set_xlabel(metric, fontsize=16)
         ax.set_ylabel("Frequency", fontsize=16)
-        ax.set_title(f"Distribution of {metric}", fontsize=18)
-        ax.set_xlim(0, 1.05)
+        ax.set_title(f"Distribution of {metric} (excluding 1.0)", fontsize=18)
+        ax.set_xlim(0, 1.0)
         ax.axvline(x=0.5, color="gray", linestyle="--", alpha=0.5)
-        ax.axvline(x=1.0, color="gray", linestyle="--", alpha=0.5)
         ax.grid(True, alpha=0.3)
         ax.legend(fontsize=12)
         ax.tick_params(axis='both', labelsize=14)
     
-    fig.suptitle("Alpha Metrics Distribution by Voting Method\n(across all PB elections)", fontsize=20, fontweight="bold")
+    fig.suptitle("Alpha Metrics Distribution by Voting Method\n(excluding perfect scores)", fontsize=20, fontweight="bold")
     plt.tight_layout()
     
     # Save figure
-    output_path = analysis_dir / "alpha_histograms.png"
+    output_path = analysis_dir / "alpha_histograms_no_ones.png"
     plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     
@@ -96,17 +98,18 @@ def main():
     
     # Print summary statistics
     print("\n" + "=" * 80)
-    print("Summary Statistics")
+    print("Summary Statistics (excluding 1.0)")
     print("=" * 80)
     for metric in alpha_metrics:
         print(f"\n{metric}:")
         for method in methods:
             method_data = all_data[all_data["method"] == method][metric].dropna()
+            total = len(method_data)
+            method_data = method_data[method_data < 1.0]
             if len(method_data) > 0:
-                print(f"  {method:20s}: n={len(method_data):4d}, mean={method_data.mean():.4f}, min={method_data.min():.4f}, max={method_data.max():.4f}")
+                print(f"  {method:20s}: n={len(method_data):4d}/{total:4d}, mean={method_data.mean():.4f}, min={method_data.min():.4f}, max={method_data.max():.4f}")
 
 
 if __name__ == "__main__":
     main()
-
 

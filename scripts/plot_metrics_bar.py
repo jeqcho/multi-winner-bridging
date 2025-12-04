@@ -87,14 +87,16 @@ def main():
     
     # Formatting
     ax.set_xticks(x)
-    ax.set_xticklabels(metric_labels, fontsize=12)
-    ax.set_ylabel("Proportion of Elections Achieving 1.0", fontsize=12)
-    ax.set_xlabel("Metric", fontsize=12)
-    ax.set_title("Metric Achievement by Voting Method", fontsize=14, fontweight="bold")
+    ax.set_xticklabels(metric_labels, fontsize=14)
+    ax.set_ylabel("Proportion of Elections Achieving 1.0", fontsize=16)
+    ax.set_xlabel("Metric", fontsize=16)
+    ax.set_title("Metric Achievement by Voting Method", fontsize=18, fontweight="bold")
     ax.set_ylim(0, 1.1)
     ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5)
-    ax.legend(loc="upper right", fontsize=10)
+    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5)
+    ax.legend(loc="upper left", fontsize=12)
     ax.grid(True, alpha=0.3, axis="y")
+    ax.tick_params(axis='both', labelsize=14)
     
     plt.tight_layout()
     
