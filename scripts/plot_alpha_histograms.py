@@ -74,17 +74,16 @@ def main():
                     linewidth=0.5,
                 )
         
-        ax.set_xlabel(metric, fontsize=16)
-        ax.set_ylabel("Frequency", fontsize=16)
-        ax.set_title(f"Distribution of {metric}", fontsize=18)
+        ax.set_xlabel(metric, fontsize=20)
+        ax.set_ylabel("Frequency", fontsize=20)
+        ax.set_title(f"Distribution of {metric}", fontsize=22)
         ax.set_xlim(0, 1.05)
-        ax.axvline(x=0.5, color="gray", linestyle="--", alpha=0.5)
         ax.axvline(x=1.0, color="gray", linestyle="--", alpha=0.5)
         ax.grid(True, alpha=0.3)
-        ax.legend(fontsize=12)
-        ax.tick_params(axis='both', labelsize=14)
+        ax.legend(fontsize=14)
+        ax.tick_params(axis='both', labelsize=16)
     
-    fig.suptitle("Alpha Metrics Distribution by Voting Method\n(across all PB elections)", fontsize=20, fontweight="bold")
+    fig.suptitle("Alpha Metrics Distribution by Voting Method\n(across all PB elections)", fontsize=24, fontweight="bold")
     plt.tight_layout()
     
     # Save figure

@@ -72,15 +72,15 @@ def main():
             label=r"$\alpha_{CC} = 1 - \alpha_{CONS}^2$")
     
     # Formatting
-    ax.set_xlabel(r"$\alpha_{CONS}$", fontsize=16)
-    ax.set_ylabel(r"$\alpha_{CC}$", fontsize=16)
-    ax.set_title("CONS vs CC (all committees from all elections)", fontsize=18, fontweight="bold")
+    ax.set_xlabel(r"$\alpha_{CONS}$", fontsize=22)
+    ax.set_ylabel(r"$\alpha_{CC}$", fontsize=22)
+    ax.set_title("CONS vs CC (all committees from all elections)", fontsize=24, fontweight="bold")
     ax.set_xlim(0, 1.05)
     ax.set_ylim(0, 1.05)
     ax.set_aspect("equal")
     ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=14, loc="lower left")
-    ax.tick_params(axis='both', labelsize=14)
+    ax.legend(fontsize=16, loc="lower left")
+    ax.tick_params(axis='both', labelsize=18)
     
     plt.tight_layout()
     

@@ -113,7 +113,7 @@ def main():
         print(f"  {method}: {method_props[method]}")
     
     # ===== Create Grouped Bar Chart =====
-    fig, ax = plt.subplots(figsize=(14, 7))
+    fig, ax = plt.subplots(figsize=(14, 8))
     
     pair_names = ["PAIRS-AV", "PAIRS-CC", "PAIRS-EJR", "CONS-AV", "CONS-CC", "CONS-EJR"]
     n_pairs = len(pair_names)
@@ -149,16 +149,18 @@ def main():
     
     # Formatting
     ax.set_xticks(x)
-    ax.set_xticklabels(pair_names, fontsize=14)
-    ax.set_ylabel("Proportion of Elections with (1,1)", fontsize=16)
-    ax.set_xlabel("Trade-off Pair", fontsize=16)
-    ax.set_title("(1,1) Achievement: Best Possible vs Voting Methods", fontsize=18, fontweight="bold")
+    ax.set_xticklabels(pair_names, fontsize=18)
+    ax.set_ylabel("Proportion of Elections with (1,1)", fontsize=20)
+    ax.set_xlabel("Trade-off Pair", fontsize=20)
+    ax.set_title("(1,1) Achievement: Best Possible vs Voting Methods", fontsize=22, fontweight="bold")
     ax.set_ylim(0, 1.1)
     ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5)
     ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5)
-    ax.legend(loc="upper right", fontsize=12)
     ax.grid(True, alpha=0.3, axis="y")
-    ax.tick_params(axis='both', labelsize=14)
+    ax.tick_params(axis='both', labelsize=16)
+    
+    # Legend below the plot
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=4, fontsize=14)
     
     plt.tight_layout()
     
