@@ -1,15 +1,16 @@
 """
-Plot histograms of alpha metrics for each voting method across all PB elections.
+Plot CDFs of alpha metrics for each voting method across all PB elections.
 Excludes values equal to 1.0 to show distribution of non-perfect scores.
 
-Creates a 2x2 subplot figure where each subplot shows the distribution of one alpha metric
-(alpha_AV, alpha_CC, alpha_PAIRS, alpha_CONS) with overlapping transparent histograms
+Creates a 2x2 subplot figure where each subplot shows the CDF of one alpha metric
+(alpha_AV, alpha_CC, alpha_PAIRS, alpha_CONS) with overlapping lines
 for each voting method.
 
-Output: analysis/alpha_histograms_no_ones.png
+Output: analysis/alpha_cdf_no_ones.png
 """
 
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
@@ -68,24 +69,21 @@ def main():
             # Filter out values equal to 1.0
             method_data = method_data[method_data < 1.0]
             if len(method_data) > 0:
-                ax.hist(
-                    method_data,
-                    bins=30,
-                    alpha=0.5,
-                    color=colors[method],
-                    label=method,
-                    edgecolor=colors[method],
-                    linewidth=0.3,
-                )
+                # Sort data for CDF
+                sorted_data = np.sort(method_data)
+                # Compute cumulative proportions
+                cdf = np.arange(1, len(sorted_data) + 1) / len(sorted_data)
+                ax.plot(sorted_data, cdf, color=colors[method], label=method, linewidth=1)
         
         ax.set_xlabel(alpha_labels[idx], fontsize=6)
-        ax.set_ylabel("Frequency", fontsize=6)
+        ax.set_ylabel("Cumulative Proportion", fontsize=6)
         ax.set_xlim(0, 1.0)
+        ax.set_ylim(0, 1.0)
         ax.axvline(x=0.5, color="gray", linestyle="--", alpha=0.5, linewidth=0.5)
         ax.grid(True, alpha=0.3, linewidth=0.5)
         ax.tick_params(axis='both', labelsize=5)
     
-    fig.suptitle("Alpha Metrics Distribution by Voting Method\n(excluding perfect scores)", fontsize=9, fontweight="bold")
+    fig.suptitle("Alpha Metrics CDF by Voting Method\n(excluding perfect scores)", fontsize=9, fontweight="bold")
     
     # Single shared legend at the bottom
     handles, labels = axes[0].get_legend_handles_labels()
@@ -94,26 +92,12 @@ def main():
     plt.tight_layout(rect=[0, 0.08, 1, 0.95])
     
     # Save figure
-    output_path = analysis_dir / "alpha_histograms_no_ones.png"
+    output_path = analysis_dir / "alpha_cdf_no_ones.png"
     plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     
-    print(f"\nHistogram saved to: {output_path}")
-    
-    # Print summary statistics
-    print("\n" + "=" * 80)
-    print("Summary Statistics (excluding 1.0)")
-    print("=" * 80)
-    for metric in alpha_metrics:
-        print(f"\n{metric}:")
-        for method in methods:
-            method_data = all_data[all_data["method"] == method][metric].dropna()
-            total = len(method_data)
-            method_data = method_data[method_data < 1.0]
-            if len(method_data) > 0:
-                print(f"  {method:20s}: n={len(method_data):4d}/{total:4d}, mean={method_data.mean():.4f}, min={method_data.min():.4f}, max={method_data.max():.4f}")
+    print(f"\nCDF plot saved to: {output_path}")
 
 
 if __name__ == "__main__":
     main()
-

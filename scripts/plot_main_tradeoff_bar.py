@@ -113,7 +113,7 @@ def main():
         print(f"  {method}: {method_props[method]}")
     
     # ===== Create Grouped Bar Chart =====
-    fig, ax = plt.subplots(figsize=(14, 8))
+    fig, ax = plt.subplots(figsize=(5, 4))
     
     pair_names = ["PAIRS-AV", "PAIRS-CC", "PAIRS-EJR", "CONS-AV", "CONS-CC", "CONS-EJR"]
     n_pairs = len(pair_names)
@@ -121,7 +121,7 @@ def main():
     
     # Bar positions
     x = np.arange(n_pairs)
-    width = 0.11
+    width = 0.10
     
     # Colors
     colors = {
@@ -138,29 +138,29 @@ def main():
     heights = [best_possible_prop[name] for name in pair_names]
     offset = -width * (n_bars - 1) / 2
     bars = ax.bar(x + offset, heights, width, label="Best Possible", 
-                  color=colors["Best Possible"], edgecolor="black", linewidth=0.5)
+                  color=colors["Best Possible"], edgecolor="black", linewidth=0.3)
     
     # Plot voting methods
     for i, method in enumerate(methods):
         heights = [method_props[method][name] for name in pair_names]
         offset = -width * (n_bars - 1) / 2 + width * (i + 1)
         ax.bar(x + offset, heights, width, label=method,
-               color=colors[method], edgecolor="black", linewidth=0.5)
+               color=colors[method], edgecolor="black", linewidth=0.3)
     
     # Formatting
     ax.set_xticks(x)
-    ax.set_xticklabels(pair_names, fontsize=18)
-    ax.set_ylabel("Proportion of Elections with (1,1)", fontsize=20)
-    ax.set_xlabel("Trade-off Pair", fontsize=20)
-    ax.set_title("(1,1) Achievement: Best Possible vs Voting Methods", fontsize=22, fontweight="bold")
+    ax.set_xticklabels(pair_names, fontsize=7, rotation=45, ha="right")
+    ax.set_ylabel("Proportion of Elections that\nMaximize Both Metrics", fontsize=8)
+    ax.set_xlabel("Trade-off Pair", fontsize=8)
+    ax.set_title("Proportion of Elections with Metric Pairs\nMaximized by Voting Methods", fontsize=9, fontweight="bold")
     ax.set_ylim(0, 1.1)
-    ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5)
-    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5)
-    ax.grid(True, alpha=0.3, axis="y")
-    ax.tick_params(axis='both', labelsize=16)
+    ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5, linewidth=0.5)
+    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5, linewidth=0.5)
+    ax.grid(True, alpha=0.3, axis="y", linewidth=0.5)
+    ax.tick_params(axis='both', labelsize=7)
     
     # Legend below the plot
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=4, fontsize=14)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.35), ncol=4, fontsize=6)
     
     plt.tight_layout()
     

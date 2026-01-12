@@ -17,7 +17,7 @@ def main():
     
     # Use poland_warszawa_2019_rejon-poludniowy (8191 committees, max_error=0.000269)
     election_path = base_dir / "output" / "pb" / "poland_warszawa_2019_rejon-poludniowy" / "raw_scores.csv"
-    election_name = "poland_warszawa_2019_rejon-poludniowy"
+    election_name = "Poland Warszawa 2019 Rejon Poludniowy"
     
     print(f"Loading {election_name}...")
     df = pd.read_csv(election_path)
@@ -40,28 +40,20 @@ def main():
     print(f"Mean error: {errors.mean():.6f}")
     
     # Create figure
-    fig, ax = plt.subplots(figsize=(10, 10))
+    fig, ax = plt.subplots(figsize=(3.5, 3.5))
     
     # Plot all points
-    ax.scatter(alpha_cons, alpha_cc, alpha=0.2, color="black", s=15, edgecolors="none",
-               label="Committee")
-    
-    # Add theory line: alpha_CC = 1 - alpha_CONS^2
-    x_theory = np.linspace(0, 1, 100)
-    y_theory = 1 - x_theory**2
-    ax.plot(x_theory, y_theory, color="red", linewidth=2, linestyle="--", 
-            label=r"$\alpha_{CC} = 1 - \alpha_{CONS}^2$")
+    ax.scatter(alpha_cons, alpha_cc, alpha=0.2, color="black", s=3, edgecolors="none")
     
     # Formatting
-    ax.set_xlabel(r"$\alpha_{CONS}$", fontsize=22)
-    ax.set_ylabel(r"$\alpha_{CC}$", fontsize=22)
-    ax.set_title(f"CONS vs CC\n{election_name}", fontsize=24, fontweight="bold")
+    ax.set_xlabel(r"$\alpha_{CONS}$", fontsize=8)
+    ax.set_ylabel(r"$\alpha_{CC}$", fontsize=8)
+    ax.set_title(f"CONS vs CC\n{election_name}", fontsize=9, fontweight="bold")
     ax.set_xlim(0, 1.05)
     ax.set_ylim(0, 1.05)
     ax.set_aspect("equal")
-    ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=16, loc="lower right")
-    ax.tick_params(axis='both', labelsize=18)
+    ax.grid(True, alpha=0.3, linewidth=0.5)
+    ax.tick_params(axis='both', labelsize=7)
     
     plt.tight_layout()
     

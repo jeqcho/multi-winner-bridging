@@ -28,7 +28,7 @@ def main():
     
     # Metrics (including EJR)
     metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS", "EJR"]
-    metric_labels = ["AV", "CC", "PAIRS", "CONS", "EJR"]
+    metric_labels = [r"$\alpha_{AV}$", r"$\alpha_{CC}$", r"$\alpha_{PAIRS}$", r"$\alpha_{CONS}$", r"$\alpha_{EJR}$"]
     
     # Voting methods (ordered for plot)
     methods = ["MES", "greedy-CC", "greedy-PAV", "greedy-AV", "greedy-AV/cost", "greedy-AV/cost^2"]
@@ -59,7 +59,7 @@ def main():
         print(f"  {method}: {method_props[method]}")
     
     # ===== Create Grouped Bar Chart =====
-    fig, ax = plt.subplots(figsize=(14, 8))
+    fig, ax = plt.subplots(figsize=(3.5, 3.5))
     
     n_metrics = len(metrics)
     n_bars = len(methods)  # Just voting methods
@@ -83,22 +83,22 @@ def main():
         heights = [method_props[method][metric] for metric in metrics]
         offset = -width * (n_bars - 1) / 2 + width * i
         ax.bar(x + offset, heights, width, label=method,
-               color=colors[method], edgecolor="black", linewidth=0.5)
+               color=colors[method], edgecolor="black", linewidth=0.3)
     
     # Formatting
     ax.set_xticks(x)
-    ax.set_xticklabels(metric_labels, fontsize=18)
-    ax.set_ylabel("Proportion of Elections Achieving 1.0", fontsize=20)
-    ax.set_xlabel("Metric", fontsize=20)
-    ax.set_title("Metric Achievement by Voting Method", fontsize=22, fontweight="bold")
+    ax.set_xticklabels(metric_labels, fontsize=7)
+    ax.set_ylabel("Proportion of Elections", fontsize=8)
+    ax.set_xlabel("Metric", fontsize=8)
+    ax.set_title("Metric Achievement by Voting Method", fontsize=9, fontweight="bold")
     ax.set_ylim(0, 1.1)
-    ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5)
-    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5)
-    ax.grid(True, alpha=0.3, axis="y")
-    ax.tick_params(axis='both', labelsize=16)
+    ax.axhline(y=1.0, color="gray", linestyle="--", alpha=0.5, linewidth=0.5)
+    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.5, linewidth=0.5)
+    ax.grid(True, alpha=0.3, axis="y", linewidth=0.5)
+    ax.tick_params(axis='both', labelsize=7)
     
     # Legend below the plot
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=3, fontsize=14)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=3, fontsize=6)
     
     plt.tight_layout()
     
