@@ -1,22 +1,48 @@
 # Multi-Winner Bridging
 
-A comprehensive Python system to calculate and analyze approval voting scores (AV, CC, PAIRS, CONS, EJR) for all possible committee subsets from PrefLib voting datasets.
+A comprehensive Python system to calculate and analyze approval voting scores (AV, CC, PAIRS, CONS, EJR) for committee selection from PrefLib voting datasets and Pabulib participatory budgeting data.
 
 ## Overview
 
-This project:
-1. Loads approval voting data from PrefLib datasets
-2. Calculates 5 different scoring metrics for all possible committee subsets
+This project supports two types of committee selection problems:
+
+**Fixed-size committee selection** (PrefLib data):
+- Select k candidates from m total candidates
+- Exhaustively evaluate all possible committees
+
+**Budget-constrained selection** (Pabulib PB data):
+- Select projects that fit within a budget constraint
+- Projects have varying costs
+- Exhaustively evaluate all budget-feasible committees
+
+The pipeline:
+1. Loads approval voting data from PrefLib or Pabulib datasets
+2. Calculates 5 scoring metrics (AV, CC, PAIRS, CONS, EJR) for all valid committees
 3. Computes alpha-approximations for each metric
-4. Runs the Method of Equal Shares (MES) algorithm
-5. Visualizes the relationships between different metrics
+4. Runs multiple voting methods (MES, greedy-AV, greedy-CC, greedy-PAV, and more)
+5. Visualizes trade-offs between different metrics
 
 ## Supported Datasets
+
+### PrefLib Datasets (Fixed-size committees)
 
 - **French Election (2007)**: Dataset 00071 - 12 candidates, 2836 voters from 6 polling stations
 - **Camp Songs**: Dataset 00059
   - `file_02`: 8 candidates, 39 voters
   - `file_04`: 10 candidates, 56 voters
+
+### Pabulib Datasets (Budget-constrained)
+
+Participatory budgeting data from [Pabulib](https://pabulib.org/). The `data/` directory contains PB instances from Poland, France, and the US.
+
+**Curated selection** (`data/pb_selected_10_20251202_023743/`): Top 10 PB instances filtered by:
+- At most 13 projects
+- At most 10k voters
+- Approval voting format
+- Excludes experimental runs
+- Ranked by Pabulib quality score
+
+See the [filtered Pabulib query](https://pabulib.org/?votes_max=10000&projects_max=13&type=approval&exclude_experimental=true) for details.
 
 ## Installation
 
@@ -40,21 +66,44 @@ This project requires [Gurobi Optimizer](https://www.gurobi.com/) for verifying 
 ```
 ├── pyproject.toml              # Project configuration
 ├── reference.md                # Score definitions and formulas
+│
+├── main.py                     # Runner for PrefLib data (fixed-size committees)
+├── main_pb.py                  # Runner for Pabulib PB data (full pipeline with plots)
+├── main_pb_batch.py            # Batch runner for PB data (no plots, faster)
+│
 ├── src/
 │   ├── data_loader.py          # Load PrefLib data
+│   ├── pb_data_loader.py       # Load Pabulib PB data (.pb files)
 │   ├── scoring.py              # Scoring functions (AV, CC, PAIRS, CONS, EJR)
 │   ├── alpha_approx.py         # Alpha-approximation calculations (global)
 │   ├── alpha_approx_by_size.py # Alpha-approximation calculations (by size)
-│   ├── run_mes.py              # Method of Equal Shares
+│   ├── mes.py                  # Method of Equal Shares (budget-aware)
+│   ├── run_mes.py              # MES runner for fixed-size committees
+│   ├── voting_methods.py       # Voting methods (AV, CC, PAV, budget variants)
 │   ├── plot_results.py         # Visualization (global)
 │   ├── plot_results_by_size.py # Visualization (by size)
 │   ├── plot_individual_sizes.py# Individual size plots
+│   ├── plot_ejr.py             # EJR-specific plots
 │   └── timer.py                # Time estimation
+│
+├── scripts/                    # Analysis and plotting scripts (26 scripts)
+│   ├── plot_alpha_*.py         # Alpha distribution plots
+│   ├── plot_cons_vs_cc_*.py    # CONS vs CC analysis
+│   ├── plot_metrics_bar.py     # Metrics bar charts
+│   ├── plot_pareto_front.py    # Pareto frontier visualization
+│   └── ...                     # Various analysis scripts
+│
 ├── tests/
 │   ├── test_scoring.py         # Unit tests for scoring functions
 │   └── test_data_loader.py     # Unit tests for data loader
-├── main.py                     # Main runner script
-└── output/                     # Generated results and plots
+│
+├── data/                       # Input datasets
+│   ├── pb_selected_10_*/       # Curated PB datasets
+│   └── *.pb                    # Individual PB files
+│
+├── output/                     # Generated results (CSV files, plots)
+├── analysis/                   # Analysis outputs (plots, JSON results)
+└── presentation/               # Presentation materials and plots
 ```
 
 ## Usage
@@ -62,8 +111,7 @@ This project requires [Gurobi Optimizer](https://www.gurobi.com/) for verifying 
 ### Run Tests
 
 ```bash
-uv run python tests/test_scoring.py
-uv run python tests/test_data_loader.py
+uv run pytest tests/
 ```
 
 ### Estimate Computation Time
@@ -72,9 +120,9 @@ uv run python tests/test_data_loader.py
 uv run python src/timer.py
 ```
 
-### Run Analysis
+### PrefLib Data Analysis (Fixed-size committees)
 
-The main script supports both datasets via command line arguments:
+The main script supports PrefLib datasets:
 
 ```bash
 # Process French Election dataset (2007)
@@ -88,6 +136,31 @@ uv run python main.py camp_songs --file file_02
 uv run python main.py camp_songs --file file_04
 ```
 
+### Pabulib PB Data Analysis (Budget-constrained)
+
+For participatory budgeting data with budget constraints:
+
+```bash
+# Process a single PB file (full pipeline with plots)
+uv run python main_pb.py data/poland_warszawa_2018_wola.pb
+
+# Process all PB files in a directory
+uv run python main_pb.py data/pb_selected_10_20251202_023743/
+
+# Test mode (runs on a small sample file)
+uv run python main_pb.py --test
+```
+
+For batch processing without plots (faster):
+
+```bash
+# Batch process all PB files in directory
+uv run python main_pb_batch.py data/pb_selected_10_20251202_023743/
+
+# Process single file in batch mode
+uv run python main_pb_batch.py data/poland_warszawa_2018_wola.pb
+```
+
 ### Run with Timestamped Logs
 
 To save output to a timestamped log file (recommended for long-running analyses):
@@ -97,30 +170,66 @@ To save output to a timestamped log file (recommended for long-running analyses)
 LOG_FILE="logs/french_election_$(date +%Y%m%d_%H%M%S).log" && \
 uv run python -u main.py french_election 2>&1 | tee "$LOG_FILE"
 
-# Camp Songs with logging
-LOG_FILE="logs/camp_songs_$(date +%Y%m%d_%H%M%S).log" && \
-uv run python -u main.py camp_songs 2>&1 | tee "$LOG_FILE"
+# PB data with logging
+LOG_FILE="logs/pb_$(date +%Y%m%d_%H%M%S).log" && \
+uv run python -u main_pb.py data/pb_selected_10_20251202_023743/ 2>&1 | tee "$LOG_FILE"
 ```
 
-The `-u` flag ensures unbuffered output for real-time logging. Logs are saved to the `logs/` directory with format `{dataset}_{YYYYMMDD_HHMMSS}.log`.
+The `-u` flag ensures unbuffered output for real-time logging.
 
-#### Output
+### Output
 
-For each dataset, the pipeline produces:
+#### PrefLib Output (fixed-size committees)
+
+For each PrefLib dataset, the pipeline produces:
 
 **CSV files:**
-- `raw_scores.csv` - Raw scores for all subsets
+- `raw_scores.csv` - Raw scores (AV, CC, PAIRS, CONS) for all subsets
 - `alpha_scores_by_size.csv` - Alpha-approximations by committee size
 - `max_scores_by_size.csv` - Maximum scores per size
-- `voting_results.csv` - Voting method results (MES, AV, CC, PAV)
+- `voting_results.csv` - Voting method results (MES, AV, greedy-CC, greedy-PAV)
 
 **Plots:**
 - `alpha_plots_by_size.png` - Alpha plots by committee size
+- `ejr_plots.png` - EJR analysis with voting methods
 - `by_size/size_XX.png` - Individual plots for each committee size
 
-Output is saved to:
+Output locations:
 - `output/french_election/` for French Election
 - `output/camp_songs/file_02/` and `output/camp_songs/file_04/` for Camp Songs
+
+#### Pabulib PB Output (budget-constrained)
+
+For each PB dataset, `main_pb.py` produces:
+
+**CSV files:**
+- `raw_scores.csv` - Raw scores for all budget-feasible committees
+- `alpha_scores.csv` - Alpha-approximations (normalized by global max)
+- `max_scores.csv` - Maximum scores across all valid committees
+- `voting_results.csv` - Results for 10 voting methods
+- `ejr_data.csv` - EJR analysis for voting methods
+
+**Plots:**
+- `alpha_plots.png` - Alpha scatter plots (PAIRS/CONS vs AV/CC)
+- `ejr_plots.png` - Voting methods vs EJR
+- `ejr_plots_zoomed.png` - Zoomed EJR plots (0.8-1.0 range)
+
+Output location: `output/pb/{dataset_name}/`
+
+#### Batch Mode Output
+
+`main_pb_batch.py` produces only CSV files (no plots):
+- `raw_scores.csv`
+- `voting_results.csv` (includes EJR boolean)
+
+#### Analysis Outputs
+
+The `analysis/` directory contains cross-dataset analysis:
+- `alpha_histograms*.png` - Distribution of alpha values
+- `cons_vs_cc_*.png` - CONS vs CC relationship analysis
+- `pareto_front_scatter.png` - Pareto frontier visualization
+- `metrics_bar.png` - Comparative metrics bar chart
+- `ejr_*.json` - EJR analysis results
 
 ## Scoring Metrics
 
@@ -139,10 +248,41 @@ Number of voter pairs in the same connected component (connected via shared appr
 ### EJR (Extended Justified Representation)
 Boolean property: whether the committee satisfies proportional representation.
 
-### β-EJR
-Maximum β ∈ [0,1] such that the committee satisfies β-EJR (relaxed version of EJR).
+### α-EJR
+Maximum α ∈ [0,1] such that the committee satisfies α-EJR (relaxed version of EJR).
 
 See `reference.md` for detailed mathematical definitions.
+
+## Voting Methods
+
+### Greedy Methods (Fixed-size)
+
+| Method | Description |
+|--------|-------------|
+| **AV** | Select top-k candidates by approval count |
+| **greedy-CC** | Greedily maximize coverage (CC score) |
+| **greedy-PAV** | Greedy Proportional Approval Voting with harmonic weights |
+| **MES** | Method of Equal Shares |
+
+### Budget-Aware Methods (PB data)
+
+| Method | Description |
+|--------|-------------|
+| **MES** | Method of Equal Shares (budget-aware) |
+| **greedy-AV** | Select projects by approval count within budget |
+| **greedy-AV/cost** | Select by approval/cost ratio (cost-effectiveness) |
+| **greedy-AV/cost²** | Select by approval/cost² ratio (penalizes expensive projects) |
+| **greedy-CC** | Greedy coverage maximization within budget |
+| **greedy-PAV** | Greedy PAV within budget |
+
+### Max-Score Methods (from exhaustive search)
+
+| Method | Description |
+|--------|-------------|
+| **PAIRS-AV** | Max PAIRS score, tiebreak by AV |
+| **PAIRS-CC** | Max PAIRS score, tiebreak by CC |
+| **CONS-AV** | Max CONS score, tiebreak by AV |
+| **CONS-CC** | Max CONS score, tiebreak by CC |
 
 ## Performance
 
@@ -202,23 +342,19 @@ Run the analysis to discover:
 - How connectivity (PAIRS/CONS) relates to representation (AV/CC/EJR)
 - The Pareto frontier for multi-objective optimization
 
-## Notes
-
-We used data from Preflib and Pabulib.
-
-For Pabulib, we filtered for PBs that have at most 13 projects, 10k voters, use approval voting, excluded experimental runs, and then we chose the top 10 PBs by "quality" as defined by the Pabulib authors. The corresponding link with these filters applied is [this](https://pabulib.org/?votes_max=10000&projects_max=13&type=approval&exclude_experimental=true) (the filters on the left did not visibly change, but they are actually applied). The data is at `data/pb_selected_10_20251202_023743`.
-
 ## References
 
 - Dong et al., "Selecting Interlacing Committees" (2024)
-- PrefLib: A Library for Preferences - https://preflib.github.io/PrefLib-Jekyll/
+- PrefLib - https://preflib.github.io/PrefLib-Jekyll/
+- Pabulib - https://pabulib.org/
 - Dataset 00071: 2007 French Presidential Election Approval Voting
 - Dataset 00059: Camp Songs
 
 ## Citation
 
 If you use this code or the datasets, please cite:
-- Nicholas Mattei and Toby Walsh. PrefLib: A Library of Preference Data. Proceedings of Third International Conference on Algorithmic Decision Theory (ADT 2013)
+- Nicholas Mattei and Toby Walsh. PrefLib: A Library for Preference Data. Proceedings of Third International Conference on Algorithmic Decision Theory (ADT 2013)
+- Pabulib: Stolicki, Szufa, Talmon. "Pabulib: A Participatory Budgeting Library" (2020)
 
 ## License
 
