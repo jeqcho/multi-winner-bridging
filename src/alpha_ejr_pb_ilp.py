@@ -87,6 +87,65 @@ def generate_q_candidates(costs: List[int], budget: int) -> List[float]:
     return sorted(candidates)
 
 
+def generate_q_candidates_for_outcome(
+    costs: List[int], 
+    budget: int, 
+    utilities: np.ndarray
+) -> List[float]:
+    """
+    Generate q candidates optimized for a specific outcome W.
+    
+    Per Section 3 of reference/compute-alpha-from-outcome-alpha-ejr-pb.md:
+    Q = {u_i(W) + ε : i ∈ V} ∪ {cost(c): c ∈ C} ∪ {B}
+    
+    Key insight: violations occur when q is just above some achieved utility.
+    However, q must be at least min_cost for any group to be q-cohesive.
+    
+    We use epsilon = min(costs) to ensure meaningful thresholds.
+    
+    Args:
+        costs: List of project costs
+        budget: Total budget B
+        utilities: Pre-computed utilities u_i(W) for each voter
+        
+    Returns:
+        Sorted list of unique q values >= min_cost and <= budget
+    """
+    candidates = set()
+    min_cost = min(costs) if costs else 1
+    
+    # Use epsilon = 1 (small numerical offset), but filter by min_cost later
+    epsilon = 1.0
+    
+    # u_i(W) + ε for all voters (key thresholds for violations)
+    # Only include if above min_cost (otherwise can't be cohesive)
+    for u in utilities:
+        q = u + epsilon
+        if min_cost <= q <= budget:
+            candidates.add(float(q))
+    
+    # All project costs (cohesiveness thresholds)
+    for c in costs:
+        if 0 < c <= budget:
+            candidates.add(float(c))
+    
+    # Prefix sums of sorted costs (potential cohesive bundle thresholds)
+    sorted_costs = sorted(costs)
+    cumsum = 0
+    for c in sorted_costs:
+        cumsum += c
+        if min_cost <= cumsum <= budget:
+            candidates.add(float(cumsum))
+    
+    # Budget itself
+    candidates.add(float(budget))
+    
+    # Filter: only keep candidates >= min_cost
+    candidates = {q for q in candidates if q >= min_cost}
+    
+    return sorted(candidates)
+
+
 def find_largest_violating_group(
     M: np.ndarray,
     costs: List[int],
@@ -211,8 +270,8 @@ def compute_alpha_ejr_pb(
         print(f"  Voters: {n}, Projects: {n_projects}, Budget: {B}")
         print(f"  Utilities: min={utilities.min():.0f}, max={utilities.max():.0f}, mean={utilities.mean():.0f}")
     
-    # Generate candidate q values
-    q_candidates = generate_q_candidates(costs, budget)
+    # Generate candidate q values using utility-based thresholds
+    q_candidates = generate_q_candidates_for_outcome(costs, budget, utilities)
     
     if verbose:
         print(f"  Testing {len(q_candidates)} q thresholds...")
