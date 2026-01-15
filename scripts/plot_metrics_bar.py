@@ -26,8 +26,8 @@ def main():
     voting_files = list(pb_output_dir.rglob("voting_results.csv"))
     print(f"Found {len(voting_files)} voting_results.csv files")
     
-    # Metrics (including EJR)
-    metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS", "EJR"]
+    # Metrics (including alpha_EJR - budget-aware EJR)
+    metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS", "alpha_EJR"]
     metric_labels = [r"$\alpha_{AV}$", r"$\alpha_{CC}$", r"$\alpha_{PAIRS}$", r"$\alpha_{CONS}$", r"$\alpha_{EJR}$"]
     
     # Voting methods (ordered for plot)
@@ -46,12 +46,8 @@ def main():
         method_data = all_data[all_data["method"] == method]
         total = len(method_data)
         for metric in metrics:
-            if metric == "EJR":
-                # EJR is boolean True/False
-                achieved = method_data[metric].sum()
-            else:
-                # Alpha metrics: check if == 1.0
-                achieved = (method_data[metric] == 1.0).sum()
+            # All metrics are now continuous alpha values - check if >= 0.9999 (essentially 1.0)
+            achieved = (method_data[metric] >= 0.9999).sum()
             method_props[method][metric] = achieved / total if total > 0 else 0
     
     print("\nProportions achieving 1.0 for each metric:")

@@ -42,10 +42,10 @@ def main():
         ("alpha_CONS", "alpha_AV", "CONS-AV"),
         ("alpha_CONS", "alpha_CC", "CONS-CC"),
     ]
-    # EJR trade-off pairs (handled separately)
+    # EJR trade-off pairs (using budget-aware alpha_EJR)
     ejr_pairs = [
-        ("alpha_PAIRS", "EJR", "PAIRS-EJR"),
-        ("alpha_CONS", "EJR", "CONS-EJR"),
+        ("alpha_PAIRS", "alpha_EJR", "PAIRS-EJR"),
+        ("alpha_CONS", "alpha_EJR", "CONS-EJR"),
     ]
     
     # Voting methods (ordered for plot)
@@ -73,17 +73,19 @@ def main():
     
     best_possible_prop = {name: best_possible[name] / total_elections for name in best_possible}
     
-    # Load EJR best-possible from JSON files
-    ejr_pairs_json = analysis_dir / "ejr_best_pairs.json"
-    ejr_cons_json = analysis_dir / "ejr_best_cons.json"
+    # Load optimal alpha-EJR results for best-possible (budget-aware)
+    optimal_ejr_json = analysis_dir / "optimal_alpha_ejr.json"
     
-    with open(ejr_pairs_json) as f:
-        ejr_pairs_data = json.load(f)
-    with open(ejr_cons_json) as f:
-        ejr_cons_data = json.load(f)
-    
-    best_possible_prop["PAIRS-EJR"] = ejr_pairs_data["ejr_satisfied_proportion"]
-    best_possible_prop["CONS-EJR"] = ejr_cons_data["ejr_satisfied_proportion"]
+    if optimal_ejr_json.exists():
+        with open(optimal_ejr_json) as f:
+            optimal_ejr_data = json.load(f)
+        # Best possible: proportion of elections where optimal alpha = 1
+        best_possible_prop["PAIRS-EJR"] = optimal_ejr_data["alpha_1_proportion"]
+        best_possible_prop["CONS-EJR"] = optimal_ejr_data["alpha_1_proportion"]
+    else:
+        print(f"Warning: {optimal_ejr_json} not found. Run compute_optimal_alpha_ejr.py first.")
+        best_possible_prop["PAIRS-EJR"] = 0.0
+        best_possible_prop["CONS-EJR"] = 0.0
     
     print(f"\nBest Possible (out of {total_elections} elections):")
     for name, prop in best_possible_prop.items():
@@ -103,9 +105,9 @@ def main():
         for col1, col2, name in pairs_voting:
             achieved = ((method_data[col1] == 1.0) & (method_data[col2] == 1.0)).sum()
             method_props[method][name] = achieved / total if total > 0 else 0
-        # EJR trade-off pairs (EJR is boolean True/False)
+        # EJR trade-off pairs (alpha_EJR is continuous, check >= 0.9999)
         for col1, col2, name in ejr_pairs:
-            achieved = ((method_data[col1] == 1.0) & (method_data[col2] == True)).sum()
+            achieved = ((method_data[col1] >= 0.9999) & (method_data[col2] >= 0.9999)).sum()
             method_props[method][name] = achieved / total if total > 0 else 0
     
     print("\nVoting Methods:")
