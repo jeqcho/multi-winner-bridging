@@ -73,17 +73,17 @@ def main():
     
     best_possible_prop = {name: best_possible[name] / total_elections for name in best_possible}
     
-    # Load optimal alpha-EJR results for best-possible (budget-aware)
-    optimal_ejr_json = analysis_dir / "optimal_alpha_ejr.json"
+    # Load correct PAIRS-EJR and CONS-EJR best-possible values
+    # These check if committees with alpha_PAIRS=1 or alpha_CONS=1 also achieve alpha_EJR=1
+    ejr_tradeoffs_json = analysis_dir / "best_possible_ejr_tradeoffs.json"
     
-    if optimal_ejr_json.exists():
-        with open(optimal_ejr_json) as f:
-            optimal_ejr_data = json.load(f)
-        # Best possible: proportion of elections where optimal alpha = 1
-        best_possible_prop["PAIRS-EJR"] = optimal_ejr_data["alpha_1_proportion"]
-        best_possible_prop["CONS-EJR"] = optimal_ejr_data["alpha_1_proportion"]
+    if ejr_tradeoffs_json.exists():
+        with open(ejr_tradeoffs_json) as f:
+            ejr_tradeoffs_data = json.load(f)
+        best_possible_prop["PAIRS-EJR"] = ejr_tradeoffs_data["pairs_ejr_11_proportion"]
+        best_possible_prop["CONS-EJR"] = ejr_tradeoffs_data["cons_ejr_11_proportion"]
     else:
-        print(f"Warning: {optimal_ejr_json} not found. Run compute_optimal_alpha_ejr.py first.")
+        print(f"Warning: {ejr_tradeoffs_json} not found. Run compute_best_possible_ejr_tradeoffs.py first.")
         best_possible_prop["PAIRS-EJR"] = 0.0
         best_possible_prop["CONS-EJR"] = 0.0
     
@@ -173,6 +173,9 @@ def main():
     
     print(f"\nBar chart saved to: {output_path}")
 
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()

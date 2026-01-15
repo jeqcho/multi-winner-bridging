@@ -2,8 +2,8 @@
 Plot CDFs of alpha metrics for each voting method across all PB elections.
 Excludes values equal to 1.0 to show distribution of non-perfect scores.
 
-Creates a 2x2 subplot figure where each subplot shows the CDF of one alpha metric
-(alpha_AV, alpha_CC, alpha_PAIRS, alpha_CONS) with overlapping lines
+Creates a 3x2 subplot figure where each subplot shows the CDF of one alpha metric
+(alpha_AV, alpha_CC, alpha_PAIRS, alpha_CONS, alpha_EJR) with overlapping lines
 for each voting method.
 
 Output: analysis/alpha_cdf_no_ones.png
@@ -43,8 +43,8 @@ def main():
     print(f"Total rows: {len(all_data)}")
     
     # Alpha metrics and voting methods
-    alpha_metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS"]
-    alpha_labels = [r"$\alpha_{AV}$", r"$\alpha_{CC}$", r"$\alpha_{PAIRS}$", r"$\alpha_{CONS}$"]
+    alpha_metrics = ["alpha_AV", "alpha_CC", "alpha_PAIRS", "alpha_CONS", "alpha_EJR"]
+    alpha_labels = [r"$\alpha_{AV}$", r"$\alpha_{CC}$", r"$\alpha_{PAIRS}$", r"$\alpha_{CONS}$", r"$\alpha_{EJR}$"]
     methods = ["MES", "greedy-AV", "greedy-AV/cost", "greedy-AV/cost^2", "greedy-CC", "greedy-PAV"]
     
     # Colors for each method
@@ -57,8 +57,8 @@ def main():
         "greedy-PAV": "#a65628",    # brown
     }
     
-    # Create 2x2 subplot figure
-    fig, axes = plt.subplots(2, 2, figsize=(3.5, 3.0))
+    # Create 3x2 subplot figure (5 metrics + 1 empty)
+    fig, axes = plt.subplots(3, 2, figsize=(3.5, 4.5))
     axes = axes.flatten()
     
     for idx, metric in enumerate(alpha_metrics):
@@ -83,13 +83,16 @@ def main():
         ax.grid(True, alpha=0.3, linewidth=0.5)
         ax.tick_params(axis='both', labelsize=5)
     
+    # Hide the 6th (empty) subplot
+    axes[5].axis("off")
+    
     fig.suptitle("Alpha Metrics CDF by Voting Method\n(excluding perfect scores)", fontsize=9, fontweight="bold")
     
-    # Single shared legend at the bottom
+    # Single shared legend in the empty subplot area
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, -0.02), ncol=3, fontsize=5)
+    axes[5].legend(handles, labels, loc="center", ncol=2, fontsize=6, frameon=False)
     
-    plt.tight_layout(rect=[0, 0.08, 1, 0.95])
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
     
     # Save figure
     output_path = analysis_dir / "alpha_cdf_no_ones.png"

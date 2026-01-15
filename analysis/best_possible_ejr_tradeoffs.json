@@ -1,0 +1,2376 @@
+{
+  "total_elections": 338,
+  "pairs_ejr_11_count": 130,
+  "pairs_ejr_11_proportion": 0.38461538461538464,
+  "cons_ejr_11_count": 132,
+  "cons_ejr_11_proportion": 0.3905325443786982,
+  "errors": 0,
+  "results": [
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-2_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_leszczynki-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_radiowo-wolka-weglowa-placowka-huta",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_nad-nerem",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_obluze-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_kamienna-gora-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_14_-_Saint-Simon_Lafourguette_Oncopole-Campus_Sante_du_Futur",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 4,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_gorniak",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_miedzeszyn",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_dzialki-lesne-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-1_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_nowosolna",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_poznan_2023_9-stare-miasto",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_marysin-polnocny",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_babie-doly-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-29th-ward-2020_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 11,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_pustki-cisowskie-demptowo-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_nad-nerem",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_dolina-lodki",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_8_-_Minimes_Barriere_de_Paris_Ponts-Jumeaux_La_Vache_Raisins_Fondeyre",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_radiowo-wolka-weglowa-placowka-huta",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-35th-ward-2019_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-40th-ward-2021_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_marysin-wawerski-poludniowy",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-35th-ward-2021_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-central-falls-high-school-participatory-budgeting-vote_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_koziny",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_miasto-ogrod-sadyba",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_radiowo-wolka-weglowa-placowka-huta",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-2_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-5_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_przyczolek-grochowski",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_grabowek-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zoliborz-poludniowy-powazki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-4_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_rejon-poludniowy",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_marysin-poludniowy",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_nadwisle",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-b_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-40th-ward-2020_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_mileszki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2020_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-1_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_pole-mokotowskie",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_wiskitno",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_zerzen",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_marysin-wawerski-polnocny",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_aleksandrow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-vallejo-2018_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_srodmiescie-poludniowe",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": true,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "netherlands_amsterdam_619_",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_3_-_Les_Chalets_Bayard_Belfort_Saint_Aubin_Dupuy",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_sluzew",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_chylonia-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_participatory-budgeting-project-pb2-2021-ballot_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_zerzen",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_zdrowie-mania",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_niskie-okecie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_wlochy",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_stegny",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 8,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zielona-grzybowa",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_dzialki-lesne-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_czyste-mirow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_1_-_Capitole_Arnaud_Bernard_Carmes",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_plac-wojska-polskiego",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-1_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_miedzylesie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_wawrzyszew",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-5-2019_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_karwiny-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_kobialka-grodzisk-brzeziny",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_srodmiescie-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-i-wilanow-wysoki-wilanow-niski-zachodni",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 6,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_chwarzno-wiczlino-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_wiskitno",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_7_-_Sept_Deniers_Ginestous-Sesquieres_Lalande",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_chrzanow-jelonki-poludniowe-jelonki-polnocne",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_lagiewniki",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_ursus-polnocny",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_falenica",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_zdrowie-mania",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_ruda",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-3-2019_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_bemowo-lotnisko-fort-bema",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_nowosolna",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_subunit-wawer",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_niskie-okecie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_wrzeciono",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-7_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_maly-kack-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_kamionek",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-polnocny",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_las",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_lagiewniki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_gorniak",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_12_-_Pont_des_Demoiselles_Ormeau_Montaudran_La_Terrasse_Malepere",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_srodmiescie-polnocne",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_orlowo-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_4_-_Lapujade_Bonnefoy_Periole_Marengo_La_Colonne",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_srodmiescie-polnocne",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 5,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_mlociny-wolka-weglowa-placowka-radiowo-huta",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-vallejo-2019-2_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_cisowa-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_im-jozefa-montwilla-mireckiego",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_rokicie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_oksywie-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_widzew-wschod",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_andrzejow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_srodmiescie",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_sadul",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_sadul",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_stare-bielany",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_5_-_Saint-Michel_Saint-Agne_Empalot_Le_Busca_Ile_du_Ramier_Monplaisir",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_przyczolek-grochowski",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_marymont-potok-zoliborz-dziennikarski",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 6,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_kamionek",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_stare-miasto",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_targowek-fabryczny-elsnerow-i-utrata",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_miedzeszyn",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2020_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_przyczolek-grochowski",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_nowosolna",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_marysin-wawerski-polnocny",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_aleksandrow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_muranow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "netherlands_amsterdam_523_",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-4-2019_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_wzniesien-lodzkich",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_wiskitno",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_grabowek-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-3_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-6_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_im-jozefa-montwilla-mireckiego",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_wielki-kack-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_radosc",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_mileszki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_boernerowo-fort-radiowo-groty-gorce",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2018_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_15_-_Croix_de_Pierre_Route_dEspagne",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_babie-doly-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-kinowa",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 4,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_piaski",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2019_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 43,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_nowosolna",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_nr-33",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_las-zerzen-wawer-sadul",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_las",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-6_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-40th-ward-2021_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_karwiny-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_wilanow-obszar-i",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_leszczynki-small",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_las-bielanski-marymont-ruda-marymont-kaskada",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_falenica",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_witomino-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_wilanow-obszar-ii",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2020_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_miedzylesie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_sielce",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-north-east-san-fernando-valley-2021_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_rejon-7",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 4,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_muranow",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-4-piekielko-zeran-annopol",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_olechow-janow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_gorniak",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2021_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_stary-mokotow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 4,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2021-22-cal-high-library-pb_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_slodowiec",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_stare-miasto",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_chwarzno-wiczlino-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_lublinek-pienista",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_obluze-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_piastow-kurak",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "netherlands_amsterdam_515_",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_sluzew",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_redlowo-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-10th-ward-2017_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_dabrowa-large",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 11,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_mirow-czyste-odolany",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-29th-ward-2021_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_marysin-wawerski-poludniowy",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_slodowiec",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_17_-_Mirail-Universite_Reynerie_Bellefontaine",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_radosc",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-long-beach-district-9-2015_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_miedzylesie-radosc",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zielony-ursynow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-2-2019_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 4,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_wielki-kack-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2017_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": false,
+      "n_committees_checked": 5,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_lagiewniki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_kamionek",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_witomino-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_wawrzyszew",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2016_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 14,
+      "error": null
+    },
+    {
+      "election": "poland_poznan_2023_7-morasko-radojewo-naramowice-umultowo",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_maly-kack-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_miedzylesie",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_piaski",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_nad-nerem",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_cisowa-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-2-stara-milosna",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_srodmiescie-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_aleksandrow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_nr-33",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_stare-polesie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2021_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_las",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 448,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-1_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_brodno-podgrodzie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_stara-ochota",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_subunit-wawer",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-4_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-vallejo-2021_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2020_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": false,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_participatory-budgeting-project-pb2-2022-ballot_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-merced-county-district-2-2018_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_boernerowo-fort-radiowo-gorce-groty",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_grochow-polnocny",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-7_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_wygledow-sluzewiec",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_6_-_Saint-Cyprien",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_mileszki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_zlotno",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 12,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_rejon-4",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_kolo",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-3_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 4,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_baluty-zachodnie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_retkinia-zachod-smulsko",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_piastow-kurak",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_ruda-marymont-las-bielanski",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_wzniesien-lodzkich",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_chylonia-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_mileszki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_olszynka-grochowska-goclawek",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_srodmiescie-polnocne",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_tarchomin",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_chomiczowka",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_andrzejow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_im-jozefa-montwilla-mireckiego",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_ruda",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-e_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_10_-_Jolimont_Soupetard_Roseraie_Gloire_Gramont_Amouroux",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_sadul",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_slodowiec",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_nr-33",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_miedzeszyn",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_oksywie-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_lublinek-pienista",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_piastow-kurak",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zerzen",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_powazki-nowolipki-mlynow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 3,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_blonia-wilanowskie",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 32,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-4-zoliborz-poludniowy-powazki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_9_-_Trois_Cocus_Borderouge_Croix-Daurade_Paleficat_Grand_Selve",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_nad-nerem",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_orlowo-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_nadwisle",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_andrzejow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_pogorze-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_nr-33",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-6_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_pustki-cisowskie-demptowo-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_radosc",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_wilanow",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-1-2019_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_nadwisle",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_baluty-zachodnie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-4-zoliborz-poludniowy",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-centrum",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_olechow-janow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_zarzew",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_nowodwory",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_wawrzyszew",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_baluty-zachodnie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2020_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_muranow-nowe-miasto-stare-miasto",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_falenica",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-4_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_rokicie",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_2_-_Amidonniers_Compans-Caffarelli_Brouardel",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_subunit-wawer",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-f_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 6,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-knapsacks",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_19_-_Casselardit_Fontaine-Bayonne_Cartoucherie",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_wiskitno",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-7_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_boernerowo-lotnisko-fort-radiowo-groty",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_przywisle",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-d_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_dolina-lodki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_wzniesien-lodzkich",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_pogorze-large",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-oakland-2017-district-1_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 10,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-5_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_dolina-lodki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_wzniesien-lodzkich",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_lagiewniki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2017_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 8,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_przywisle",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_siekierki-augustowka",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_redlowo-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_kamienna-gora-small",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-5-powazki",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_brodno-podgrodzie-zacisze",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-long-beach-district-9-2016_vote-approvals",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_andrzejow",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_zdrowie-mania",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-3-marymont-potok-zoliborz-dziennikarski",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_widzew-wschod",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 2,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_julianow-marysin-rogi",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 1,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-approvals",
+      "pairs_ejr_11": false,
+      "cons_ejr_11": false,
+      "n_committees_checked": 120,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_wola",
+      "pairs_ejr_11": true,
+      "cons_ejr_11": true,
+      "n_committees_checked": 1,
+      "error": null
+    }
+  ]
+}
