@@ -1,8 +1,185 @@
 {
-  "total_elections": 170,
-  "alpha_1_count": 170,
+  "total_elections": 338,
+  "alpha_1_count": 338,
   "alpha_1_proportion": 1.0,
   "results": [
+    {
+      "election": "France_Toulouse_2022_10_-_Jolimont_Soupetard_Roseraie_Gloire_Gramont_Amouroux",
+      "n_voters": 393,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 362000,
+      "PAIRS": 12336,
+      "CONS": 27966,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee",
+      "n_voters": 262,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9
+      ],
+      "committee_size": 7,
+      "total_cost": 374000,
+      "PAIRS": 10637,
+      "CONS": 26106,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_12_-_Pont_des_Demoiselles_Ormeau_Montaudran_La_Terrasse_Malepere",
+      "n_voters": 659,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 6,
+      "total_cost": 385000,
+      "PAIRS": 41988,
+      "CONS": 77421,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville",
+      "n_voters": 304,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        4,
+        5,
+        6,
+        9
+      ],
+      "committee_size": 5,
+      "total_cost": 400000,
+      "PAIRS": 2409,
+      "CONS": 7503,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_14_-_Saint-Simon_Lafourguette_Oncopole-Campus_Sante_du_Futur",
+      "n_voters": 191,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 387200,
+      "PAIRS": 8768,
+      "CONS": 15576,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_15_-_Croix_de_Pierre_Route_dEspagne",
+      "n_voters": 274,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 398200,
+      "PAIRS": 14196,
+      "CONS": 34716,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette",
+      "n_voters": 234,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        4,
+        6,
+        7
+      ],
+      "committee_size": 5,
+      "total_cost": 395000,
+      "PAIRS": 7377,
+      "CONS": 14538,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_17_-_Mirail-Universite_Reynerie_Bellefontaine",
+      "n_voters": 93,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        3,
+        6
+      ],
+      "committee_size": 3,
+      "total_cost": 375000,
+      "PAIRS": 763,
+      "CONS": 1830,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo",
+      "n_voters": 357,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "committee_size": 5,
+      "total_cost": 397000,
+      "PAIRS": 8833,
+      "CONS": 17208,
+      "error": null
+    },
     {
       "election": "France_Toulouse_2022_19_-_Casselardit_Fontaine-Bayonne_Cartoucherie",
       "n_voters": 292,
@@ -22,6 +199,124 @@
       "error": null
     },
     {
+      "election": "France_Toulouse_2022_1_-_Capitole_Arnaud_Bernard_Carmes",
+      "n_voters": 972,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 397000,
+      "PAIRS": 129277,
+      "CONS": 252405,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan",
+      "n_voters": 286,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 390000,
+      "PAIRS": 823,
+      "CONS": 2926,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_2_-_Amidonniers_Compans-Caffarelli_Brouardel",
+      "n_voters": 404,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        4,
+        8,
+        9
+      ],
+      "committee_size": 5,
+      "total_cost": 396900,
+      "PAIRS": 15070,
+      "CONS": 31878,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_3_-_Les_Chalets_Bayard_Belfort_Saint_Aubin_Dupuy",
+      "n_voters": 330,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        5,
+        6,
+        8,
+        9
+      ],
+      "committee_size": 5,
+      "total_cost": 375700,
+      "PAIRS": 6122,
+      "CONS": 15225,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_4_-_Lapujade_Bonnefoy_Periole_Marengo_La_Colonne",
+      "n_voters": 253,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "committee_size": 7,
+      "total_cost": 380320,
+      "PAIRS": 6089,
+      "CONS": 20503,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_5_-_Saint-Michel_Saint-Agne_Empalot_Le_Busca_Ile_du_Ramier_Monplaisir",
+      "n_voters": 423,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        6
+      ],
+      "committee_size": 5,
+      "total_cost": 400000,
+      "PAIRS": 21710,
+      "CONS": 56616,
+      "error": null
+    },
+    {
       "election": "France_Toulouse_2022_6_-_Saint-Cyprien",
       "n_voters": 436,
       "n_projects": 10,
@@ -38,6 +333,63 @@
       "total_cost": 354000,
       "PAIRS": 13168,
       "CONS": 19900,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_7_-_Sept_Deniers_Ginestous-Sesquieres_Lalande",
+      "n_voters": 154,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "committee_size": 4,
+      "total_cost": 397000,
+      "PAIRS": 2336,
+      "CONS": 5460,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_8_-_Minimes_Barriere_de_Paris_Ponts-Jumeaux_La_Vache_Raisins_Fondeyre",
+      "n_voters": 512,
+      "n_projects": 10,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "committee_size": 5,
+      "total_cost": 393000,
+      "PAIRS": 13649,
+      "CONS": 32896,
+      "error": null
+    },
+    {
+      "election": "France_Toulouse_2022_9_-_Trois_Cocus_Borderouge_Croix-Daurade_Paleficat_Grand_Selve",
+      "n_voters": 185,
+      "n_projects": 9,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 397700,
+      "PAIRS": 2201,
+      "CONS": 6105,
       "error": null
     },
     {
@@ -89,6 +441,21 @@
       "total_cost": 96856,
       "PAIRS": 311654,
       "CONS": 357435,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_babie-doly-large",
+      "n_voters": 318,
+      "n_projects": 6,
+      "budget": 219780,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        4
+      ],
+      "committee_size": 1,
+      "total_cost": 188500,
+      "PAIRS": 3570,
+      "CONS": 3570,
       "error": null
     },
     {
@@ -145,6 +512,23 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_chylonia-large",
+      "n_voters": 1231,
+      "n_projects": 7,
+      "budget": 511110,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        5,
+        6
+      ],
+      "committee_size": 3,
+      "total_cost": 482758,
+      "PAIRS": 159227,
+      "CONS": 285390,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_chylonia-small",
       "n_voters": 1218,
       "n_projects": 10,
@@ -159,6 +543,21 @@
       "total_cost": 29994,
       "PAIRS": 311014,
       "CONS": 492528,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_cisowa-large",
+      "n_voters": 671,
+      "n_projects": 3,
+      "budget": 448110,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 448110,
+      "PAIRS": 61425,
+      "CONS": 61425,
       "error": null
     },
     {
@@ -197,6 +596,21 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_dzialki-lesne-large",
+      "n_voters": 745,
+      "n_projects": 5,
+      "budget": 286650,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 286650,
+      "PAIRS": 54285,
+      "CONS": 54285,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_dzialki-lesne-small",
       "n_voters": 697,
       "n_projects": 7,
@@ -211,6 +625,21 @@
       "total_cost": 18200,
       "PAIRS": 103324,
       "CONS": 172578,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_grabowek-large",
+      "n_voters": 1511,
+      "n_projects": 7,
+      "budget": 295110,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3
+      ],
+      "committee_size": 1,
+      "total_cost": 295000,
+      "PAIRS": 67896,
+      "CONS": 67896,
       "error": null
     },
     {
@@ -231,6 +660,22 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_kamienna-gora-large",
+      "n_voters": 477,
+      "n_projects": 3,
+      "budget": 190170,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2
+      ],
+      "committee_size": 2,
+      "total_cost": 179675,
+      "PAIRS": 25052,
+      "CONS": 29890,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_kamienna-gora-small",
       "n_voters": 429,
       "n_projects": 3,
@@ -244,6 +689,21 @@
       "total_cost": 18464,
       "PAIRS": 61827,
       "CONS": 79003,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_karwiny-large",
+      "n_voters": 1104,
+      "n_projects": 5,
+      "budget": 287370,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 287370,
+      "PAIRS": 116886,
+      "CONS": 116886,
       "error": null
     },
     {
@@ -264,6 +724,21 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_leszczynki-large",
+      "n_voters": 727,
+      "n_projects": 5,
+      "budget": 278370,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 131310,
+      "PAIRS": 57630,
+      "CONS": 57630,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_leszczynki-small",
       "n_voters": 675,
       "n_projects": 9,
@@ -281,6 +756,21 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_maly-kack-large",
+      "n_voters": 3050,
+      "n_projects": 7,
+      "budget": 491940,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 491816,
+      "PAIRS": 644680,
+      "CONS": 644680,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_maly-kack-small",
       "n_voters": 2881,
       "n_projects": 10,
@@ -295,6 +785,21 @@
       "total_cost": 27774,
       "PAIRS": 1452190,
       "CONS": 2498730,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_obluze-large",
+      "n_voters": 1973,
+      "n_projects": 7,
+      "budget": 467100,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        6
+      ],
+      "committee_size": 1,
+      "total_cost": 419600,
+      "PAIRS": 90951,
+      "CONS": 90951,
       "error": null
     },
     {
@@ -317,6 +822,21 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_oksywie-large",
+      "n_voters": 819,
+      "n_projects": 2,
+      "budget": 456930,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1
+      ],
+      "committee_size": 1,
+      "total_cost": 150000,
+      "PAIRS": 101926,
+      "CONS": 101926,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_oksywie-small",
       "n_voters": 789,
       "n_projects": 6,
@@ -332,6 +852,21 @@
       "total_cost": 39196,
       "PAIRS": 186021,
       "CONS": 270480,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_orlowo-large",
+      "n_voters": 368,
+      "n_projects": 2,
+      "budget": 376020,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1
+      ],
+      "committee_size": 1,
+      "total_cost": 20000,
+      "PAIRS": 16110,
+      "CONS": 16110,
       "error": null
     },
     {
@@ -352,6 +887,21 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_pogorze-large",
+      "n_voters": 1197,
+      "n_projects": 4,
+      "budget": 347932,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3
+      ],
+      "committee_size": 1,
+      "total_cost": 344050,
+      "PAIRS": 87990,
+      "CONS": 87990,
+      "error": null
+    },
+    {
       "election": "poland_gdynia_2020_pogorze-small",
       "n_voters": 849,
       "n_projects": 8,
@@ -366,6 +916,22 @@
       "total_cost": 30000,
       "PAIRS": 139750,
       "CONS": 239778,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_pustki-cisowskie-demptowo-large",
+      "n_voters": 1056,
+      "n_projects": 4,
+      "budget": 271440,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3
+      ],
+      "committee_size": 2,
+      "total_cost": 98680,
+      "PAIRS": 149182,
+      "CONS": 176121,
       "error": null
     },
     {
@@ -416,6 +982,21 @@
       "total_cost": 29480,
       "PAIRS": 789500,
       "CONS": 1415403,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_srodmiescie-large",
+      "n_voters": 1020,
+      "n_projects": 3,
+      "budget": 361890,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 20000,
+      "PAIRS": 50403,
+      "CONS": 50403,
       "error": null
     },
     {
@@ -502,6 +1083,73 @@
       "error": null
     },
     {
+      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-large",
+      "n_voters": 1277,
+      "n_projects": 8,
+      "budget": 317070,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        5,
+        6
+      ],
+      "committee_size": 2,
+      "total_cost": 312800,
+      "PAIRS": 44121,
+      "CONS": 71253,
+      "error": null
+    },
+    {
+      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-small",
+      "n_voters": 1300,
+      "n_projects": 7,
+      "budget": 35230,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4,
+        5
+      ],
+      "committee_size": 3,
+      "total_cost": 30000,
+      "PAIRS": 187145,
+      "CONS": 345696,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_andrzejow",
+      "n_voters": 1036,
+      "n_projects": 9,
+      "budget": 447000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        7,
+        8
+      ],
+      "committee_size": 4,
+      "total_cost": 436000,
+      "PAIRS": 143493,
+      "CONS": 266085,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_baluty-zachodnie",
+      "n_voters": 2227,
+      "n_projects": 9,
+      "budget": 457000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        7,
+        8
+      ],
+      "committee_size": 2,
+      "total_cost": 447800,
+      "PAIRS": 76432,
+      "CONS": 148240,
+      "error": null
+    },
+    {
       "election": "poland_lodz_2020_dolina-lodki",
       "n_voters": 651,
       "n_projects": 4,
@@ -517,6 +1165,24 @@
       "total_cost": 408000,
       "PAIRS": 89728,
       "CONS": 211575,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_gorniak",
+      "n_voters": 759,
+      "n_projects": 5,
+      "budget": 538000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 31900,
+      "PAIRS": 91046,
+      "CONS": 176121,
       "error": null
     },
     {
@@ -574,6 +1240,78 @@
       "total_cost": 440000,
       "PAIRS": 1038215,
       "CONS": 1324378,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_mileszki",
+      "n_voters": 955,
+      "n_projects": 9,
+      "budget": 417000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "committee_size": 4,
+      "total_cost": 405000,
+      "PAIRS": 70808,
+      "CONS": 149878,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_nad-nerem",
+      "n_voters": 608,
+      "n_projects": 8,
+      "budget": 409000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 5,
+      "total_cost": 400000,
+      "PAIRS": 35976,
+      "CONS": 124750,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_nowosolna",
+      "n_voters": 1442,
+      "n_projects": 5,
+      "budget": 434000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        4
+      ],
+      "committee_size": 3,
+      "total_cost": 65000,
+      "PAIRS": 149515,
+      "CONS": 222111,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_nr-33",
+      "n_voters": 237,
+      "n_projects": 5,
+      "budget": 411000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 270000,
+      "PAIRS": 8769,
+      "CONS": 21945,
       "error": null
     },
     {
@@ -636,6 +1374,29 @@
       "total_cost": 435100,
       "PAIRS": 781902,
       "CONS": 2081820,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2020_rokicie",
+      "n_voters": 1960,
+      "n_projects": 11,
+      "budget": 533000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "committee_size": 9,
+      "total_cost": 502200,
+      "PAIRS": 789135,
+      "CONS": 1786995,
       "error": null
     },
     {
@@ -734,6 +1495,96 @@
       "error": null
     },
     {
+      "election": "poland_lodz_2020_zdrowie-mania",
+      "n_voters": 890,
+      "n_projects": 13,
+      "budget": 425000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "committee_size": 9,
+      "total_cost": 413000,
+      "PAIRS": 93143,
+      "CONS": 287661,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_andrzejow",
+      "n_voters": 1044,
+      "n_projects": 7,
+      "budget": 461000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2
+      ],
+      "committee_size": 1,
+      "total_cost": 461000,
+      "PAIRS": 59340,
+      "CONS": 59340,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_gorniak",
+      "n_voters": 1402,
+      "n_projects": 13,
+      "budget": 572000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        4,
+        9,
+        12
+      ],
+      "committee_size": 4,
+      "total_cost": 568965,
+      "PAIRS": 148457,
+      "CONS": 250278,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_im-jozefa-montwilla-mireckiego",
+      "n_voters": 652,
+      "n_projects": 9,
+      "budget": 416000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        5,
+        6
+      ],
+      "committee_size": 2,
+      "total_cost": 410000,
+      "PAIRS": 15634,
+      "CONS": 21115,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_lagiewniki",
+      "n_voters": 981,
+      "n_projects": 7,
+      "budget": 416000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 340000,
+      "PAIRS": 71895,
+      "CONS": 126253,
+      "error": null
+    },
+    {
       "election": "poland_lodz_2022_lublinek-pienista",
       "n_voters": 1557,
       "n_projects": 13,
@@ -749,6 +1600,41 @@
       "total_cost": 439800,
       "PAIRS": 162269,
       "CONS": 334971,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_mileszki",
+      "n_voters": 619,
+      "n_projects": 4,
+      "budget": 422000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3
+      ],
+      "committee_size": 3,
+      "total_cost": 252900,
+      "PAIRS": 45982,
+      "CONS": 63190,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_nad-nerem",
+      "n_voters": 315,
+      "n_projects": 8,
+      "budget": 411000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        6,
+        7
+      ],
+      "committee_size": 4,
+      "total_cost": 399000,
+      "PAIRS": 22586,
+      "CONS": 44551,
       "error": null
     },
     {
@@ -768,6 +1654,25 @@
       "error": null
     },
     {
+      "election": "poland_lodz_2022_nr-33",
+      "n_voters": 579,
+      "n_projects": 6,
+      "budget": 414000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "committee_size": 5,
+      "total_cost": 249600,
+      "PAIRS": 47335,
+      "CONS": 97020,
+      "error": null
+    },
+    {
       "election": "poland_lodz_2022_olechow-janow",
       "n_voters": 2843,
       "n_projects": 12,
@@ -784,6 +1689,24 @@
       "total_cost": 595000,
       "PAIRS": 996721,
       "CONS": 1933561,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_piastow-kurak",
+      "n_voters": 2936,
+      "n_projects": 9,
+      "budget": 588000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        3,
+        7,
+        8
+      ],
+      "committee_size": 4,
+      "total_cost": 581970,
+      "PAIRS": 1738598,
+      "CONS": 2516646,
       "error": null
     },
     {
@@ -849,6 +1772,41 @@
       "error": null
     },
     {
+      "election": "poland_lodz_2022_wzniesien-lodzkich",
+      "n_voters": 784,
+      "n_projects": 3,
+      "budget": 414000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2
+      ],
+      "committee_size": 2,
+      "total_cost": 23100,
+      "PAIRS": 46860,
+      "CONS": 90951,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2022_zarzew",
+      "n_voters": 2507,
+      "n_projects": 12,
+      "budget": 598000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        7,
+        8,
+        9
+      ],
+      "committee_size": 5,
+      "total_cost": 595000,
+      "PAIRS": 576309,
+      "CONS": 1013176,
+      "error": null
+    },
+    {
       "election": "poland_lodz_2022_zlotno",
       "n_voters": 3452,
       "n_projects": 13,
@@ -887,6 +1845,323 @@
       "total_cost": 424000,
       "PAIRS": 168447,
       "CONS": 343206,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_baluty-zachodnie",
+      "n_voters": 3253,
+      "n_projects": 8,
+      "budget": 499000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "committee_size": 4,
+      "total_cost": 496000,
+      "PAIRS": 313994,
+      "CONS": 581581,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_dolina-lodki",
+      "n_voters": 1678,
+      "n_projects": 13,
+      "budget": 435000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        5,
+        8,
+        10,
+        11,
+        12
+      ],
+      "committee_size": 5,
+      "total_cost": 416900,
+      "PAIRS": 32713,
+      "CONS": 85078,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_gorniak",
+      "n_voters": 1275,
+      "n_projects": 6,
+      "budget": 627000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "committee_size": 5,
+      "total_cost": 355000,
+      "PAIRS": 288903,
+      "CONS": 530965,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_im-jozefa-montwilla-mireckiego",
+      "n_voters": 458,
+      "n_projects": 8,
+      "budget": 421000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 320570,
+      "PAIRS": 55091,
+      "CONS": 95703,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_lagiewniki",
+      "n_voters": 1250,
+      "n_projects": 12,
+      "budget": 422000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        4,
+        9
+      ],
+      "committee_size": 3,
+      "total_cost": 410000,
+      "PAIRS": 73554,
+      "CONS": 167910,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_mileszki",
+      "n_voters": 1281,
+      "n_projects": 8,
+      "budget": 432000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        4,
+        7
+      ],
+      "committee_size": 2,
+      "total_cost": 430000,
+      "PAIRS": 19508,
+      "CONS": 30628,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_nad-nerem",
+      "n_voters": 409,
+      "n_projects": 9,
+      "budget": 415000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        6,
+        8
+      ],
+      "committee_size": 4,
+      "total_cost": 380500,
+      "PAIRS": 23091,
+      "CONS": 36046,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_nowosolna",
+      "n_voters": 1557,
+      "n_projects": 11,
+      "budget": 465000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 437100,
+      "PAIRS": 284949,
+      "CONS": 566580,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_nr-33",
+      "n_voters": 978,
+      "n_projects": 9,
+      "budget": 420000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        5,
+        8
+      ],
+      "committee_size": 5,
+      "total_cost": 409000,
+      "PAIRS": 77785,
+      "CONS": 129286,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_piastow-kurak",
+      "n_voters": 1420,
+      "n_projects": 13,
+      "budget": 648000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        8
+      ],
+      "committee_size": 2,
+      "total_cost": 644600,
+      "PAIRS": 110766,
+      "CONS": 158766,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_ruda",
+      "n_voters": 1896,
+      "n_projects": 11,
+      "budget": 550000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        5,
+        7,
+        8,
+        9,
+        10
+      ],
+      "committee_size": 6,
+      "total_cost": 521100,
+      "PAIRS": 279071,
+      "CONS": 707455,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_wiskitno",
+      "n_voters": 1907,
+      "n_projects": 10,
+      "budget": 453000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        4,
+        7,
+        8,
+        9
+      ],
+      "committee_size": 4,
+      "total_cost": 440800,
+      "PAIRS": 148997,
+      "CONS": 224115,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_wzniesien-lodzkich",
+      "n_voters": 362,
+      "n_projects": 3,
+      "budget": 419000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2
+      ],
+      "committee_size": 2,
+      "total_cost": 214000,
+      "PAIRS": 11046,
+      "CONS": 16653,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2023_zdrowie-mania",
+      "n_voters": 1144,
+      "n_projects": 11,
+      "budget": 446000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "committee_size": 8,
+      "total_cost": 437950,
+      "PAIRS": 188093,
+      "CONS": 426426,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_andrzejow",
+      "n_voters": 2186,
+      "n_projects": 7,
+      "budget": 516000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        6
+      ],
+      "committee_size": 3,
+      "total_cost": 516000,
+      "PAIRS": 132251,
+      "CONS": 219453,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_baluty-zachodnie",
+      "n_voters": 5723,
+      "n_projects": 13,
+      "budget": 538000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "committee_size": 10,
+      "total_cost": 348500,
+      "PAIRS": 483968,
+      "CONS": 1329265,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_dolina-lodki",
+      "n_voters": 976,
+      "n_projects": 10,
+      "budget": 451000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        7
+      ],
+      "committee_size": 3,
+      "total_cost": 434000,
+      "PAIRS": 45090,
+      "CONS": 84666,
       "error": null
     },
     {
@@ -932,6 +2207,41 @@
       "error": null
     },
     {
+      "election": "poland_lodz_2024_lagiewniki",
+      "n_voters": 1460,
+      "n_projects": 9,
+      "budget": 430000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 5,
+      "total_cost": 329500,
+      "PAIRS": 140984,
+      "CONS": 344865,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_mileszki",
+      "n_voters": 769,
+      "n_projects": 6,
+      "budget": 445000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3
+      ],
+      "committee_size": 2,
+      "total_cost": 444000,
+      "PAIRS": 48562,
+      "CONS": 65341,
+      "error": null
+    },
+    {
       "election": "poland_lodz_2024_nad-nerem",
       "n_voters": 298,
       "n_projects": 7,
@@ -946,6 +2256,80 @@
       "total_cost": 383500,
       "PAIRS": 23476,
       "CONS": 39060,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_nowosolna",
+      "n_voters": 1791,
+      "n_projects": 9,
+      "budget": 493000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        5,
+        6
+      ],
+      "committee_size": 3,
+      "total_cost": 490000,
+      "PAIRS": 321019,
+      "CONS": 424581,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_nr-33",
+      "n_voters": 664,
+      "n_projects": 11,
+      "budget": 429000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 375000,
+      "PAIRS": 16785,
+      "CONS": 56616,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_wiskitno",
+      "n_voters": 1399,
+      "n_projects": 7,
+      "budget": 474000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "committee_size": 6,
+      "total_cost": 400427,
+      "PAIRS": 177018,
+      "CONS": 258840,
+      "error": null
+    },
+    {
+      "election": "poland_lodz_2024_wzniesien-lodzkich",
+      "n_voters": 601,
+      "n_projects": 4,
+      "budget": 426000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2
+      ],
+      "committee_size": 3,
+      "total_cost": 320000,
+      "PAIRS": 97133,
+      "CONS": 157641,
       "error": null
     },
     {
@@ -966,6 +2350,71 @@
       "total_cost": 419600,
       "PAIRS": 163318,
       "CONS": 304590,
+      "error": null
+    },
+    {
+      "election": "poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn",
+      "n_voters": 9552,
+      "n_projects": 9,
+      "budget": 1760000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        5,
+        6,
+        7
+      ],
+      "committee_size": 3,
+      "total_cost": 1716400,
+      "PAIRS": 1802283,
+      "CONS": 3342405,
+      "error": null
+    },
+    {
+      "election": "poland_poznan_2023_7-morasko-radojewo-naramowice-umultowo",
+      "n_voters": 9527,
+      "n_projects": 6,
+      "budget": 1510000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        5
+      ],
+      "committee_size": 3,
+      "total_cost": 1145000,
+      "PAIRS": 3420409,
+      "CONS": 7405476,
+      "error": null
+    },
+    {
+      "election": "poland_poznan_2023_9-stare-miasto",
+      "n_voters": 6119,
+      "n_projects": 7,
+      "budget": 800000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        5
+      ],
+      "committee_size": 1,
+      "total_cost": 800000,
+      "PAIRS": 308505,
+      "CONS": 308505,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_aleksandrow",
+      "n_voters": 422,
+      "n_projects": 5,
+      "budget": 110411,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3
+      ],
+      "committee_size": 2,
+      "total_cost": 108467,
+      "PAIRS": 14203,
+      "CONS": 22155,
       "error": null
     },
     {
@@ -1031,6 +2480,25 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2017_kamionek",
+      "n_voters": 927,
+      "n_projects": 9,
+      "budget": 308298,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        4,
+        5,
+        7,
+        8
+      ],
+      "committee_size": 5,
+      "total_cost": 295797,
+      "PAIRS": 115642,
+      "CONS": 183315,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2017_las",
       "n_voters": 135,
       "n_projects": 5,
@@ -1050,6 +2518,100 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2017_marymont-potok-zoliborz-dziennikarski",
+      "n_voters": 587,
+      "n_projects": 13,
+      "budget": 475000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "committee_size": 10,
+      "total_cost": 422900,
+      "PAIRS": 137621,
+      "CONS": 162735,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_marysin-polnocny",
+      "n_voters": 397,
+      "n_projects": 8,
+      "budget": 124802,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4
+      ],
+      "committee_size": 2,
+      "total_cost": 124360,
+      "PAIRS": 10516,
+      "CONS": 20301,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_marysin-poludniowy",
+      "n_voters": 265,
+      "n_projects": 2,
+      "budget": 128824,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 115000,
+      "PAIRS": 9180,
+      "CONS": 9180,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_miedzeszyn",
+      "n_voters": 545,
+      "n_projects": 8,
+      "budget": 117063,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 110840,
+      "PAIRS": 20280,
+      "CONS": 34453,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_miedzylesie",
+      "n_voters": 465,
+      "n_projects": 11,
+      "budget": 133458,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 93533,
+      "PAIRS": 59969,
+      "CONS": 90100,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2017_nadwisle",
       "n_voters": 108,
       "n_projects": 5,
@@ -1066,6 +2628,24 @@
       "total_cost": 98600,
       "PAIRS": 5133,
       "CONS": 5778,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_niskie-okecie",
+      "n_voters": 440,
+      "n_projects": 5,
+      "budget": 336250,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 329140,
+      "PAIRS": 58851,
+      "CONS": 94395,
       "error": null
     },
     {
@@ -1106,6 +2686,37 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2017_przyczolek-grochowski",
+      "n_voters": 176,
+      "n_projects": 4,
+      "budget": 102533,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2
+      ],
+      "committee_size": 2,
+      "total_cost": 98000,
+      "PAIRS": 8519,
+      "CONS": 11175,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_radiowo-wolka-weglowa-placowka-huta",
+      "n_voters": 228,
+      "n_projects": 2,
+      "budget": 200000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 199999,
+      "PAIRS": 19701,
+      "CONS": 19701,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2017_radosc",
       "n_voters": 258,
       "n_projects": 6,
@@ -1139,6 +2750,43 @@
       "total_cost": 110100,
       "PAIRS": 5698,
       "CONS": 6105,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_slodowiec",
+      "n_voters": 674,
+      "n_projects": 8,
+      "budget": 650000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "committee_size": 6,
+      "total_cost": 582650,
+      "PAIRS": 106895,
+      "CONS": 145530,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_subunit-wawer",
+      "n_voters": 373,
+      "n_projects": 5,
+      "budget": 115208,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3
+      ],
+      "committee_size": 3,
+      "total_cost": 12900,
+      "PAIRS": 19016,
+      "CONS": 21736,
       "error": null
     },
     {
@@ -1197,6 +2845,92 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2017_zerzen",
+      "n_voters": 327,
+      "n_projects": 2,
+      "budget": 132036,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 118800,
+      "PAIRS": 34980,
+      "CONS": 34980,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zielona-grzybowa",
+      "n_voters": 268,
+      "n_projects": 8,
+      "budget": 148884,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "committee_size": 4,
+      "total_cost": 148860,
+      "PAIRS": 18310,
+      "CONS": 28920,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zielony-ursynow",
+      "n_voters": 743,
+      "n_projects": 12,
+      "budget": 1100000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        9
+      ],
+      "committee_size": 4,
+      "total_cost": 1090280,
+      "PAIRS": 130898,
+      "CONS": 170820,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2017_zoliborz-poludniowy-powazki",
+      "n_voters": 1733,
+      "n_projects": 5,
+      "budget": 475000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 474900,
+      "PAIRS": 894023,
+      "CONS": 933661,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_aleksandrow",
+      "n_voters": 475,
+      "n_projects": 6,
+      "budget": 117431,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        4
+      ],
+      "committee_size": 3,
+      "total_cost": 113500,
+      "PAIRS": 72227,
+      "CONS": 94395,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2018_czyste-mirow",
       "n_voters": 586,
       "n_projects": 5,
@@ -1212,6 +2946,65 @@
       "total_cost": 946108,
       "PAIRS": 124029,
       "CONS": 162735,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_falenica",
+      "n_voters": 498,
+      "n_projects": 8,
+      "budget": 162175,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "committee_size": 4,
+      "total_cost": 152410,
+      "PAIRS": 61767,
+      "CONS": 92235,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_grochow-polnocny",
+      "n_voters": 936,
+      "n_projects": 9,
+      "budget": 541057,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 8,
+      "total_cost": 488207,
+      "PAIRS": 297579,
+      "CONS": 364231,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_kamionek",
+      "n_voters": 1225,
+      "n_projects": 11,
+      "budget": 308151,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "committee_size": 5,
+      "total_cost": 180500,
+      "PAIRS": 303374,
+      "CONS": 361675,
       "error": null
     },
     {
@@ -1297,6 +3090,25 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2018_miedzeszyn",
+      "n_voters": 454,
+      "n_projects": 7,
+      "budget": 126341,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "committee_size": 5,
+      "total_cost": 119580,
+      "PAIRS": 42878,
+      "CONS": 62835,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2018_miedzylesie",
       "n_voters": 446,
       "n_projects": 6,
@@ -1351,6 +3163,26 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2018_niskie-okecie",
+      "n_voters": 229,
+      "n_projects": 12,
+      "budget": 372500,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 367735,
+      "PAIRS": 15242,
+      "CONS": 24753,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona",
       "n_voters": 1061,
       "n_projects": 11,
@@ -1388,6 +3220,21 @@
       "total_cost": 261252,
       "PAIRS": 184022,
       "CONS": 239778,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_obszar-4-zoliborz-poludniowy-powazki",
+      "n_voters": 3482,
+      "n_projects": 5,
+      "budget": 487500,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 485000,
+      "PAIRS": 1668051,
+      "CONS": 1668051,
       "error": null
     },
     {
@@ -1461,6 +3308,27 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2018_radosc",
+      "n_voters": 792,
+      "n_projects": 11,
+      "budget": 162345,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "committee_size": 7,
+      "total_cost": 160340,
+      "PAIRS": 52372,
+      "CONS": 88831,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2018_rejon-4",
       "n_voters": 1058,
       "n_projects": 13,
@@ -1476,6 +3344,24 @@
       "total_cost": 263000,
       "PAIRS": 236791,
       "CONS": 367653,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_rejon-7",
+      "n_voters": 955,
+      "n_projects": 13,
+      "budget": 639560,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        7,
+        9,
+        11
+      ],
+      "committee_size": 4,
+      "total_cost": 636750,
+      "PAIRS": 148104,
+      "CONS": 259560,
       "error": null
     },
     {
@@ -1553,6 +3439,23 @@
       "total_cost": 576450,
       "PAIRS": 27326,
       "CONS": 45451,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2018_subunit-wawer",
+      "n_voters": 301,
+      "n_projects": 5,
+      "budget": 125794,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3
+      ],
+      "committee_size": 3,
+      "total_cost": 112600,
+      "PAIRS": 24078,
+      "CONS": 41616,
       "error": null
     },
     {
@@ -1662,6 +3565,22 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2019_aleksandrow",
+      "n_voters": 529,
+      "n_projects": 5,
+      "budget": 125362,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        4
+      ],
+      "committee_size": 2,
+      "total_cost": 105160,
+      "PAIRS": 29044,
+      "CONS": 43071,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2019_bemowo-lotnisko-fort-bema",
       "n_voters": 606,
       "n_projects": 6,
@@ -1679,6 +3598,45 @@
       "total_cost": 1223450,
       "PAIRS": 155248,
       "CONS": 183315,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_boernerowo-fort-radiowo-gorce-groty",
+      "n_voters": 963,
+      "n_projects": 6,
+      "budget": 766000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "committee_size": 4,
+      "total_cost": 751851,
+      "PAIRS": 195007,
+      "CONS": 338253,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_brodno-podgrodzie",
+      "n_voters": 494,
+      "n_projects": 11,
+      "budget": 400000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10
+      ],
+      "committee_size": 7,
+      "total_cost": 392080,
+      "PAIRS": 67304,
+      "CONS": 87990,
       "error": null
     },
     {
@@ -1701,6 +3659,65 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2019_falenica",
+      "n_voters": 652,
+      "n_projects": 10,
+      "budget": 187723,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "committee_size": 6,
+      "total_cost": 180400,
+      "PAIRS": 85917,
+      "CONS": 124750,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-centrum",
+      "n_voters": 598,
+      "n_projects": 8,
+      "budget": 376634,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 217150,
+      "PAIRS": 87833,
+      "CONS": 123753,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_grochow-kinowa",
+      "n_voters": 491,
+      "n_projects": 10,
+      "budget": 222176,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        8
+      ],
+      "committee_size": 4,
+      "total_cost": 218740,
+      "PAIRS": 37587,
+      "CONS": 72771,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2019_grochow-polnocny",
       "n_voters": 642,
       "n_projects": 5,
@@ -1717,6 +3734,26 @@
       "total_cost": 381500,
       "PAIRS": 179241,
       "CONS": 205761,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_kamionek",
+      "n_voters": 669,
+      "n_projects": 7,
+      "budget": 322239,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "committee_size": 6,
+      "total_cost": 119200,
+      "PAIRS": 100990,
+      "CONS": 118341,
       "error": null
     },
     {
@@ -1782,6 +3819,62 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2019_miasto-ogrod-sadyba",
+      "n_voters": 1063,
+      "n_projects": 11,
+      "budget": 462911,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "committee_size": 8,
+      "total_cost": 303454,
+      "PAIRS": 236297,
+      "CONS": 368511,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_miedzeszyn",
+      "n_voters": 295,
+      "n_projects": 5,
+      "budget": 137672,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        3
+      ],
+      "committee_size": 3,
+      "total_cost": 134940,
+      "PAIRS": 20092,
+      "CONS": 31375,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_miedzylesie",
+      "n_voters": 466,
+      "n_projects": 10,
+      "budget": 179370,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        8
+      ],
+      "committee_size": 3,
+      "total_cost": 178886,
+      "PAIRS": 29251,
+      "CONS": 41905,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2019_muranow",
       "n_voters": 182,
       "n_projects": 2,
@@ -1815,6 +3908,29 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2019_obszar-3-marymont-potok-zoliborz-dziennikarski",
+      "n_voters": 606,
+      "n_projects": 12,
+      "budget": 527500,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "committee_size": 9,
+      "total_cost": 434556,
+      "PAIRS": 91043,
+      "CONS": 118828,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2019_obszar-4-piekielko-zeran-annopol",
       "n_voters": 748,
       "n_projects": 5,
@@ -1831,6 +3947,22 @@
       "total_cost": 546512,
       "PAIRS": 257412,
       "CONS": 279378,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-4-zoliborz-poludniowy",
+      "n_voters": 439,
+      "n_projects": 5,
+      "budget": 263750,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1
+      ],
+      "committee_size": 2,
+      "total_cost": 101200,
+      "PAIRS": 49567,
+      "CONS": 64261,
       "error": null
     },
     {
@@ -1868,6 +4000,76 @@
       "total_cost": 459000,
       "PAIRS": 26297,
       "CONS": 29161,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki",
+      "n_voters": 154,
+      "n_projects": 7,
+      "budget": 220000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "committee_size": 4,
+      "total_cost": 192650,
+      "PAIRS": 4246,
+      "CONS": 6328,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_piaski",
+      "n_voters": 558,
+      "n_projects": 9,
+      "budget": 900000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        5,
+        7
+      ],
+      "committee_size": 3,
+      "total_cost": 881278,
+      "PAIRS": 72724,
+      "CONS": 92665,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_przyczolek-grochowski",
+      "n_voters": 274,
+      "n_projects": 4,
+      "budget": 114339,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 92800,
+      "PAIRS": 19503,
+      "CONS": 19503,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_przywisle",
+      "n_voters": 1030,
+      "n_projects": 8,
+      "budget": 1120000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 6,
+      "total_cost": 1083925,
+      "PAIRS": 308868,
+      "CONS": 497503,
       "error": null
     },
     {
@@ -1932,6 +4134,24 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2019_ruda-marymont-las-bielanski",
+      "n_voters": 718,
+      "n_projects": 9,
+      "budget": 550000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "committee_size": 4,
+      "total_cost": 535130,
+      "PAIRS": 185953,
+      "CONS": 234955,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2019_sadul",
       "n_voters": 110,
       "n_projects": 2,
@@ -1966,6 +4186,25 @@
       "total_cost": 461828,
       "PAIRS": 82373,
       "CONS": 99681,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_sluzew",
+      "n_voters": 663,
+      "n_projects": 8,
+      "budget": 670085,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "committee_size": 5,
+      "total_cost": 444400,
+      "PAIRS": 92682,
+      "CONS": 112101,
       "error": null
     },
     {
@@ -2015,6 +4254,24 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2019_stare-bielany",
+      "n_voters": 847,
+      "n_projects": 12,
+      "budget": 800000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4,
+        7,
+        11
+      ],
+      "committee_size": 4,
+      "total_cost": 792168,
+      "PAIRS": 106111,
+      "CONS": 163306,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2019_stare-miasto",
       "n_voters": 413,
       "n_projects": 9,
@@ -2032,6 +4289,22 @@
       "total_cost": 781220,
       "PAIRS": 45491,
       "CONS": 84255,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2019_subunit-wawer",
+      "n_voters": 287,
+      "n_projects": 6,
+      "budget": 136447,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        4
+      ],
+      "committee_size": 2,
+      "total_cost": 135159,
+      "PAIRS": 16034,
+      "CONS": 27730,
       "error": null
     },
     {
@@ -2143,6 +4416,25 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2026_las-zerzen-wawer-sadul",
+      "n_voters": 1130,
+      "n_projects": 12,
+      "budget": 725604,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        5,
+        9
+      ],
+      "committee_size": 5,
+      "total_cost": 689550,
+      "PAIRS": 395398,
+      "CONS": 597871,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2026_miedzylesie-radosc",
       "n_voters": 777,
       "n_projects": 13,
@@ -2182,6 +4474,41 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2026_mlociny-wolka-weglowa-placowka-radiowo-huta",
+      "n_voters": 310,
+      "n_projects": 5,
+      "budget": 241868,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        3
+      ],
+      "committee_size": 2,
+      "total_cost": 233780,
+      "PAIRS": 26896,
+      "CONS": 29646,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_muranow-nowe-miasto-stare-miasto",
+      "n_voters": 501,
+      "n_projects": 8,
+      "budget": 967473,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "committee_size": 5,
+      "total_cost": 966780,
+      "PAIRS": 96644,
+      "CONS": 110685,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2026_nowodwory",
       "n_voters": 2076,
       "n_projects": 12,
@@ -2198,6 +4525,24 @@
       "total_cost": 1175288,
       "PAIRS": 717612,
       "CONS": 1174278,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_olszynka-grochowska-goclawek",
+      "n_voters": 538,
+      "n_projects": 6,
+      "budget": 846539,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "committee_size": 4,
+      "total_cost": 498400,
+      "PAIRS": 86230,
+      "CONS": 93096,
       "error": null
     },
     {
@@ -2290,6 +4635,26 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2026_srodmiescie-polnocne",
+      "n_voters": 308,
+      "n_projects": 9,
+      "budget": 846539,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 738488,
+      "PAIRS": 36263,
+      "CONS": 46665,
+      "error": null
+    },
+    {
       "election": "poland_warszawa_2026_srodmiescie-poludniowe",
       "n_voters": 620,
       "n_projects": 13,
@@ -2347,6 +4712,43 @@
       "total_cost": 589630,
       "PAIRS": 305906,
       "CONS": 379756,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_tarchomin",
+      "n_voters": 948,
+      "n_projects": 9,
+      "budget": 967473,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 5,
+      "total_cost": 828228,
+      "PAIRS": 206666,
+      "CONS": 374545,
+      "error": null
+    },
+    {
+      "election": "poland_warszawa_2026_wawrzyszew",
+      "n_voters": 857,
+      "n_projects": 13,
+      "budget": 483736,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "committee_size": 4,
+      "total_cost": 459571,
+      "PAIRS": 69239,
+      "CONS": 121278,
       "error": null
     },
     {
@@ -2410,6 +4812,149 @@
       "error": null
     },
     {
+      "election": "poland_warszawa_2026_wygledow-sluzewiec",
+      "n_voters": 598,
+      "n_projects": 3,
+      "budget": 725604,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1
+      ],
+      "committee_size": 2,
+      "total_cost": 619500,
+      "PAIRS": 159336,
+      "CONS": 162165,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2021-22-cal-high-library-pb_vote-knapsacks",
+      "n_voters": 238,
+      "n_projects": 9,
+      "budget": 1300,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "committee_size": 7,
+      "total_cost": 1210,
+      "PAIRS": 15865,
+      "CONS": 17391,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-central-falls-high-school-participatory-budgeting-vote_vote-approvals",
+      "n_voters": 356,
+      "n_projects": 8,
+      "budget": 10000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        6
+      ],
+      "committee_size": 2,
+      "total_cost": 8700,
+      "PAIRS": 11691,
+      "CONS": 17391,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-b_vote-knapsacks",
+      "n_voters": 127,
+      "n_projects": 7,
+      "budget": 50000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 50000,
+      "PAIRS": 1176,
+      "CONS": 1176,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks",
+      "n_voters": 187,
+      "n_projects": 10,
+      "budget": 50000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 50000,
+      "PAIRS": 1225,
+      "CONS": 1225,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-d_vote-knapsacks",
+      "n_voters": 245,
+      "n_projects": 12,
+      "budget": 50000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 50000,
+      "PAIRS": 5671,
+      "CONS": 5671,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-e_vote-knapsacks",
+      "n_voters": 364,
+      "n_projects": 12,
+      "budget": 50000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 5000,
+      "PAIRS": 9730,
+      "CONS": 9730,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_2022-jersey-city-ward-f_vote-knapsacks",
+      "n_voters": 132,
+      "n_projects": 9,
+      "budget": 50000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 5000,
+      "PAIRS": 1378,
+      "CONS": 1378,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals",
+      "n_voters": 449,
+      "n_projects": 4,
+      "budget": 150000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0
+      ],
+      "committee_size": 1,
+      "total_cost": 150000,
+      "PAIRS": 16290,
+      "CONS": 16290,
+      "error": null
+    },
+    {
       "election": "us_stanford-dataset_participatory-budgeting-project-pb2-2021-ballot_vote-approvals",
       "n_voters": 129,
       "n_projects": 12,
@@ -2441,6 +4986,160 @@
       "total_cost": 20000,
       "PAIRS": 9696,
       "CONS": 12720,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-10th-ward-2017_vote-approvals",
+      "n_voters": 107,
+      "n_projects": 6,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "committee_size": 5,
+      "total_cost": 392000,
+      "PAIRS": 4858,
+      "CONS": 5356,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-29th-ward-2020_vote-approvals",
+      "n_voters": 106,
+      "n_projects": 7,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "committee_size": 6,
+      "total_cost": 536800,
+      "PAIRS": 5007,
+      "CONS": 5460,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-29th-ward-2021_vote-approvals",
+      "n_voters": 274,
+      "n_projects": 8,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 513000,
+      "PAIRS": 34711,
+      "CONS": 36315,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals",
+      "n_voters": 713,
+      "n_projects": 8,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 545000,
+      "PAIRS": 208532,
+      "CONS": 235641,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-knapsacks",
+      "n_voters": 234,
+      "n_projects": 8,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 545000,
+      "PAIRS": 22259,
+      "CONS": 23871,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-approvals",
+      "n_voters": 764,
+      "n_projects": 13,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "committee_size": 12,
+      "total_cost": 600000,
+      "PAIRS": 274139,
+      "CONS": 289180,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-knapsacks",
+      "n_voters": 267,
+      "n_projects": 13,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "committee_size": 12,
+      "total_cost": 600000,
+      "PAIRS": 32969,
+      "CONS": 33411,
       "error": null
     },
     {
@@ -2502,6 +5201,69 @@
       "total_cost": 1000000,
       "PAIRS": 104196,
       "CONS": 104196,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-36th-ward-2020_vote-knapsacks",
+      "n_voters": 214,
+      "n_projects": 8,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 945000,
+      "PAIRS": 10086,
+      "CONS": 15931,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-approvals",
+      "n_voters": 946,
+      "n_projects": 13,
+      "budget": 500000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "committee_size": 8,
+      "total_cost": 499050,
+      "PAIRS": 286847,
+      "CONS": 435711,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-knapsacks",
+      "n_voters": 280,
+      "n_projects": 13,
+      "budget": 500000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9
+      ],
+      "committee_size": 6,
+      "total_cost": 499950,
+      "PAIRS": 35705,
+      "CONS": 38781,
       "error": null
     },
     {
@@ -2617,6 +5379,22 @@
       "error": null
     },
     {
+      "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-approvals",
+      "n_voters": 1521,
+      "n_projects": 5,
+      "budget": 200000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4
+      ],
+      "committee_size": 2,
+      "total_cost": 200000,
+      "PAIRS": 232786,
+      "CONS": 405450,
+      "error": null
+    },
+    {
       "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-knapsacks",
       "n_voters": 472,
       "n_projects": 5,
@@ -2630,6 +5408,136 @@
       "total_cost": 170000,
       "PAIRS": 66605,
       "CONS": 82621,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals",
+      "n_voters": 355,
+      "n_projects": 10,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "committee_size": 9,
+      "total_cost": 671700,
+      "PAIRS": 58152,
+      "CONS": 62481,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2016_vote-approvals",
+      "n_voters": 484,
+      "n_projects": 9,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 8,
+      "total_cost": 576200,
+      "PAIRS": 111170,
+      "CONS": 115440,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2017_vote-approvals",
+      "n_voters": 811,
+      "n_projects": 9,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 8,
+      "total_cost": 573200,
+      "PAIRS": 302274,
+      "CONS": 312445,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2018_vote-approvals",
+      "n_voters": 572,
+      "n_projects": 8,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "committee_size": 7,
+      "total_cost": 506000,
+      "PAIRS": 148338,
+      "CONS": 154290,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2019_vote-approvals",
+      "n_voters": 609,
+      "n_projects": 11,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "committee_size": 10,
+      "total_cost": 913000,
+      "PAIRS": 167441,
+      "CONS": 179700,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-chicago-49th-ward-2020_vote-approvals",
+      "n_voters": 320,
+      "n_projects": 5,
+      "budget": 1000000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 415000,
+      "PAIRS": 36537,
+      "CONS": 39903,
       "error": null
     },
     {
@@ -2684,6 +5592,24 @@
       "total_cost": 93000,
       "PAIRS": 757653,
       "CONS": 906531,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_pb-greensboro-district-4-2019_vote-knapsacks",
+      "n_voters": 1249,
+      "n_projects": 6,
+      "budget": 100000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "committee_size": 4,
+      "total_cost": 62500,
+      "PAIRS": 694261,
+      "CONS": 754606,
       "error": null
     },
     {
@@ -2872,6 +5798,25 @@
       "error": null
     },
     {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-2_vote-approvals",
+      "n_voters": 820,
+      "n_projects": 9,
+      "budget": 285000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "committee_size": 5,
+      "total_cost": 232500,
+      "PAIRS": 89094,
+      "CONS": 205120,
+      "error": null
+    },
+    {
       "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-3_vote-approvals",
       "n_voters": 431,
       "n_projects": 10,
@@ -2887,6 +5832,26 @@
       "total_cost": 263000,
       "PAIRS": 42998,
       "CONS": 79401,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-4_vote-approvals",
+      "n_voters": 594,
+      "n_projects": 9,
+      "budget": 285000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        3,
+        4,
+        7,
+        8
+      ],
+      "committee_size": 6,
+      "total_cost": 282770,
+      "PAIRS": 91204,
+      "CONS": 169653,
       "error": null
     },
     {
@@ -2998,6 +5963,25 @@
       "error": null
     },
     {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-5_vote-approvals",
+      "n_voters": 590,
+      "n_projects": 11,
+      "budget": 285000,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        6,
+        7,
+        9,
+        10
+      ],
+      "committee_size": 5,
+      "total_cost": 275750,
+      "PAIRS": 30159,
+      "CONS": 81406,
+      "error": null
+    },
+    {
       "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals",
       "n_voters": 903,
       "n_projects": 11,
@@ -3086,6 +6070,24 @@
       "error": null
     },
     {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-approvals",
+      "n_voters": 696,
+      "n_projects": 10,
+      "budget": 190476,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "committee_size": 4,
+      "total_cost": 144500,
+      "PAIRS": 64154,
+      "CONS": 117855,
+      "error": null
+    },
+    {
       "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-knapsacks",
       "n_voters": 175,
       "n_projects": 10,
@@ -3101,6 +6103,58 @@
       "total_cost": 155000,
       "PAIRS": 11464,
       "CONS": 13861,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-4_vote-approvals",
+      "n_voters": 287,
+      "n_projects": 6,
+      "budget": 190476,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3
+      ],
+      "committee_size": 3,
+      "total_cost": 180000,
+      "PAIRS": 19691,
+      "CONS": 27966,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-approvals",
+      "n_voters": 604,
+      "n_projects": 8,
+      "budget": 190476,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        2,
+        6,
+        7
+      ],
+      "committee_size": 3,
+      "total_cost": 182600,
+      "PAIRS": 30283,
+      "CONS": 64261,
+      "error": null
+    },
+    {
+      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks",
+      "n_voters": 149,
+      "n_projects": 8,
+      "budget": 190476,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "committee_size": 4,
+      "total_cost": 174600,
+      "PAIRS": 6635,
+      "CONS": 8385,
       "error": null
     },
     {
@@ -3139,680 +6193,23 @@
       "PAIRS": 19210,
       "CONS": 21528,
       "error": null
-    }
-  ],
-  "errors": [
-    {
-      "election": "France_Toulouse_2022_17_-_Mirail-Universite_Reynerie_Bellefontaine",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_14_-_Saint-Simon_Lafourguette_Oncopole-Campus_Sante_du_Futur",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_15_-_Croix_de_Pierre_Route_dEspagne",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_10_-_Jolimont_Soupetard_Roseraie_Gloire_Gramont_Amouroux",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_12_-_Pont_des_Demoiselles_Ormeau_Montaudran_La_Terrasse_Malepere",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_4_-_Lapujade_Bonnefoy_Periole_Marengo_La_Colonne",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_7_-_Sept_Deniers_Ginestous-Sesquieres_Lalande",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_2_-_Amidonniers_Compans-Caffarelli_Brouardel",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_9_-_Trois_Cocus_Borderouge_Croix-Daurade_Paleficat_Grand_Selve",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_5_-_Saint-Michel_Saint-Agne_Empalot_Le_Busca_Ile_du_Ramier_Monplaisir",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_3_-_Les_Chalets_Bayard_Belfort_Saint_Aubin_Dupuy",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_babie-doly-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_8_-_Minimes_Barriere_de_Paris_Ponts-Jumeaux_La_Vache_Raisins_Fondeyre",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "France_Toulouse_2022_1_-_Capitole_Arnaud_Bernard_Carmes",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_cisowa-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_chylonia-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_dzialki-lesne-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_grabowek-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_kamienna-gora-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_karwiny-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_leszczynki-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_maly-kack-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_oksywie-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_obluze-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_orlowo-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_pogorze-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_pustki-cisowskie-demptowo-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_srodmiescie-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-large",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_andrzejow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_gorniak",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_gdynia_2020_wzgorze-sw-maksymiliana-small",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_baluty-zachodnie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_nad-nerem",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_nr-33",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_nowosolna",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_mileszki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_rokicie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_andrzejow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2020_zdrowie-mania",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_im-jozefa-montwilla-mireckiego",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_lagiewniki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_mileszki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_gorniak",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_nad-nerem",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_nr-33",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_piastow-kurak",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_wzniesien-lodzkich",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_gorniak",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_im-jozefa-montwilla-mireckiego",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_dolina-lodki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_nad-nerem",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_baluty-zachodnie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_mileszki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_nr-33",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_piastow-kurak",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_wzniesien-lodzkich",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_lagiewniki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_andrzejow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_wiskitno",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2022_zarzew",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_nowosolna",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_zdrowie-mania",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_dolina-lodki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_mileszki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_nowosolna",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_wiskitno",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_wzniesien-lodzkich",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_nr-33",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2023_ruda",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_lagiewniki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_aleksandrow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_poznan_2023_9-stare-miasto",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_marysin-polnocny",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_marysin-poludniowy",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_miedzeszyn",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_miedzylesie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_niskie-okecie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_przyczolek-grochowski",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_radiowo-wolka-weglowa-placowka-huta",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_marymont-potok-zoliborz-dziennikarski",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_kamionek",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_slodowiec",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_subunit-wawer",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_zerzen",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_zielona-grzybowa",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_lodz_2024_baluty-zachodnie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_zoliborz-poludniowy-powazki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_aleksandrow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_grochow-polnocny",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_falenica",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_kamionek",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2017_zielony-ursynow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_miedzeszyn",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_niskie-okecie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_obszar-4-zoliborz-poludniowy-powazki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_poznan_2023_7-morasko-radojewo-naramowice-umultowo",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_rejon-7",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_subunit-wawer",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2018_radosc",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_aleksandrow",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_boernerowo-fort-radiowo-gorce-groty",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_brodno-podgrodzie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_falenica",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_grochow-centrum",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_kamionek",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_grochow-kinowa",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_miedzeszyn",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_miedzylesie",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_miasto-ogrod-sadyba",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_obszar-4-zoliborz-poludniowy",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_przyczolek-grochowski",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_przywisle",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_ruda-marymont-las-bielanski",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_piaski",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_sluzew",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_obszar-3-marymont-potok-zoliborz-dziennikarski",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_subunit-wawer",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2019_stare-bielany",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_mlociny-wolka-weglowa-placowka-radiowo-huta",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_muranow-nowe-miasto-stare-miasto",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_olszynka-grochowska-goclawek",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_srodmiescie-polnocne",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_las-zerzen-wawer-sadul",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_tarchomin",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_wygledow-sluzewiec",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2021-22-cal-high-library-pb_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2022-jersey-city-ward-b_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2022-jersey-city-ward-d_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2022-jersey-city-ward-e_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2022-jersey-city-ward-f_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_2022-central-falls-high-school-participatory-budgeting-vote_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-10th-ward-2017_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-29th-ward-2020_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-29th-ward-2021_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-33rd-ward-2021_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-36th-ward-2020_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_warszawa_2026_wawrzyszew",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-47th-ward-2022-youth_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-49th-ward-2017_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-49th-ward-2018_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-49th-ward-2020_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-49th-ward-2016_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-49th-ward-2019_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-chicago-39th-ward-2020_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_pb-greensboro-district-4-2019_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-4_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2017-district-2_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-5_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-4_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-3_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
     },
     {
       "election": "us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-7_vote-approvals",
-      "error": "Unable to retrieve attribute 'X'"
-    },
-    {
-      "election": "poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn",
-      "error": "Unable to retrieve attribute 'X'"
+      "n_voters": 272,
+      "n_projects": 8,
+      "budget": 190476,
+      "optimal_alpha": 1.0,
+      "optimal_W": [
+        4,
+        5
+      ],
+      "committee_size": 2,
+      "total_cost": 175000,
+      "PAIRS": 6456,
+      "CONS": 9316,
+      "error": null
     }
-  ]
+  ],
+  "errors": []
 }

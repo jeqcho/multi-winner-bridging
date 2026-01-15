@@ -420,6 +420,10 @@ def compute_alpha_ejr_pb_full_optimization(
         cuts = []  # List of (S, q) pairs
         cut_vars = {}  # y_{i,t} variables for each cut
         
+        # Track best solution found (in case later iterations become infeasible)
+        best_alpha = 0.0
+        best_W = []
+        
         for iteration in range(max_iterations):
             if verbose:
                 print(f"\nIteration {iteration + 1}")
@@ -435,6 +439,11 @@ def compute_alpha_ejr_pb_full_optimization(
             # Extract solution
             alpha_star = alpha.X
             W = [c for c in range(n_projects) if x[c].X > 0.5]
+            
+            # Track best solution
+            if alpha_star >= best_alpha:
+                best_alpha = alpha_star
+                best_W = W.copy()
             
             if verbose:
                 total_cost = sum(costs[c] for c in W)
@@ -498,13 +507,14 @@ def compute_alpha_ejr_pb_full_optimization(
         if verbose:
             print(f"Max iterations reached")
         
-        # Return best found solution
-        alpha_star = alpha.X
-        W = [c for c in range(n_projects) if x[c].X > 0.5]
-        return alpha_star, W
+        # Return best found solution (use last valid solution)
+        return best_alpha, best_W
         
     except gp.GurobiError as e:
         print(f"Gurobi error: {e}")
+        # Return best solution found so far if we have one
+        if best_W is not None:
+            return best_alpha, best_W
         return 0.0, []
 
 
