@@ -1,0 +1,22 @@
+% ILP vs Enumeration Comparison for CONS Objective
+% Generated: 2026-01-16
+
+\begin{table}[htbp]
+\centering
+\caption{ILP vs Enumeration Runtime Comparison for CONS Objective}
+\label{tab:ilp-vs-enum-cons}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Pabulib ID} & \textbf{Voters} & \textbf{Projects} & \textbf{Enum (s)} & \textbf{ILP (s)} & \textbf{Speedup} \\
+\midrule
+poland\_warszawa\_2017\_plac & 27 & 4 & 0.0003 & 2.95 & 9{,}830$\times$ \\
+poland\_warszawa\_2019\_marysin & 85 & 2 & 0.0002 & 390.3 & 1{,}839{,}144$\times$ \\
+France\_Toulouse\_2022\_17 & 93 & 10 & 0.02 & 264.0 & 13{,}200$\times$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Speedup = ILP Time / Enum Time (values $>1$ indicate enumeration is faster).
+\item The CONS ILP uses a multi-commodity flow formulation with $O(|V|^4)$ variables, making it prohibitively slow even for modest voter counts.
+\end{tablenotes}
+\end{table}

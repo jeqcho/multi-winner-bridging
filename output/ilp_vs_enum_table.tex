@@ -1,0 +1,26 @@
+% ILP vs Enumeration Comparison for PAIRS Objective
+% Generated: 2026-01-16
+
+\begin{table}[htbp]
+\centering
+\caption{ILP vs Enumeration Runtime Comparison for PAIRS Objective}
+\label{tab:ilp-vs-enum}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Pabulib ID} & \textbf{Voters} & \textbf{Projects} & \textbf{Enum (s)} & \textbf{ILP (s)} & \textbf{Speedup} \\
+\midrule
+France\_Toulouse\_2022\_7  & 154 & 10 & 0.066 & 0.231 & 3.5$\times$ \\
+France\_Toulouse\_2022\_13 & 304 & 10 & 0.188 & 0.397 & 2.1$\times$ \\
+France\_Toulouse\_2022\_8  & 512 & 10 & 0.678 & 1.004 & 1.5$\times$ \\
+France\_Toulouse\_2022\_12 & 659 & 10 & 0.623 & 2.777 & 4.5$\times$ \\
+France\_Toulouse\_2022\_1  & 972 & 10 & 2.759 & 3.904 & 1.4$\times$ \\
+\midrule
+\textbf{Total} & --- & --- & \textbf{4.31} & \textbf{8.31} & \textbf{1.9$\times$} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Speedup = ILP Time / Enum Time (values $>1$ indicate enumeration is faster).
+\item All elections have 10 projects; valid committees range from 323--611 due to budget constraints.
+\end{tablenotes}
+\end{table}
