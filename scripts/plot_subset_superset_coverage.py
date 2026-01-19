@@ -161,10 +161,10 @@ def main():
         linewidth=0.5,
     )
     
-    ax.set_xlabel("Proportion of Committees Covered", fontsize=14)
+    ax.set_xlabel("Proportion of Outcomes Covered", fontsize=14)
     ax.set_ylabel("Number of Elections", fontsize=14)
     ax.set_title(
-        "Proportion of Budget-Feasible Committees\nCovered by Some Voter's Approval Set",
+        "Proportion of Budget-Feasible Outcomes\nCovered by Some Voter's Approval Set",
         fontsize=16,
         fontweight="bold",
     )
