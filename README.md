@@ -33,14 +33,13 @@ The pipeline:
 
 ### Pabulib Datasets (Budget-constrained)
 
-Participatory budgeting data from [Pabulib](https://pabulib.org/). The `data/` directory contains PB instances from Poland, France, and the US.
+Participatory budgeting data from [Pabulib](https://pabulib.org/). See [Data Setup](#data-setup) to download the dataset.
 
-**Curated selection** (`data/pb_selected_10_20251202_023743/`): Top 10 PB instances filtered by:
+The curated selection includes 338 PB instances filtered by:
 - At most 13 projects
 - At most 10k voters
 - Approval voting format
 - Excludes experimental runs
-- Ranked by Pabulib quality score
 
 See the [filtered Pabulib query](https://pabulib.org/?votes_max=10000&projects_max=13&type=approval&exclude_experimental=true) for details.
 
@@ -50,6 +49,22 @@ See the [filtered Pabulib query](https://pabulib.org/?votes_max=10000&projects_m
 # Initialize and install dependencies
 uv sync
 ```
+
+## Data Setup
+
+The participatory budgeting datasets are not included in the repository. Download them from Pabulib:
+
+1. Download the dataset:
+   ```bash
+   curl -L -o data.zip "https://pabulib.org/download/snapshot/98659fc686f297cc"
+   ```
+
+2. Extract to the data/ directory:
+   ```bash
+   mkdir -p data && unzip data.zip -d data/
+   ```
+
+This downloads 338 curated PB instances from Poland, France, Netherlands, and the US.
 
 ### Gurobi Optimizer
 
@@ -97,9 +112,8 @@ This project requires [Gurobi Optimizer](https://www.gurobi.com/) for verifying 
 │   ├── test_scoring.py         # Unit tests for scoring functions
 │   └── test_data_loader.py     # Unit tests for data loader
 │
-├── data/                       # Input datasets
-│   ├── pb_selected_10_*/       # Curated PB datasets
-│   └── *.pb                    # Individual PB files
+├── data/                       # Input datasets (download separately, see Data Setup)
+│   └── *.pb                    # PB files from Pabulib
 │
 ├── output/                     # Generated results (CSV files, plots)
 ├── analysis/                   # Analysis outputs (plots, JSON results)

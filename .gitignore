@@ -208,3 +208,7 @@ __marimo__/
 
 # macOS
 .DS_Store
+
+# Data files (download separately - see README)
+data/
+presentation/
