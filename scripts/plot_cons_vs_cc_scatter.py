@@ -63,12 +63,12 @@ def main():
     
     # Plot all points
     ax.scatter(all_cons, all_cc, alpha=0.2, color="blue", s=3, edgecolors="none",
-               label="Committee from an election")
+               label="Outcome from an election")
     
     # Formatting
     ax.set_xlabel(r"$\alpha_{CONS}$", fontsize=8)
     ax.set_ylabel(r"$\alpha_{CC}$", fontsize=8)
-    ax.set_title("CONS vs CC\n(all committees from all elections)", fontsize=9, fontweight="bold")
+    ax.set_title("CONS vs CC", fontsize=9, fontweight="bold")
     ax.set_xlim(0, 1.05)
     ax.set_ylim(0, 1.05)
     ax.set_aspect("equal")
