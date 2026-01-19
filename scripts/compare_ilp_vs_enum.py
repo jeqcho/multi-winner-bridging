@@ -10,7 +10,7 @@ on 5 small PB elections and generates a markdown report with timing results.
 
 Usage:
     python scripts/compare_ilp_vs_enum.py
-    python scripts/compare_ilp_vs_enum.py --output-dir output/experiments
+    python scripts/compare_ilp_vs_enum.py --output-dir analysis/experiments
 """
 
 import os
@@ -346,8 +346,8 @@ def main():
     parser.add_argument(
         '--output-dir', 
         type=str, 
-        default='output',
-        help='Output directory for the report (default: output)'
+        default='analysis',
+        help='Output directory for the report (default: analysis)'
     )
     parser.add_argument(
         '--time-limit',

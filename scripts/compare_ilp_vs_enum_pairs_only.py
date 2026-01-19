@@ -200,7 +200,7 @@ This experiment compares ILP vs enumeration for the **PAIRS objective only** on 
 
 def main():
     parser = argparse.ArgumentParser(description='PAIRS-only ILP vs Enum comparison')
-    parser.add_argument('--output-dir', type=str, default='output')
+    parser.add_argument('--output-dir', type=str, default='analysis')
     parser.add_argument('--time-limit', type=int, default=120)
     args = parser.parse_args()
     

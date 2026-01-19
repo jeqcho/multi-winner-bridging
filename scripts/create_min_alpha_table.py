@@ -10,11 +10,12 @@ from pathlib import Path
 
 
 def main():
-    output_dir = Path("output")
+    data_dir = Path("output/pb")  # Where the voting data files are
+    analysis_dir = Path("analysis")  # Where to save the summary
     
     # Find all voting_results.csv and ejr_data.csv files
-    voting_files = list(output_dir.rglob("voting_results.csv"))
-    ejr_files = list(output_dir.rglob("ejr_data.csv"))
+    voting_files = list(data_dir.rglob("voting_results.csv"))
+    ejr_files = list(data_dir.rglob("ejr_data.csv"))
     
     # Methods to analyze
     methods = ["MES", "AV", "greedy-AV/cost", "greedy-AV/cost^2", "greedy-CC", "greedy-PAV", "PAIRS-AV", "PAIRS-CC", "CONS-AV", "CONS-CC"]
@@ -88,7 +89,7 @@ def main():
         print(f"| {method} | " + " | ".join(row_values) + " |")
     
     # Save to CSV
-    output_path = output_dir / "min_alpha_summary.csv"
+    output_path = analysis_dir / "min_alpha_summary.csv"
     df_result.to_csv(output_path)
     print(f"\nSaved to {output_path}")
     
