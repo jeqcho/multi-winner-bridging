@@ -212,3 +212,7 @@ __marimo__/
 # Data files (download separately - see README)
 data/
 presentation/
+
+# Output folders (ignore all except pb/)
+output/*/
+!output/pb/
