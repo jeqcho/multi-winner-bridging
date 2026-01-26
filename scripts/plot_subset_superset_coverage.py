@@ -169,7 +169,6 @@ def main():
         fontweight="bold",
     )
     ax.set_xlim(0, 1.05)
-    ax.axvline(x=1.0, color="red", linestyle="--", alpha=0.7, label="100% coverage")
     ax.axvline(x=proportions.mean(), color="green", linestyle="-", alpha=0.7, label=f"Mean ({proportions.mean():.3f})")
     ax.grid(True, alpha=0.3)
     ax.legend(fontsize=12)
